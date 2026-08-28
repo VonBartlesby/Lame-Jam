@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dyyslt200puif"]
+
+[ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="1_81phd"]
+[ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://our_moon.gd" id="2_qtpbo"]
+[ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://input_hander.gd" id="3_qtpbo"]
+
+[node name="Space" type="Node2D" unique_id=1292661137]
+
+[node name="Our Moon" type="Sprite2D" parent="." unique_id=888625057]
+position = Vector2(496, 405)
+texture = ExtResource("1_81phd")
+script = ExtResource("2_qtpbo")
+velocity = Vector2(10, 0)
+
+[node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344]
+script = ExtResource("3_qtpbo")
