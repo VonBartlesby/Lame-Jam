@@ -13,8 +13,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	offset = lerp(offset,ball.global_position,delta*4.)
 	
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_up"):
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("ui_up"):
 		zoom_level += 0.25
-	if event.is_action_pressed("ui_down"):
+	if event.is_action("ui_down"):
 		zoom_level -= 0.25

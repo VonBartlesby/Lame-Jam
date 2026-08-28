@@ -23,13 +23,14 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
 		event.position = camera.get_global_mouse_position()
-		if event.pressed:
+		
+		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
 			mouseDown = true
 			mouseInitialPostision = event.position
 			print("Mouse at: ", mouseInitialPostision)
 			print("Moon at: ", moon.position)
 			print("dir: ", (moon.position-event.position).normalized())
 			
-		elif mouseDown:
+		elif mouseDown && event.button_index == MOUSE_BUTTON_LEFT:
 			magnituge = abs(mouseInitialPostision-event.position).length()
 			moon.add_velocity((moon.position-event.position).normalized() * magnituge)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0poyklthpt7g"]
+
+[ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://planet.gd" id="1_mtr83"]
+[ext_resource type="Texture2D" uid="uid://btjyhndj5tre4" path="res://planet.png" id="2_a75xc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
+radius = 472.31
+
+[node name="Planet" type="Area2D" unique_id=454251863]
+scale = Vector2(1.7187498, 1.7734375)
+collision_layer = 2
+script = ExtResource("1_mtr83")
+gravityRange = 300.0
+
+[node name="PlanetSprite" type="Sprite2D" parent="." unique_id=448856999]
+texture = ExtResource("2_a75xc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=399900421]
+shape = SubResource("CircleShape2D_57qmd")
