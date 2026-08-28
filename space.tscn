@@ -9,6 +9,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 82.38932
 
+[sub_resource type="GDScript" id="GDScript_8n4m7"]
+script/source = "extends Node2D
+@export var squash_strength :float=2
+@export var strech_strength :float=2
+@onready var sprite: Sprite2D = $Moon
+@onready var root: Area2D = $\"..\"
+var sqst_str := 0.0001
+func _process(delta: float) -> void:
+	var v_s = root.velocity.length()
+	look_at(root.position+root.velocity)
+	scale=Vector2(
+		1+v_s*strech_strength*sqst_str,
+		1-v_s*squash_strength*sqst_str)
+	sprite.rotation=-rotation
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
 radius = 44.102154
 
@@ -24,12 +40,17 @@ decleration = 0.0
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344]
 script = ExtResource("3_qtpbo")
 
-[node name="Moon" type="Sprite2D" parent="Our Moon" unique_id=888625057]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("3_ulv8f")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=298686917]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="visual" type="Node2D" parent="Our Moon" unique_id=11191935]
+script = SubResource("GDScript_8n4m7")
+squash_strength = 3.0
+strech_strength = 16.0
+
+[node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=888625057]
+scale = Vector2(0.17500001, 0.17500001)
+texture = ExtResource("3_ulv8f")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=871911740]
 position = Vector2(947, 304.25)
