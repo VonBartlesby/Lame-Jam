@@ -1,48 +1,46 @@
 [gd_scene format=3 uid="uid://dyyslt200puif"]
 
+[ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="1_81phd"]
 [ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://our_moon.gd" id="2_qtpbo"]
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://input_hander.gd" id="3_qtpbo"]
-[ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://moon.png" id="3_ulv8f"]
 [ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://planet.gd" id="4_rxlph"]
-[ext_resource type="Texture2D" uid="uid://btjyhndj5tre4" path="res://planet.png" id="4_w5eul"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 82.38932
+
+[sub_resource type="Gradient" id="Gradient_ulv8f"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yf5fn"]
+gradient = SubResource("Gradient_ulv8f")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
 radius = 44.102154
 
 [node name="Space" type="Node2D" unique_id=1292661137]
 
-[node name="Our Moon" type="Area2D" parent="." unique_id=1914234917]
+[node name="Our Moon" type="Sprite2D" parent="." unique_id=888625057]
 position = Vector2(447.5, 356.5)
 scale = Vector2(0.2421875, 0.2421875)
-collision_mask = 6
+texture = ExtResource("1_81phd")
 script = ExtResource("2_qtpbo")
+velocity = Vector2(10, 0)
 decleration = 0.0
 
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344]
 script = ExtResource("3_qtpbo")
 
-[node name="Moon" type="Sprite2D" parent="Our Moon" unique_id=888625057]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("3_ulv8f")
+[node name="Moon Collider" type="Area2D" parent="Our Moon" unique_id=1914234917]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=298686917]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon/Moon Collider" unique_id=298686917]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=871911740]
+[node name="Planet" type="Sprite2D" parent="." unique_id=907702866]
 position = Vector2(947, 304.25)
 scale = Vector2(1.7187498, 1.7734375)
-collision_layer = 2
+texture = SubResource("GradientTexture2D_yf5fn")
 script = ExtResource("4_rxlph")
-gravityRange = 300.0
 
-[node name="Planet" type="Sprite2D" parent="Area2D" unique_id=907702866]
-scale = Vector2(0.092, 0.092)
-texture = ExtResource("4_w5eul")
+[node name="Area2D" type="Area2D" parent="Planet" unique_id=871911740]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1049347310]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet/Area2D" unique_id=1049347310]
 shape = SubResource("CircleShape2D_57qmd")
-
-[connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]

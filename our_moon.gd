@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Area2D
 @export var velocity : Vector2
 @export var speed : float = 1.0
 @export var decleration : float = 1.0
@@ -18,3 +18,8 @@ func move(delta : float) -> void:
 
 func add_velocity(vel:Vector2) -> void:
 	velocity+=vel
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.collision_layer == 2:
+		process_mode = Node.PROCESS_MODE_DISABLED

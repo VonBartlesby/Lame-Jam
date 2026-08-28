@@ -1,7 +1,7 @@
 extends Node
 
 
-@onready var moon: Sprite2D = $".."
+@onready var moon: Area2D = $".."
 
 
 var mouseDown : bool = false
