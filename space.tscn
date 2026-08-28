@@ -6,9 +6,11 @@
 [ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://planet.gd" id="4_rxlph"]
 [ext_resource type="Texture2D" uid="uid://btjyhndj5tre4" path="res://planet.png" id="4_w5eul"]
 [ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://ball_cam.gd" id="6_w5eul"]
+[ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://STAR_0.png" id="7_4fhbr"]
+[ext_resource type="Script" uid="uid://bhnf58memdwa7" path="res://background.gd" id="7_b5fhv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 82.38932
+radius = 78.59
 
 [sub_resource type="GDScript" id="GDScript_8n4m7"]
 script/source = "extends Node2D
@@ -17,19 +19,55 @@ script/source = "extends Node2D
 @onready var sprite: Sprite2D = $Moon
 @onready var root: Area2D = $\"..\"
 var sqst_str := 0.0001
+var rot_offset :float
+func _ready() -> void: rot_offset=sprite.rotation
 func _process(delta: float) -> void:
 	var v_s = root.velocity.length()
 	look_at(root.position+root.velocity)
 	scale=Vector2(
 		1+v_s*strech_strength*sqst_str,
 		1-v_s*squash_strength*sqst_str)
-	sprite.rotation=-rotation
+	sprite.rotation=-rotation+rot_offset
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
-radius = 44.102154
+radius = 43.55
+
+[sub_resource type="Gradient" id="Gradient_l12om"]
+offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
+colors = PackedColorArray(0.16941994, 0.15370345, 0.19875267, 1, 0.15288767, 0.1414848, 0.18429346, 1, 0.09239999, 0.09477999, 0.14, 1, 0.09481579, 0.108502634, 0.14473684, 1, 0.3, 0.2946, 0.21900001, 1, 0.09588948, 0.11460158, 0.1468421, 1, 0.097500004, 0.12375, 0.15, 1, 0.0793, 0.085215, 0.13, 1, 0.030438976, 0.05098556, 0.07719918, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nryri"]
+frequency = 0.0027
+fractal_lacunarity = 1.875
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8n4m7"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_nryri")
+color_ramp = SubResource("Gradient_l12om")
 
 [node name="Space" type="Node2D" unique_id=1292661137]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1673503574]
+scroll_scale = Vector2(0.055, 0.055)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=484838966]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_4fhbr")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=110286170]
+scroll_scale = Vector2(0.035, 0.035)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=358669426]
+rotation = 0.36651915
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_4fhbr")
+centered = false
 
 [node name="Our Moon" type="Area2D" parent="." unique_id=1914234917]
 position = Vector2(447.5, 356.5)
@@ -51,6 +89,7 @@ squash_strength = 3.0
 strech_strength = 16.0
 
 [node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=888625057]
+rotation = 1.0384709
 scale = Vector2(0.17500001, 0.17500001)
 texture = ExtResource("3_ulv8f")
 
@@ -69,7 +108,17 @@ texture = ExtResource("4_w5eul")
 shape = SubResource("CircleShape2D_57qmd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
+position_smoothing_enabled = true
 script = ExtResource("6_w5eul")
 ball = NodePath("../Our Moon")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=303781234]
+layer = -100
+
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer" unique_id=1032879341 node_paths=PackedStringArray("cam")]
+texture = SubResource("NoiseTexture2D_8n4m7")
+script = ExtResource("7_b5fhv")
+parallax = 0.04
+cam = NodePath("../../Camera2D")
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
