@@ -1,8 +1,13 @@
 extends Area2D
 class_name Ball
+
 @export var velocity : Vector2
 @export var speed : float = 1.0
 @export var decleration : float = 1.0
+
+var shootable : bool = true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,5 +28,8 @@ func add_velocity(vel:Vector2) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.collision_layer == 2:
-		velocity*=0
-		process_mode = Node.PROCESS_MODE_DISABLED
+		call_deferred("impact")
+
+func impact() -> void:
+	velocity*=0
+	process_mode = Node.PROCESS_MODE_DISABLED
