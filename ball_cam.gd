@@ -2,7 +2,6 @@ extends Camera2D
 class_name Cam
 @export var ball : Ball
 
-@onready var background: TextureRect = $background
 
 var zoom_level : float = 1. : 
 	set(z):

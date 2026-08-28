@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://ball_cam.gd" id="6_w5eul"]
 [ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://STAR_0.png" id="7_4fhbr"]
 [ext_resource type="Script" uid="uid://bhnf58memdwa7" path="res://background.gd" id="7_b5fhv"]
+[ext_resource type="Material" uid="uid://2q4hg5qy40x5" path="res://blackhole_material.tres" id="9_4hog4"]
+[ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="10_4hog4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 78.59
@@ -60,12 +62,12 @@ centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=110286170]
 scroll_scale = Vector2(0.035, 0.035)
-repeat_size = Vector2(1024, 1024)
+repeat_size = Vector2(750, 750)
 repeat_times = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=358669426]
 rotation = 0.36651915
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.19, 0.19)
 texture = ExtResource("7_4fhbr")
 centered = false
 
@@ -120,5 +122,10 @@ texture = SubResource("NoiseTexture2D_8n4m7")
 script = ExtResource("7_b5fhv")
 parallax = 0.04
 cam = NodePath("../../Camera2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1479354504]
+material = ExtResource("9_4hog4")
+position = Vector2(778, 409)
+texture = ExtResource("10_4hog4")
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
