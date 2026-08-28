@@ -1,5 +1,6 @@
 extends Node
 
+@export var camera : Cam
 
 @onready var moon: Area2D = $".."
 
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
+		event.position = camera.get_global_mouse_position()
 		if event.pressed:
 			mouseDown = true
 			mouseInitialPostision = event.position

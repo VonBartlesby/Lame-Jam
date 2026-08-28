@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://moon.png" id="3_ulv8f"]
 [ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://planet.gd" id="4_rxlph"]
 [ext_resource type="Texture2D" uid="uid://btjyhndj5tre4" path="res://planet.png" id="4_w5eul"]
+[ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://ball_cam.gd" id="6_w5eul"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 82.38932
@@ -37,8 +38,9 @@ collision_mask = 6
 script = ExtResource("2_qtpbo")
 decleration = 0.0
 
-[node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344]
+[node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344 node_paths=PackedStringArray("camera")]
 script = ExtResource("3_qtpbo")
+camera = NodePath("../../Camera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=298686917]
 shape = SubResource("CircleShape2D_g4v7s")
@@ -65,5 +67,9 @@ texture = ExtResource("4_w5eul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1049347310]
 shape = SubResource("CircleShape2D_57qmd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
+script = ExtResource("6_w5eul")
+ball = NodePath("../Our Moon")
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]

@@ -1,4 +1,5 @@
 extends Area2D
+class_name Ball
 @export var velocity : Vector2
 @export var speed : float = 1.0
 @export var decleration : float = 1.0
@@ -22,4 +23,5 @@ func add_velocity(vel:Vector2) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.collision_layer == 2:
+		velocity*=0
 		process_mode = Node.PROCESS_MODE_DISABLED
