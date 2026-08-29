@@ -1,6 +1,9 @@
 extends Area2D
 class_name Ball
 
+signal impacted
+signal reflected
+
 @export var velocity : Vector2
 @export var speed : float = 1.0
 @export var max_charge : float = 100
@@ -59,17 +62,23 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		if result:
 			var impact_angle = velocity.angle_to(result["normal"])
+			
 			print(impact_angle)
 			if abs(impact_angle) >= 2 or abs(impact_angle) <= 1:
+				
 				call_deferred("impact")
+				
 			else:
 				var shallow_reflected_about_vel : Vector2= velocity - 1.8 * (velocity.dot(result["normal"])) * result["normal"]
 				velocity = shallow_reflected_about_vel * 0.9
+				emit_signal("reflected")
 
 func impact() -> void:
+	emit_signal("impacted")
 	velocity*=0
 	started = false
 	process_mode = Node.PROCESS_MODE_DISABLED
+	
 
 func _reset() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
