@@ -23,8 +23,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if global_lock:
-		global_position = global_lock
+	pass
 
 func move() -> void:
 	global_position += velocity * speed * 0.01666666666667
@@ -46,11 +45,16 @@ func launch(launch_vel : Vector2) -> Array:
 		for planet in planets_in_range:
 			if planet is GravitationalMass:
 				velocity += planet.get_force_to_body(self) * 0.01666666666667
+				var distance_to_planet = abs(global_position-planet.global_position).length()
+				print(distance_to_planet)
+				if distance_to_planet < 50:
+					points.append(position)
+					return points
 		move()
 		if i%3 == 0:
 			points.append(position)
 			
-	global_lock = global_position
+
 	return points
 
 func _reset() -> void:
