@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="10_4hog4"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="10_ap0gv"]
 [ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="11_y7rfp"]
+[ext_resource type="Script" uid="uid://s4q36xx2fnm1" path="res://gpu_particles_2d.gd" id="10_ap0gv"]
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://ui_controller.gd" id="13_7ltla"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://planet.tscn" id="13_betvx"]
 
@@ -46,6 +47,21 @@ func _process(_delta: float) -> void:
 	
 	position = Vector2(randf_range(-1,1)*wobble_strength,randf_range(-1,1)*wobble_strength)
 "
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ltla"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+angle_min = -22.39999
+angle_max = 15.0000105
+inherit_velocity_ratio = 0.1
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_max = 5.0
+color = Color(1.3882558, 1.3882558, 1.3882558, 1)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+turbulence_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_l12om"]
 offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
@@ -138,6 +154,10 @@ stream = ExtResource("10_ap0gv")
 
 [node name="reflect" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=690279310]
 stream = ExtResource("11_y7rfp")
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=1347480971]
+process_mode = 3
+process_material = SubResource("ParticleProcessMaterial_7ltla")
+script = ExtResource("10_ap0gv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true
