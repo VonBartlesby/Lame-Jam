@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://input_hander.gd" id="3_qtpbo"]
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://moon.png" id="3_ulv8f"]
 [ext_resource type="Texture2D" uid="uid://bt0wgti5stypi" path="res://dottedline.png" id="4_myilm"]
-[ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://planet.gd" id="4_rxlph"]
+[ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://GravitationalMass.gd" id="4_rxlph"]
 [ext_resource type="Texture2D" uid="uid://btjyhndj5tre4" path="res://planet.png" id="4_w5eul"]
 [ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://ball_cam.gd" id="6_w5eul"]
 [ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://STAR_0.png" id="7_4fhbr"]
@@ -179,7 +179,7 @@ gizmo_extents = 50.0
 
 [node name="Masses" type="Node2D" parent="." unique_id=1161130699]
 
-[node name="Area2D" type="Area2D" parent="Masses" unique_id=5729475]
+[node name="Planet 1" type="Area2D" parent="Masses" unique_id=5729475]
 position = Vector2(947, 304.25)
 scale = Vector2(1.7187498, 1.7734375)
 collision_layer = 2
@@ -187,11 +187,11 @@ script = ExtResource("4_rxlph")
 gravityStrength = 4.0
 gravityRange = 400.0
 
-[node name="Planet" type="Sprite2D" parent="Masses/Area2D" unique_id=512162874]
+[node name="Planet" type="Sprite2D" parent="Masses/Planet 1" unique_id=512162874]
 scale = Vector2(0.092, 0.092)
 texture = ExtResource("4_w5eul")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Masses/Area2D" unique_id=1303189337]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Masses/Planet 1" unique_id=1303189337]
 shape = SubResource("CircleShape2D_57qmd")
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
