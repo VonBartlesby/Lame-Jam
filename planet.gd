@@ -3,8 +3,9 @@ class_name GravitationalMass
 
 @export var gravityStrength : float = 1.0
 @export var gravityRange : float
+@onready var moon: Ball = $"../../Our Moon"
 
-@onready var moon: Area2D = $"../Our Moon"
+
 
 var distanceToMoon : float
 var directionFromMoon : Vector2

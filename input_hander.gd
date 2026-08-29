@@ -28,7 +28,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _input(event):
+func _unhandled_input(event):
 	if not moon.shootable:
 		return
 	event.position = camera.get_global_mouse_position()

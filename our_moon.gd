@@ -3,6 +3,8 @@ class_name Ball
 
 @export var velocity : Vector2
 @export var speed : float = 1.0
+@onready var start_point: Marker2D = $"../Start Point"
+@onready var reset_button: Button = $"../Ui Controller/ResetButton"
 
 
 var shootable : bool = true
@@ -10,7 +12,7 @@ var shootable : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	reset_button.connect("button_up",_reset)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +34,8 @@ func _on_area_entered(area: Area2D) -> void:
 func impact() -> void:
 	velocity*=0
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+func _reset() -> void:
+	velocity = Vector2.ZERO
+	global_position = start_point.global_position
+	shootable = true
