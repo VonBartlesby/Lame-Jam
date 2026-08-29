@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://Scripts/input_hander.gd" id="3_qtpbo"]
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="3_ulv8f"]
 [ext_resource type="Texture2D" uid="uid://dr7g7karrjo0s" path="res://Textures/Frame 1.png" id="4_4fo3t"]
+[ext_resource type="AudioStream" uid="uid://cchphensegg63" path="res://sound/charge.wav" id="4_isj1v"]
 [ext_resource type="Texture2D" uid="uid://db5481y1ntli" path="res://Textures/Frame 2.png" id="5_4v84m"]
 [ext_resource type="Texture2D" uid="uid://0omie6vh57l2" path="res://Textures/Frame 3.png" id="6_m37bs"]
 [ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://Scripts/ball_cam.gd" id="6_w5eul"]
@@ -131,6 +132,11 @@ charge_speed = 100.0
 script = ExtResource("3_qtpbo")
 camera = NodePath("../../Camera2D")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Our Moon/Input Hander" unique_id=752963450]
+stream = ExtResource("4_isj1v")
+volume_db = -80.0
+autoplay = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=298686917]
 shape = SubResource("CircleShape2D_g4v7s")
 
@@ -159,7 +165,6 @@ texture = ExtResource("10_4hog4")
 
 [node name="Sound" type="Node2D" parent="Our Moon" unique_id=1735515538]
 process_mode = 3
-visible = false
 script = ExtResource("8_betvx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=877844356]
@@ -262,7 +267,4 @@ size = 2.0
 debug = true
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
-[connection signal="impacted" from="Our Moon" to="Our Moon/Input Hander" method="_on_our_moon_impacted"]
-[connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
-[connection signal="reflected" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_reflected"]
 [connection signal="launched" from="Our Moon/Input Hander" to="Our Moon/Sound" method="_on_input_hander_launched"]
