@@ -12,7 +12,7 @@ var gravityStrength : float = 1.0
 
 
 
-@onready var moon: Ball = $"../../Our Moon"
+var moon: Ball
 
 
 var distanceToMoon : float
@@ -28,6 +28,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if not Engine.is_editor_hint():
+		moon = $"../../Our Moon"
 		gravitationPull = get_force_to_body(moon)
 		if moon.started:
 			moon.add_velocity(gravitationPull * delta)

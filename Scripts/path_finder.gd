@@ -35,7 +35,7 @@ func launch(launch_vel : Vector2) -> Array:
 	var points = []
 	position = Vector2.ZERO
 	
-	velocity = launch_vel
+	velocity = launch_vel + our_moon.velocity
 	speed = our_moon.speed
 	planets_in_range = masses.get_children()
 	

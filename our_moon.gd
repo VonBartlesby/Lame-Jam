@@ -70,7 +70,7 @@ func _on_area_entered(area: Area2D) -> void:
 				
 			else:
 				var shallow_reflected_about_vel : Vector2= velocity - 2 * (velocity.dot(result["normal"])) * result["normal"]
-				velocity = shallow_reflected_about_vel * 0.95
+				velocity = shallow_reflected_about_vel
 				emit_signal("reflected")
 
 func impact() -> void:

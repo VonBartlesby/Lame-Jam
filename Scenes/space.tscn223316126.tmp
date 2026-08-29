@@ -258,6 +258,5 @@ size = 2.0
 debug = true
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
-[connection signal="impacted" from="Our Moon" to="Our Moon/Input Hander" method="_on_our_moon_impacted"]
 [connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
 [connection signal="reflected" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_reflected"]

@@ -62,3 +62,10 @@ func _unhandled_input(event):
 			for point in points:
 				line_2d.add_point(point)
 	
+
+
+func _on_our_moon_impacted() -> void:
+	mouseDown = false
+	moon_launch_velocity = Vector2.ZERO
+	line_2d.clear_points()
+	visual.wobble_strength = 0
