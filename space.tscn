@@ -185,7 +185,7 @@ debug = true
 position = Vector2(662, 164)
 
 [node name="Planet3" parent="Masses" unique_id=774382330 instance=ExtResource("13_betvx")]
-position = Vector2(1386, 1633)
+position = Vector2(1538, 1316)
 scale = Vector2(10, 10)
 size = 10.0
 debug = true

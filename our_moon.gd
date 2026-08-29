@@ -29,8 +29,30 @@ func add_velocity(vel:Vector2) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
+	print("que?")
 	if area.collision_layer == 2:
-		call_deferred("impact")
+		print("so this is running?")
+		var space_state = get_world_2d().direct_space_state
+		var query = PhysicsRayQueryParameters2D.create(global_position, area.global_position,2)
+		query.collide_with_areas = true
+		query.hit_from_inside = true
+		var result = space_state.intersect_ray(query)
+		
+		#un comment to draw the rays on impact
+		#var line = Line2D.new()
+		#line.add_point(Vector2.ZERO)
+		#line.add_point(to_local(area.global_position))
+		#line.z_index = 1
+		#add_child(line)
+		
+		if result:
+			var impact_angle = velocity.angle_to(result["normal"])
+			print(impact_angle)
+			if abs(impact_angle) >= 2 or abs(impact_angle) <= 1:
+				call_deferred("impact")
+			else:
+				var shallow_reflected_about_vel : Vector2= velocity - 1.8 * (velocity.dot(result["normal"])) * result["normal"]
+				velocity = shallow_reflected_about_vel * 0.9
 
 func impact() -> void:
 	velocity*=0
