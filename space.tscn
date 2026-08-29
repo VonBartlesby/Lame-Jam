@@ -130,21 +130,6 @@ autoplay = true
 stream = ExtResource("9_7ltla")
 autoplay = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=871911740]
-position = Vector2(947, 304.25)
-scale = Vector2(1.7187498, 1.7734375)
-collision_layer = 2
-script = ExtResource("4_rxlph")
-gravityStrength = 4.0
-gravityRange = 400.0
-
-[node name="Planet" type="Sprite2D" parent="Area2D" unique_id=907702866]
-scale = Vector2(0.092, 0.092)
-texture = ExtResource("4_w5eul")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1049347310]
-shape = SubResource("CircleShape2D_57qmd")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true
 script = ExtResource("6_w5eul")
@@ -166,6 +151,7 @@ texture = ExtResource("10_4hog4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2024419180]
 stream = ExtResource("9_7ltla")
+
 [node name="Ui Controller" type="CanvasLayer" parent="." unique_id=905353704]
 
 [node name="ResetButton" type="Button" parent="Ui Controller" unique_id=331764287]
@@ -182,7 +168,7 @@ grow_vertical = 0
 text = "Reset
 "
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=576034738 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true
 script = ExtResource("6_w5eul")
 ball = NodePath("../Our Moon")
@@ -193,7 +179,7 @@ gizmo_extents = 50.0
 
 [node name="Masses" type="Node2D" parent="." unique_id=1161130699]
 
-[node name="Area2D" type="Area2D" parent="Masses" unique_id=871911740]
+[node name="Area2D" type="Area2D" parent="Masses" unique_id=5729475]
 position = Vector2(947, 304.25)
 scale = Vector2(1.7187498, 1.7734375)
 collision_layer = 2
@@ -201,11 +187,11 @@ script = ExtResource("4_rxlph")
 gravityStrength = 4.0
 gravityRange = 400.0
 
-[node name="Planet" type="Sprite2D" parent="Masses/Area2D" unique_id=907702866]
+[node name="Planet" type="Sprite2D" parent="Masses/Area2D" unique_id=512162874]
 scale = Vector2(0.092, 0.092)
 texture = ExtResource("4_w5eul")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Masses/Area2D" unique_id=1049347310]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Masses/Area2D" unique_id=1303189337]
 shape = SubResource("CircleShape2D_57qmd")
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
