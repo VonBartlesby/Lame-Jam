@@ -9,6 +9,9 @@ signal launched
 @onready var line_2d: Line2D = $"../Line2D"
 @onready var path_finder: Node2D = $"../Path Finder"
 
+@onready var charge_noise: AudioStreamPlayer = $AudioStreamPlayer
+
+
 
 var mouseDown : bool = false
 var mouseInitialPostision : Vector2
@@ -28,6 +31,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	var pitch = remap(moon_launch_velocity.length(), 0, 500, 0.1,3)
+	var vol = remap(moon_launch_velocity.length(), 0, 500, 0.2,0.5) * (1 if mouseDown else 0)
+	charge_noise.pitch_scale = pitch
+	charge_noise.volume_linear = vol
 	pass
 
 func _unhandled_input(event):
