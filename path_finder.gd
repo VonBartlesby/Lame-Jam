@@ -3,7 +3,9 @@ extends Node2D
 @export var look_ahead_time : float = 2
 
 @onready var our_moon: Ball = $".."
-@onready var space: Node2D = $"../.."
+@onready var masses: Node2D = $"../../Masses"
+
+@onready var reset_button: Button = $"../../Ui Controller/ResetButton"
 
 
 var velocity : Vector2 = Vector2.ZERO
@@ -17,6 +19,7 @@ var loops : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	loops = look_ahead_time * 60 as int
+	reset_button.connect("button_up",_reset)
 
 
 func _process(_delta: float) -> void:
@@ -35,7 +38,7 @@ func launch(launch_vel : Vector2) -> Array:
 	
 	velocity = launch_vel
 	speed = our_moon.speed
-	planets_in_range = space.get_children()
+	planets_in_range = masses.get_children()
 	
 
 	for i in range(0,loops,1):
@@ -49,3 +52,6 @@ func launch(launch_vel : Vector2) -> Array:
 			
 	global_lock = global_position
 	return points
+
+func _reset() -> void:
+	pass
