@@ -1,0 +1,21 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://dlkybmyilu6w3"]
+
+[ext_resource type="Texture2D" uid="uid://bt0wgti5stypi" path="res://dottedline.png" id="1_1hyxj"]
+[ext_resource type="Texture2D" uid="uid://do4a5yqp6yqhr" path="res://dottedline_2.png" id="2_6otdx"]
+[ext_resource type="Texture2D" uid="uid://be3yhfksbul3l" path="res://dottedline_3.png" id="3_e88pn"]
+[ext_resource type="Texture2D" uid="uid://ch48w6fj0qchl" path="res://dottedline_4.png" id="4_katni"]
+
+[resource]
+frames = 6
+frame_0/texture = ExtResource("1_1hyxj")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("2_6otdx")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("3_e88pn")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("4_katni")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("3_e88pn")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("2_6otdx")
+frame_5/duration = 0.2

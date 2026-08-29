@@ -3,14 +3,19 @@
 [ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://our_moon.gd" id="2_qtpbo"]
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://input_hander.gd" id="3_qtpbo"]
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://moon.png" id="3_ulv8f"]
-[ext_resource type="Texture2D" uid="uid://bt0wgti5stypi" path="res://dottedline.png" id="4_myilm"]
+[ext_resource type="Texture2D" uid="uid://dr7g7karrjo0s" path="res://Frame 1.png" id="4_4fo3t"]
+[ext_resource type="Texture2D" uid="uid://db5481y1ntli" path="res://Frame 2.png" id="5_4v84m"]
+[ext_resource type="Texture2D" uid="uid://0omie6vh57l2" path="res://Frame 3.png" id="6_m37bs"]
 [ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://ball_cam.gd" id="6_w5eul"]
 [ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://STAR_0.png" id="7_4fhbr"]
+[ext_resource type="Texture2D" uid="uid://i7850xaua2qx" path="res://Frame 4.png" id="7_55yc6"]
 [ext_resource type="Script" uid="uid://bhnf58memdwa7" path="res://background.gd" id="7_b5fhv"]
 [ext_resource type="Script" uid="uid://fop4fwwb88cq" path="res://path_finder.gd" id="7_dhr8q"]
+[ext_resource type="Texture2D" uid="uid://n8403afm734r" path="res://Frame 5.png" id="8_20dnj"]
 [ext_resource type="Script" uid="uid://dlcexqu45nbte" path="res://sound.gd" id="8_betvx"]
 [ext_resource type="Material" uid="uid://2q4hg5qy40x5" path="res://blackhole_material.tres" id="9_4hog4"]
 [ext_resource type="AudioStream" uid="uid://dt2xb7mwqkiqw" path="res://sound/woosh2.wav" id="9_7ltla"]
+[ext_resource type="Texture2D" uid="uid://uod5ufes67fa" path="res://Frame 6.png" id="9_35bkm"]
 [ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="10_4hog4"]
 [ext_resource type="Script" uid="uid://s4q36xx2fnm1" path="res://gpu_particles_2d.gd" id="10_ap0gv"]
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://ui_controller.gd" id="13_7ltla"]
@@ -18,6 +23,21 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 78.59
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_y7rfp"]
+frames = 6
+frame_0/texture = ExtResource("4_4fo3t")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("5_4v84m")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("6_m37bs")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("7_55yc6")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("8_20dnj")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("9_35bkm")
+frame_5/duration = 0.1
 
 [sub_resource type="GDScript" id="GDScript_8n4m7"]
 script/source = "extends Node2D
@@ -113,7 +133,7 @@ shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Line2D" type="Line2D" parent="Our Moon" unique_id=221447527]
 texture_repeat = 2
-texture = ExtResource("4_myilm")
+texture = SubResource("AnimatedTexture_y7rfp")
 texture_mode = 1
 
 [node name="visual" type="Node2D" parent="Our Moon" unique_id=11191935]
