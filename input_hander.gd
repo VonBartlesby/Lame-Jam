@@ -14,6 +14,7 @@ var mouseToMoonDirection : Vector2
 var magnituge : float
 
 const LINE_LENGTH : float = 3
+const WOBBLE_RATIO : float = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +26,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if mouseDown:
 		magnituge = minf(500, abs(mouseInitialPostision-mouseCurrentPosition).length())
-		visual.wobble_strength = magnituge/50
+		visual.wobble_strength = magnituge/WOBBLE_RATIO
 		line_2d.set_point_position(1,(moon.position-mouseCurrentPosition).normalized() * magnituge * LINE_LENGTH)
 
 func _input(event):

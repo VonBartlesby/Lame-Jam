@@ -15,9 +15,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	distanceToMoon = abs(position-moon.position).length()
-	#print(distanceToMoon)
-	if distanceToMoon < gravityRange:
-		gravitationPull = (gravityRange-distanceToMoon)*gravityStrength
-		print("pulling at strength ",gravitationPull)
-		moon.add_velocity((position-moon.position).normalized() * gravitationPull * delta)
+	gravitationPull = get_force_to_body(moon)
+	moon.add_velocity((position-moon.position).normalized() * gravitationPull * delta)
+
+func get_force_to_body(body:Node2D) -> float:
+	var dis_to_body = abs(position-body.position).length()
+	return maxf(gravityRange-dis_to_body,0) * gravityStrength
