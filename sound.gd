@@ -8,8 +8,6 @@ var velocity_sound_volume = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	audio_player.pitch_scale = 0
-	audio_player_2.pitch_scale = 0
 	audio_player.volume_linear = 0
 	audio_player_2.volume_linear = 0
 
@@ -26,7 +24,5 @@ func _process(delta: float) -> void:
 		audio_player_2.volume_linear = vol * 0.3
 
 	else:
-		audio_player.pitch_scale = 0
-		audio_player_2.pitch_scale = 0
 		audio_player.volume_linear = 0
 		audio_player_2.volume_linear = 0
