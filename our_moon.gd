@@ -3,7 +3,7 @@ class_name Ball
 
 @export var velocity : Vector2
 @export var speed : float = 1.0
-@export var decleration : float = 1.0
+
 
 var shootable : bool = true
 
@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 
 func move(delta : float) -> void:
 	position += velocity * delta * speed
-	velocity = lerp(velocity,Vector2.ZERO,delta*decleration)
 
 func add_velocity(vel:Vector2) -> void:
 	velocity+=vel

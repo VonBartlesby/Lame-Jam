@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://ball_cam.gd" id="6_w5eul"]
 [ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://STAR_0.png" id="7_4fhbr"]
 [ext_resource type="Script" uid="uid://bhnf58memdwa7" path="res://background.gd" id="7_b5fhv"]
+[ext_resource type="Script" uid="uid://fop4fwwb88cq" path="res://path_finder.gd" id="7_dhr8q"]
 [ext_resource type="Material" uid="uid://2q4hg5qy40x5" path="res://blackhole_material.tres" id="9_4hog4"]
 [ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="10_4hog4"]
 
@@ -86,7 +87,6 @@ position = Vector2(447.5, 356.5)
 scale = Vector2(0.2421875, 0.2421875)
 collision_mask = 6
 script = ExtResource("2_qtpbo")
-decleration = 0.0
 
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344 node_paths=PackedStringArray("camera")]
 script = ExtResource("3_qtpbo")
@@ -110,12 +110,21 @@ rotation = 1.0384709
 scale = Vector2(0.17500001, 0.17500001)
 texture = ExtResource("3_ulv8f")
 
+[node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=453992763]
+script = ExtResource("7_dhr8q")
+look_ahead_time = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Our Moon/Path Finder" unique_id=1821288481]
+visible = false
+texture = ExtResource("10_4hog4")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=871911740]
 position = Vector2(947, 304.25)
 scale = Vector2(1.7187498, 1.7734375)
 collision_layer = 2
 script = ExtResource("4_rxlph")
-gravityRange = 300.0
+gravityStrength = 4.0
+gravityRange = 400.0
 
 [node name="Planet" type="Sprite2D" parent="Area2D" unique_id=907702866]
 scale = Vector2(0.092, 0.092)
