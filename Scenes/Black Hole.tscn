@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dwbyudug10ffc"]
 
-[ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://GravitationalMass.gd" id="1_o3a1b"]
-[ext_resource type="Material" uid="uid://2q4hg5qy40x5" path="res://blackhole_material.tres" id="2_ounae"]
-[ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="3_4e3t6"]
+[ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://Scripts/GravitationalMass.gd" id="1_o3a1b"]
+[ext_resource type="Material" uid="uid://2q4hg5qy40x5" path="res://Shaders/blackhole_material.tres" id="2_ounae"]
+[ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://Textures/icon.svg" id="3_4e3t6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
 radius = 11.0

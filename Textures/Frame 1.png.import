@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvwo1oxb4akns"
-path="res://.godot/imported/STAR_0.png-809e7740e84ef27ad44f15745600e722.ctex"
+uid="uid://dr7g7karrjo0s"
+path="res://.godot/imported/Frame 1.png-c4d5d92d328244c50fadf968bdad4f95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://STAR_0.png"
-dest_files=["res://.godot/imported/STAR_0.png-809e7740e84ef27ad44f15745600e722.ctex"]
+source_file="res://Textures/Frame 1.png"
+dest_files=["res://.godot/imported/Frame 1.png-c4d5d92d328244c50fadf968bdad4f95.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

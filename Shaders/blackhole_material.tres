@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://2q4hg5qy40x5"]
 
-[ext_resource type="Shader" uid="uid://b4rr23tg8cy0g" path="res://black_hole.gdshader" id="1_opigc"]
+[ext_resource type="Shader" uid="uid://b4rr23tg8cy0g" path="res://Shaders/black_hole.gdshader" id="1_opigc"]
 
 [sub_resource type="Curve" id="Curve_myilm"]
 _limits = [0.0, 5000.0, 0.0, 1.0]

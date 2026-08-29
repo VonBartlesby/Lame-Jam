@@ -13,7 +13,7 @@ config_version=5
 config/name="Lame Jam"
 run/main_scene="uid://dyyslt200puif"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Textures/icon.svg"
 
 [display]
 
