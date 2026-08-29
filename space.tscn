@@ -85,6 +85,7 @@ position = Vector2(447.5, 356.5)
 scale = Vector2(0.2421875, 0.2421875)
 collision_mask = 6
 script = ExtResource("2_qtpbo")
+charge_speed = 2.0
 
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344 node_paths=PackedStringArray("camera")]
 script = ExtResource("3_qtpbo")
@@ -110,6 +111,7 @@ texture = ExtResource("3_ulv8f")
 
 [node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=453992763]
 script = ExtResource("7_dhr8q")
+look_ahead_time = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Our Moon/Path Finder" unique_id=1821288481]
 visible = false
@@ -163,6 +165,16 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Reset
 "
+
+[node name="Charge" type="Label" parent="Ui Controller" unique_id=385829337]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "100%"
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=576034738 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true

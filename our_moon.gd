@@ -3,16 +3,32 @@ class_name Ball
 
 @export var velocity : Vector2
 @export var speed : float = 1.0
+@export var max_charge : float = 100
+@export var charge_speed : float = 1.0
+
 @onready var start_point: Marker2D = $"../Start Point"
 @onready var reset_button: Button = $"../Ui Controller/ResetButton"
+@onready var charge_text: Label = $"../Ui Controller/Charge"
 
 
+var started : bool = false
 var shootable : bool = true
+var charge : float :
+	set(c):
+		charge = minf(c,max_charge)
+		set_charge_text()
+		if charge == max_charge:
+			shootable = true
 
+var charge_percentage : float
+
+const CHARGE_TEXT = "%d%%"
+const CHARGE_SPEED_BASE = 0.01
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reset_button.connect("button_up",_reset)
+	charge = max_charge
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,22 +39,21 @@ func _process(delta: float) -> void:
 func move(delta : float) -> void:
 	position += velocity * delta * speed
 
-func add_velocity(vel:Vector2) -> void:
-	if not shootable:
-		velocity+=vel
+func add_velocity(vel:Vector2,recharge : bool = true) -> void:
+	velocity+=vel
+	if recharge:
+		charge += vel.length() * CHARGE_SPEED_BASE * charge_speed
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("que?")
 	if area.collision_layer == 2:
-		print("so this is running?")
 		var space_state = get_world_2d().direct_space_state
 		var query = PhysicsRayQueryParameters2D.create(global_position, area.global_position,2)
 		query.collide_with_areas = true
 		query.hit_from_inside = true
 		var result = space_state.intersect_ray(query)
 		
-		#un comment to draw the rays on impact
+		# un comment to draw the rays on impact
 		#var line = Line2D.new()
 		#line.add_point(Vector2.ZERO)
 		#line.add_point(to_local(area.global_position))
@@ -56,6 +71,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func impact() -> void:
 	velocity*=0
+	started = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _reset() -> void:
@@ -63,3 +79,13 @@ func _reset() -> void:
 	velocity = Vector2.ZERO
 	global_position = start_point.global_position
 	shootable = true
+	started = false
+	charge = 100
+
+func set_charge_text():
+	charge_percentage = charge/max_charge*100
+	charge_text.text = CHARGE_TEXT % [charge_percentage]
+	if charge_percentage == 100:
+		charge_text.add_theme_color_override("font_color",Color.GREEN)
+	else:
+		charge_text.add_theme_color_override("font_color",Color.RED)

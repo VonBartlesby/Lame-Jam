@@ -28,7 +28,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not Engine.is_editor_hint():
 		gravitationPull = get_force_to_body(moon)
-		if not moon.shootable:
+		if moon.started:
 			moon.add_velocity(gravitationPull * delta)
 	elif debug:
 		gravityStrength = BASE_GRAVITY_STRENGTH * size

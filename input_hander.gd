@@ -31,8 +31,9 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event):
 	if not moon.shootable:
 		return
-	event.position = camera.get_global_mouse_position()
-	moon_launch_velocity = (moon.position-event.position).normalized() * magnituge
+	if event is InputEventMouse:
+		event.position = camera.get_global_mouse_position()
+		moon_launch_velocity = (moon.position-event.position).normalized() * magnituge
 	if event is InputEventMouseButton:
 		
 		
@@ -43,7 +44,9 @@ func _unhandled_input(event):
 			
 		elif mouseDown && event.button_index == MOUSE_BUTTON_LEFT:
 			moon.shootable = false
-			moon.add_velocity(moon_launch_velocity)
+			moon.started = true
+			moon.charge = 0
+			moon.add_velocity(moon_launch_velocity,false)
 			
 			mouseDown = false
 			visual.wobble_strength = 0
