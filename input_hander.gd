@@ -42,8 +42,9 @@ func _unhandled_input(event):
 			mouseCurrentPosition = mouseInitialPostision
 			
 		elif mouseDown && event.button_index == MOUSE_BUTTON_LEFT:
-			moon.add_velocity(moon_launch_velocity)
 			moon.shootable = false
+			moon.add_velocity(moon_launch_velocity)
+			
 			mouseDown = false
 			visual.wobble_strength = 0
 			line_2d.clear_points()

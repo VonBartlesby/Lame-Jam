@@ -24,7 +24,8 @@ func move(delta : float) -> void:
 	position += velocity * delta * speed
 
 func add_velocity(vel:Vector2) -> void:
-	velocity+=vel
+	if not shootable:
+		velocity+=vel
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -36,6 +37,7 @@ func impact() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _reset() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	velocity = Vector2.ZERO
 	global_position = start_point.global_position
 	shootable = true
