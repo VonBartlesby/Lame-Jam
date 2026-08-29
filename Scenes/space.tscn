@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="13_betvx"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
+[ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
 [ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="22_m37bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
@@ -175,6 +176,9 @@ stream = ExtResource("15_m37bs")
 [node name="reflect" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=690279310]
 stream = ExtResource("11_y7rfp")
 
+[node name="launch" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=247356474]
+stream = ExtResource("17_bpkbg")
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=1347480971]
 process_mode = 3
 process_material = SubResource("ParticleProcessMaterial_7ltla")
@@ -261,3 +265,4 @@ debug = true
 [connection signal="impacted" from="Our Moon" to="Our Moon/Input Hander" method="_on_our_moon_impacted"]
 [connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
 [connection signal="reflected" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_reflected"]
+[connection signal="launched" from="Our Moon/Input Hander" to="Our Moon/Sound" method="_on_input_hander_launched"]

@@ -1,5 +1,7 @@
 extends Node
 
+signal launched
+
 @export var camera : Cam
 
 @onready var visual: Node2D = $"../visual"
@@ -47,6 +49,7 @@ func _unhandled_input(event):
 			moon.started = true
 			moon.charge = 0
 			moon.add_velocity(moon_launch_velocity,false)
+			emit_signal("launched")
 			
 			mouseDown = false
 			visual.wobble_strength = 0
