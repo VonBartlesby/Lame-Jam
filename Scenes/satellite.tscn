@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dsfd3lhbp44nj"]
+
+[ext_resource type="Script" uid="uid://bok7qoj8iqfow" path="res://Scripts/satellite.gd" id="1_uatgk"]
+[ext_resource type="Texture2D" uid="uid://ciyaju72dx3af" path="res://Textures/Satellite.png" id="1_wn5i2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="Satellite" type="Area2D" unique_id=1404198482]
+z_index = 1
+collision_layer = 8
+script = ExtResource("1_uatgk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141320283]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=193436229]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_wn5i2")

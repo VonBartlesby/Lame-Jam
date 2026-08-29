@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="13_betvx"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
 [ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="22_m37bs"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="23_bpkbg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 78.59
@@ -237,10 +238,13 @@ gizmo_extents = 50.0
 [node name="Masses" type="Node2D" parent="." unique_id=1161130699]
 
 [node name="Planet" parent="Masses" unique_id=1221522964 instance=ExtResource("13_betvx")]
-position = Vector2(947, 304.25)
+position = Vector2(1367, 261)
 scale = Vector2(2, 2)
 size = 2.0
 debug = true
+
+[node name="Satellite" parent="Masses/Planet" unique_id=1404198482 instance=ExtResource("23_bpkbg")]
+metadata/_edit_lock_ = true
 
 [node name="Planet2" parent="Masses" unique_id=1399453171 instance=ExtResource("13_betvx")]
 position = Vector2(662, 164)
@@ -250,6 +254,14 @@ position = Vector2(1538, 1316)
 scale = Vector2(10, 10)
 size = 10.0
 debug = true
+
+[node name="Satellite" parent="Masses/Planet3" unique_id=1123598587 instance=ExtResource("23_bpkbg")]
+orbit_offset = 50
+orbit_speed = 0.19999999999999996
+
+[node name="Satellite2" parent="Masses/Planet3" unique_id=562062103 instance=ExtResource("23_bpkbg")]
+orbit_offset = 70
+orbit_speed = -0.30000000000000004
 
 [node name="Black Hole" parent="Masses" unique_id=342033505 instance=ExtResource("22_m37bs")]
 position = Vector2(214, 316)

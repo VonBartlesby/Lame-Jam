@@ -1,0 +1,28 @@
+extends Area2D
+
+@export_range(10,300) var orbit_offset : int = 150
+@export_range(-1,1) var orbit_speed : float = 0.1
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+var planet : GravitationalMass
+var orbit_center : Vector2
+var orbit_distance : float
+var time : float
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	planet = get_parent()
+	orbit_center = planet.position
+	print(orbit_offset)
+	orbit_distance = planet.size * orbit_offset
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	time += delta * orbit_speed
+	if abs(time) > 2:
+		time = 0
+	var vec = Vector2.from_angle(PI * time) * orbit_distance + planet.global_position
+	rotation = PI * time
+	global_position = vec 

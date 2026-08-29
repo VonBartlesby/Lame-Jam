@@ -5,7 +5,6 @@ class_name GravitationalMass
 @export var size = 1.0
 @export var debug : bool = false
 @export var BASE_GRAVITY_STRENGTH : float = 4000000
-
 var gravityStrength : float = 1.0
 
 
@@ -22,6 +21,7 @@ var gravitationPull: Vector2
 func _ready() -> void:
 	gravityStrength = BASE_GRAVITY_STRENGTH * size * size
 	scale = Vector2.ONE * size
+
 
 
 

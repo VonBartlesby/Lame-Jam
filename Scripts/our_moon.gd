@@ -53,13 +53,6 @@ func _on_area_entered(area: Area2D) -> void:
 		query.hit_from_inside = true
 		var result = space_state.intersect_ray(query)
 		
-		# un comment to draw the rays on impact
-		#var line = Line2D.new()
-		#line.add_point(Vector2.ZERO)
-		#line.add_point(to_local(area.global_position))
-		#line.z_index = 1
-		#add_child(line)
-		
 		if result:
 			var impact_angle = velocity.angle_to(result["normal"])
 			
