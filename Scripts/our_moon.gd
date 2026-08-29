@@ -1,5 +1,6 @@
-extends Area2D
 class_name Ball
+extends Area2D
+
 
 signal impacted
 signal reflected

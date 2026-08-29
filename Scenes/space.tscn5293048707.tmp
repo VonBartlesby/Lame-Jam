@@ -127,6 +127,9 @@ position = Vector2(447.5, 356.5)
 scale = Vector2(0.2421875, 0.2421875)
 collision_mask = 6
 script = ExtResource("2_qtpbo")
+velocity = null
+speed = null
+max_charge = null
 charge_speed = 100.0
 
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344 node_paths=PackedStringArray("camera")]
@@ -279,6 +282,4 @@ size = 2.0
 debug = true
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
-[connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
-[connection signal="reflected" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_reflected"]
 [connection signal="launched" from="Our Moon/Input Hander" to="Our Moon/Sound" method="_on_input_hander_launched"]
