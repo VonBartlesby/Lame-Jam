@@ -4,6 +4,7 @@ extends Node2D
 @onready var audio_player_2:AudioStreamPlayer2D = $AudioStreamPlayer2D2
 @onready var impact_sound:AudioStreamPlayer2D = $impact
 @onready var reflect_sound:AudioStreamPlayer2D = $reflect
+@onready var launch_sound:AudioStreamPlayer2D = $launch
 @onready var planet:Ball = $".."
 
 var velocity_sound_volume = 0.5
@@ -40,4 +41,9 @@ func _on_our_moon_impacted() -> void:
 
 func _on_our_moon_reflected() -> void:
 	reflect_sound.play()
+	pass # Replace with function body.
+
+
+func _on_input_hander_launched() -> void:
+	launch_sound.play()
 	pass # Replace with function body.
