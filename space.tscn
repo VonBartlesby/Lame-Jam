@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://2q4hg5qy40x5" path="res://blackhole_material.tres" id="9_4hog4"]
 [ext_resource type="AudioStream" uid="uid://dt2xb7mwqkiqw" path="res://sound/woosh2.wav" id="9_7ltla"]
 [ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://icon.svg" id="10_4hog4"]
+[ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://ui_controller.gd" id="13_7ltla"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://planet.tscn" id="13_betvx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
@@ -151,6 +152,7 @@ texture = ExtResource("10_4hog4")
 stream = ExtResource("9_7ltla")
 
 [node name="Ui Controller" type="CanvasLayer" parent="." unique_id=905353704]
+script = ExtResource("13_7ltla")
 
 [node name="ResetButton" type="Button" parent="Ui Controller" unique_id=331764287]
 anchors_preset = 7
@@ -174,6 +176,7 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "100%"
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=576034738 node_paths=PackedStringArray("ball")]

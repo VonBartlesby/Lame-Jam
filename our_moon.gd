@@ -8,7 +8,7 @@ class_name Ball
 
 @onready var start_point: Marker2D = $"../Start Point"
 @onready var reset_button: Button = $"../Ui Controller/ResetButton"
-@onready var charge_text: Label = $"../Ui Controller/Charge"
+@onready var ui_controller: UiController = $"../Ui Controller"
 
 
 var started : bool = false
@@ -21,14 +21,11 @@ var charge : float :
 			shootable = true
 
 var charge_percentage : float
-
-const CHARGE_TEXT = "%d%%"
 const CHARGE_SPEED_BASE = 0.01
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reset_button.connect("button_up",_reset)
-	charge = max_charge
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,8 +81,4 @@ func _reset() -> void:
 
 func set_charge_text():
 	charge_percentage = charge/max_charge*100
-	charge_text.text = CHARGE_TEXT % [charge_percentage]
-	if charge_percentage == 100:
-		charge_text.add_theme_color_override("font_color",Color.GREEN)
-	else:
-		charge_text.add_theme_color_override("font_color",Color.RED)
+	ui_controller.set_charge_text(charge_percentage)
