@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 	zoom = Vector2(im_just_lerpin,im_just_lerpin)
 	
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventPanGesture:
+		zoom_level -= (event.delta.y * 0.1)
+		
 	if event.is_action("ui_up"):
 		zoom_level += 0.1
 	if event.is_action("ui_down"):
