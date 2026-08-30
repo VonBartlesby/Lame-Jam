@@ -24,6 +24,7 @@ func _ready() -> void:
 	music_stream = music_player.stream.get("clip_0/stream")
 	SignalHandler.next_level.connect(fade_to_start)
 	SignalHandler.win.connect(fade_to_music)
+	SignalHandler.reset.connect(fade_to_ambient)
 	
 	pass # Replace with function body.
 
@@ -53,3 +54,5 @@ func fade_to_start():
 func fade_to_music():
 	stream.switch_to_clip_by_name("Music")
 	
+func fade_to_ambient():
+	stream.switch_to_clip_by_name("Ambient")
