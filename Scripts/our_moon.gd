@@ -45,19 +45,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if velocity.length() > 0.01:
 		move(delta)
+		print(drift_off_timer)
 		if velocity == previous_velocity:
 			drift_off_timer += delta
 		else:
 			drift_off_timer = 0
 		if drift_off_timer > drift_off_timeout:
 			drift_off.emit()
-
+	previous_velocity = velocity
 
 func move(delta : float) -> void:
 	position += velocity * delta * speed
+		
 
 func add_velocity(vel:Vector2,recharge : bool = true) -> void:
-	previous_velocity = velocity
 	velocity+=vel
 	if recharge:
 		charge += vel.length() * CHARGE_SPEED_BASE * charge_speed
@@ -75,7 +76,7 @@ func _on_area_entered(area: Area2D) -> void:
 			var impact_angle = velocity.angle_to(result["normal"])
 			
 			print(impact_angle)
-			if abs(impact_angle) >= 2 or abs(impact_angle) <= 1:
+			if abs(impact_angle) >= 2 or abs(impact_angle) <= 1.64:
 				
 				call_deferred("impact")
 				
