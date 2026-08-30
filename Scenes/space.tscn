@@ -364,6 +364,7 @@ texture_scale = 50.0
 height = 30.0
 
 [node name="charge" type="Line2D" parent="Our Moon" unique_id=630035308]
+visible = false
 points = PackedVector2Array(0, 0, 945.54846, 846.45166)
 width = 200.0
 width_curve = SubResource("Curve_htfm3")

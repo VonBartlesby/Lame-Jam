@@ -8,6 +8,7 @@ extends Area2D
 @export var max_charge : float = 100
 @export var charge_speed : float = 1.0
 @export var drift_off_timeout : float = 5
+@onready var visual: Node2D = $visual
 
 
 @onready var ui_controller: UiController = $"../Ui Controller"
@@ -93,6 +94,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	elif area.collision_layer == 16:
 		velocity *= 0.95
+		#to fix this
 		velocity = velocity.from_angle(randf_range(-0.1,0.1)) * velocity.length()
 
 func impact() -> void:
@@ -102,6 +104,7 @@ func impact() -> void:
 	rings.emitting = true
 	particles.emitting = true
 	bang.emitting = true
+	visual.visible = false
 	light.energy=1.
 	var t := get_tree().create_tween()
 	t.tween_property(light,"energy",0.,2.)
@@ -126,6 +129,7 @@ func _reset() -> void:
 	shootable = true
 	started = false
 	charge = 100
+	visual.visible = true
 	trail.restart()
 	
 
