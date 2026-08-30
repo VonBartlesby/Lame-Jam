@@ -87,6 +87,65 @@ hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 turbulence_enabled = true
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_77p2e"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_hj4l2"]
+offsets = PackedFloat32Array(0.48396334, 0.65005726, 0.75315005, 0.892898)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.8992674, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q48jt"]
+gradient = SubResource("Gradient_hj4l2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Curve" id="Curve_gg73h"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 5.0, 0, 1, Vector2(1, 5), 5.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yq4q2"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 2.5, 0, 1, Vector2(1, 2.5), 2.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_r5fq7"]
+offsets = PackedFloat32Array(0.029445728, 0.13452657, 0.33198613, 0.7465358, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.78039217, 0, 1, 1, 0.45882353, 0, 1, 0.46518582, 0, 0.059488796, 1, 0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gg73h"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_htfm3"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hj4l2"]
+gradient = SubResource("Gradient_htfm3")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_77p2e"]
+offsets = PackedFloat32Array(0, 0.14030023, 0.5490762, 1)
+colors = PackedColorArray(0.99215686, 1, 0.83137256, 1, 0.8966847, 0.31458348, 1.1551381e-06, 1, 0.38601807, 0.11077645, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pc7qi"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_yq4q2"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gg73h"]
+gradient = SubResource("Gradient_yq4q2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_eyabf"]
+offsets = PackedFloat32Array(0, 0.17609699, 0.39203233, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.9272044, 0.7155052, 7.70092e-07, 1, 0.8690322, 0.34711653, 0, 1, 0, 0, 0, 1)
+
 [sub_resource type="Gradient" id="Gradient_l12om"]
 offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
 colors = PackedColorArray(0.16941994, 0.15370345, 0.19875267, 1, 0.15288767, 0.1414848, 0.18429346, 1, 0.09239999, 0.09477999, 0.14, 1, 0.09481579, 0.108502634, 0.14473684, 1, 0.3, 0.2946, 0.21900001, 1, 0.09588948, 0.11460158, 0.1468421, 1, 0.097500004, 0.12375, 0.15, 1, 0.0793, 0.085215, 0.13, 1, 0.030438976, 0.05098556, 0.07719918, 1)
@@ -194,6 +253,64 @@ stream = ExtResource("17_bpkbg")
 process_mode = 3
 process_material = SubResource("ParticleProcessMaterial_7ltla")
 script = ExtResource("10_ap0gv")
+
+[node name="Explosion" type="Node2D" parent="Our Moon" unique_id=1749219441]
+process_mode = 3
+
+[node name="Rings" type="CPUParticles2D" parent="Our Moon/Explosion" unique_id=1749761475]
+material = SubResource("CanvasItemMaterial_77p2e")
+scale = Vector2(1.0000001, 1.0000001)
+emitting = false
+amount = 2
+texture = SubResource("GradientTexture2D_q48jt")
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.95
+lifetime_randomness = 0.41
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_min = -30.0
+angle_max = 30.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_gg73h")
+split_scale = true
+scale_curve_x = SubResource("Curve_gg73h")
+scale_curve_y = SubResource("Curve_yq4q2")
+color_ramp = SubResource("Gradient_r5fq7")
+
+[node name="Particles" type="CPUParticles2D" parent="Our Moon/Explosion" unique_id=334493783]
+material = SubResource("CanvasItemMaterial_gg73h")
+emitting = false
+amount = 100
+texture = SubResource("GradientTexture2D_hj4l2")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.34
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 47.29
+initial_velocity_max = 273.79
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_77p2e")
+
+[node name="Bang" type="CPUParticles2D" parent="Our Moon/Explosion" unique_id=1576055011]
+material = SubResource("CanvasItemMaterial_pc7qi")
+emitting = false
+amount = 1
+texture = SubResource("GradientTexture2D_gg73h")
+lifetime = 3.0
+one_shot = true
+gravity = Vector2(0, 0)
+scale_amount_min = 4.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_eyabf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true

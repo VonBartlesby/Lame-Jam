@@ -14,6 +14,10 @@ signal reflected
 @onready var reset_button: Button = $"../Ui Controller/ResetButton"
 @onready var ui_controller: UiController = $"../Ui Controller"
 
+@onready var rings: CPUParticles2D = $Explosion/Rings
+@onready var particles: CPUParticles2D = $Explosion/Particles
+@onready var bang: CPUParticles2D = $Explosion/Bang
+
 
 var started : bool = false
 var shootable : bool = true
@@ -71,6 +75,9 @@ func impact() -> void:
 	emit_signal("impacted")
 	velocity*=0
 	started = false
+	rings.emitting = true
+	particles.emitting = true
+	bang.emitting = true
 	process_mode = Node.PROCESS_MODE_DISABLED
 	
 

@@ -7,6 +7,8 @@ class_name Satellite
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var reset_button: Button = $"../../../Ui Controller/ResetButton"
 @onready var destroy_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var explosion: CPUParticles2D = $CPUParticles2D
+
 
 
 var planet : GravitationalMass
@@ -41,6 +43,7 @@ func fucking_die() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	dead = true
 	destroy_sound.play()
+	explosion.emitting = true
 	GameControllerAutoLoad.check_win()
 
 func reset() -> void:
