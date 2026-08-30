@@ -2,7 +2,7 @@ extends Area2D
 
 @export_range(10,300) var orbit_offset : int = 150
 @export_range(-1,1) var orbit_speed : float = 0.1
-@export_range(-360,360) var start_rotation : float = 0.0
+@export_range(0,360) var start_rotation : float = 0.0
 @export var stationary : bool = false
 
 

@@ -21,7 +21,7 @@ fill_to = Vector2(1, 0.5)
 
 [node name="Satellite" type="Area2D" unique_id=1404198482]
 z_index = 1
-collision_layer = 16
+collision_layer = 0
 script = ExtResource("1_uatgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141320283]

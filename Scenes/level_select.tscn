@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c34m7kn06ybfd"]
+
+[ext_resource type="Script" uid="uid://65yiselmvj8g" path="res://Scripts/level_select_grid_container.gd" id="1_1fiak"]
+
+[node name="Level Select" type="ScrollContainer" unique_id=18226342]
+custom_minimum_size = Vector2(0, 300)
+offset_left = 28.0
+offset_top = 241.0
+offset_right = 336.0
+offset_bottom = 541.0
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=723153507]
+layout_mode = 2
+columns = 4
+script = ExtResource("1_1fiak")

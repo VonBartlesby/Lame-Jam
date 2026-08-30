@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmvdd862ssdfr"]
 
 [ext_resource type="Script" uid="uid://bm1k1hh2p7tor" path="res://Scripts/Menu Moon.gd" id="2_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://c34m7kn06ybfd" path="res://Scenes/level_select.tscn" id="2_n45e2"]
 [ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="3_ce3w2"]
 [ext_resource type="Script" uid="uid://bo2t6guj8xpte" path="res://Scripts/fade.gd" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dxo3rol38ldcu" path="res://music.tscn" id="4_n45e2"]
@@ -20,9 +21,10 @@ hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 
 [node name="Main Menu" type="Node2D" unique_id=1182735432]
+script = ExtResource("2_1ehe0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=294986192]
-layer = -99
+layer = 2
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1495946895]
 anchors_preset = 5
@@ -120,11 +122,16 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "SFX Volume"
 
+[node name="Level Select" parent="CanvasLayer" unique_id=18226342 instance=ExtResource("2_n45e2")]
+
 [node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=398594399]
+z_index = 1
 custom_minimum_size = Vector2(18.025, 28.9)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 18.025024
+offset_bottom = 28.900024
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -134,7 +141,6 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("4_ce3w2")
 
 [node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]
-script = ExtResource("2_1ehe0")
 
 [node name="visual" type="Node2D" parent="Menu Moon" unique_id=1271744964]
 rotation = -0.6684611
@@ -155,7 +161,6 @@ metadata/_edit_lock_ = true
 
 [node name="Music" parent="." unique_id=1787023913 instance=ExtResource("4_n45e2")]
 
-[connection signal="button_up" from="CanvasLayer/Button" to="CanvasLayer/TextureRect" method="_on_button_button_up"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Master Volume" to="Menu Moon" method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Music Volume" to="Menu Moon" method="_on_h_slider_drag_ended"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Sfx Volume" to="Menu Moon" method="_on_sfx_volume_value_changed"]

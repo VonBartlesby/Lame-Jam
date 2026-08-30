@@ -2,18 +2,18 @@ extends Node2D
 
 
 
-@onready var button: Button = $"../CanvasLayer/Button"
-@onready var texture_rect: ColorRect = $"../CanvasLayer/TextureRect"
-@onready var label: Label = $"../CanvasLayer/Label"
-@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
-@onready var v_box_container: VBoxContainer = $"../CanvasLayer/VBoxContainer"
+@onready var menu_moon: Node2D = $"Menu Moon"
+@onready var button: Button = $CanvasLayer/Button
+@onready var label: Label = $CanvasLayer/Label
+@onready var v_box_container: VBoxContainer = $CanvasLayer/VBoxContainer
+@onready var level_select: ScrollContainer = $"CanvasLayer/Level Select"
 
-@onready var visual: Node2D = $visual
+
 
 var move = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalHandler.fade_fin.connect(_on_fade_fin)
+	#GameControllerAutoLoad.start_fade_in.connect(_on_fade_fin)
 	button.connect("button_up",_on_begin_button)
 
 
@@ -27,13 +27,12 @@ func _on_begin_button():
 	button.disabled = true
 	SignalHandler.next_level.emit()
 
-func _on_fade_fin():
+func on_fade_fin():
 	button.visible = false
-	visual.visible = false
-	label.visible = false
-	gpu_particles_2d.emitting = false
-	gpu_particles_2d.visible = false
+	menu_moon.visible = false
 	v_box_container.visible = false
+	level_select.visible = false
+	label.visible = false
 
 func _on_h_slider_drag_ended(value_changed: float) -> void:
 	AudioServer.set_bus_volume_linear(1,value_changed)

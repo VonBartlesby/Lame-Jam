@@ -1,26 +1,31 @@
 extends Node
 
 var satellites : Array[Satellite]
-var level_index : int = 0
+#starts at -1 as the start of the game will increment it
+var level_index : int = -1
 var levels : Array[String] = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",
 	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_4.tscn",
+	"res://Scenes/Levels/level_5.tscn",
+	"res://Scenes/Levels/level_6.tscn",
+	"res://Scenes/Levels/level_7.tscn",
+	"res://Scenes/Levels/level_8.tscn",
 	
 	"res://Scenes/level_test.tscn",]
 var current_level : Node2D = null
 var next_level : PackedScene
 
+signal start_fade_out
 
 @onready var space: Node2D = $"../Space"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalHandler.next_level.connect(_load_next_level)
-	next_level = load(levels[level_index])
-	#current_level = next_level.instantiate()
-	#call_deferred("load")
+	SignalHandler.next_level.connect(_prepare_next_level)
+	SignalHandler.index_level.connect(_load_level_from_index)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -32,17 +37,26 @@ func check_win() -> void:
 			return
 	SignalHandler.win.emit()
 
-func load() -> void:
+func load_level() -> void:
 	satellites = []
-	
-	space.add_child(current_level)
-	SignalHandler.level_loaded.emit()
-	level_index += 1
-	if level_index < levels.size():
-		next_level = load(levels[level_index])
-
-func _load_next_level():
+	print("loading level ",level_index," into scene")
 	if current_level != null:
 		current_level.queue_free()
 	current_level = next_level.instantiate()
-	call_deferred("load")
+	space.add_child(current_level)
+	SignalHandler.level_loaded.emit()
+
+func _load_level_from_index(index:int):
+	level_index = index
+	call_deferred("prepare_level")
+
+func _prepare_next_level():
+	if level_index < levels.size():
+		level_index +=1
+	next_level = load(levels[level_index])
+	call_deferred("prepare_level")
+
+func prepare_level():
+	print("loading level ",level_index," from disk")
+	next_level = load(levels[level_index])
+	start_fade_out.emit()

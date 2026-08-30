@@ -1,27 +1,21 @@
 extends Node2D
 
+@onready var main_menu: Node2D = $"Main Menu"
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var parallaxes: Node2D = $parallaxes
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalHandler.fade_fin.connect(_on_fade_fin)
 	SignalHandler.level_loaded.connect(_on_level_load)
+
 	for child in get_children():
 		if not child is Parallax2D:
 			child.visible = false
-	get_child(-1).visible = true
-	get_child(4).visible = true
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+	main_menu.visible = true
+	canvas_layer.visible = true
+	parallaxes.visible = true
 	
 
-func _on_fade_fin() -> void:
+func _on_level_load() -> void:
 	for child in get_children():
 		child.visible = true
-
-func _on_level_load() -> void:
-	if not get_child(2).visible:
-		get_child(-1).visible = false

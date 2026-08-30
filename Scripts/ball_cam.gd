@@ -32,3 +32,5 @@ func _on_drift_off():
 
 func _on_reset():
 	follow_speed = 4
+	if (global_position - ball.global_position).length() > 100:
+		offset = ball.global_position
