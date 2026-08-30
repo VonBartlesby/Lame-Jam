@@ -3,8 +3,10 @@ extends Node
 var satellites : Array[Satellite]
 var level_index : int = 0
 var levels : Array[String] = [
-	"uid://dfu5uonpag3ao",
-	"uid://b4o7xngl6brmt",]
+	"res://Scenes/Levels/level_1.tscn",
+	"res://Scenes/Levels/level_2.tscn",
+	
+	"res://Scenes/level_test.tscn",]
 var current_level : Node2D = null
 var next_level : PackedScene
 
@@ -15,8 +17,8 @@ var next_level : PackedScene
 func _ready() -> void:
 	SignalHandler.next_level.connect(_load_next_level)
 	next_level = load(levels[level_index])
-	current_level = next_level.instantiate()
-	call_deferred("load")
+	#current_level = next_level.instantiate()
+	#call_deferred("load")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -38,6 +40,7 @@ func load() -> void:
 		next_level = load(levels[level_index])
 
 func _load_next_level():
-	space.clear_level()
+	if current_level != null:
+		current_level.queue_free()
 	current_level = next_level.instantiate()
 	call_deferred("load")

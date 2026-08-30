@@ -9,6 +9,7 @@ signal reset
 signal win
 signal level_loaded
 signal next_level
+signal fade_fin
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

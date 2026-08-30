@@ -1,14 +1,28 @@
 [gd_scene format=3 uid="uid://ck0v5h08xm645"]
 
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="1_7qxk6"]
+[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="2_ucdhh"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
-[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
-position = Vector2(269, 313)
-gizmo_extents = 50.0
+[node name="Label" type="Label" parent="." unique_id=2116998295]
+offset_left = 431.0
+offset_top = 271.0
+offset_right = 605.0
+offset_bottom = 294.0
+text = "Use the gravitational pull of this planet to curve around it and hit the satellite"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("1_7qxk6")]
 position = Vector2(861, 336)
 scale = Vector2(4.37, 4.37)
 stationary = true
+
+[node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("2_ucdhh")]
+position = Vector2(743, 334)
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(269.00006, 313)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0

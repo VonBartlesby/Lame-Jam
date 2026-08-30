@@ -15,6 +15,7 @@ func _ready() -> void:
 	SignalHandler.impacted.connect(_on_crash)
 	SignalHandler.level_loaded.connect(_on_level_load)
 	SignalHandler.spaghettified.connect(_on_spag)
+	SignalHandler.drift_off.connect(_on_drift_off)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,3 +50,6 @@ func _on_crash():
 
 func _on_spag():
 	middle_text.text = "You got sucked into a black hole"
+
+func _on_drift_off():
+	middle_text.text = "You drifted off into the vast emptiness"

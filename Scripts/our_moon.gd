@@ -18,7 +18,7 @@ extends Area2D
 
 
 var started : bool = false
-var shootable : bool = true
+var shootable : bool = false
 var drift_off_timer : float = 0
 var previous_velocity : Vector2 = Vector2.ZERO
 var charge : float :
@@ -37,6 +37,7 @@ func _ready() -> void:
 	connect("area_entered",_on_area_entered)
 	SignalHandler.reset.connect(_reset)
 	SignalHandler.level_loaded.connect(_on_level_load)
+	SignalHandler.drift_off.connect(_on_drift_off)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -116,3 +117,6 @@ func set_charge_text():
 func _on_level_load() -> void:
 	start_point = $"..".get_child(-1).get_child(-1)
 	_reset()
+
+func _on_drift_off() -> void:
+	shootable = false
