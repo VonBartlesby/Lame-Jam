@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://o76qfiiv81vk" path="res://Scripts/space.gd" id="1_yq4q2"]
 [ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://Scripts/our_moon.gd" id="2_qtpbo"]
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://Scripts/input_hander.gd" id="3_qtpbo"]
-[ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="3_ulv8f"]
 [ext_resource type="Texture2D" uid="uid://dr7g7karrjo0s" path="res://Textures/Frame 1.png" id="4_4fo3t"]
 [ext_resource type="AudioStream" uid="uid://cchphensegg63" path="res://sound/charge.wav" id="4_isj1v"]
 [ext_resource type="Texture2D" uid="uid://db5481y1ntli" path="res://Textures/Frame 2.png" id="5_4v84m"]
@@ -21,6 +20,7 @@
 [ext_resource type="Script" uid="uid://s4q36xx2fnm1" path="res://Scripts/gpu_particles_2d.gd" id="10_ap0gv"]
 [ext_resource type="Material" uid="uid://dshr5ofmyuo15" path="res://materials/heat_rim.tres" id="11_htfm3"]
 [ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="11_y7rfp"]
+[ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="12_htfm3"]
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
 [ext_resource type="AudioStream" uid="uid://cbm20ktvy3wem" path="res://sound/woosh_rumble.wav" id="16_htfm3"]
@@ -198,7 +198,6 @@ camera = NodePath("../../Camera2D")
 stream = ExtResource("4_isj1v")
 volume_db = -80.0
 autoplay = true
-bus = &"Sfx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=298686917]
 shape = SubResource("CircleShape2D_g4v7s")
@@ -218,7 +217,7 @@ strech_strength = 16.0
 use_parent_material = true
 rotation = 1.0384709
 scale = Vector2(0.17500003, 0.17500003)
-texture = ExtResource("3_ulv8f")
+texture = ExtResource("12_htfm3")
 
 [node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=453992763]
 script = ExtResource("7_dhr8q")
@@ -235,33 +234,26 @@ script = ExtResource("8_betvx")
 [node name="woosh" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=877844356]
 stream = ExtResource("9_7ltla")
 autoplay = true
-bus = &"Sfx"
 
 [node name="woosh rumble" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1698081685]
 stream = ExtResource("16_htfm3")
 autoplay = true
-bus = &"Sfx"
 
 [node name="woosh high" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=313135290]
 stream = ExtResource("9_7ltla")
 autoplay = true
-bus = &"Sfx"
 
 [node name="impact" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=905842381]
 stream = ExtResource("15_m37bs")
-bus = &"Sfx"
 
 [node name="reflect" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=690279310]
 stream = ExtResource("11_y7rfp")
-bus = &"Sfx"
 
 [node name="launch" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=247356474]
 stream = ExtResource("17_bpkbg")
-bus = &"Sfx"
 
 [node name="spaghettified" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1431086588]
 stream = ExtResource("21_5x04l")
-bus = &"Sfx"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=1347480971]
 process_mode = 3
@@ -335,15 +327,13 @@ ball = NodePath("../Our Moon")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=303781234]
 layer = -100
 
-[node name="Sprite2D" type="TextureRect" parent="CanvasLayer" unique_id=1032879341 node_paths=PackedStringArray("cam")]
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer" unique_id=1032879341]
 texture = SubResource("NoiseTexture2D_8n4m7")
 script = ExtResource("7_b5fhv")
 parallax = 0.04
-cam = NodePath("../../Camera2D")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2024419180]
 stream = ExtResource("9_7ltla")
-bus = &"Sfx"
 
 [node name="Ui Controller" type="CanvasLayer" parent="." unique_id=905353704]
 script = ExtResource("13_7ltla")

@@ -1,8 +1,9 @@
 extends TextureRect
 @export var parallax := 0.1
-@export var cam :Camera2D
+var cam :Camera2D
 
 func _ready() -> void:
+	cam=get_tree().get_first_node_in_group("active_cam")
 	var resize : Callable = (func():
 		var vp=get_viewport_rect()
 		texture.width=vp.size.x
