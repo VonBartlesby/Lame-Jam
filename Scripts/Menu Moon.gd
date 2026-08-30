@@ -6,6 +6,7 @@ extends Node2D
 @onready var texture_rect: ColorRect = $"../CanvasLayer/TextureRect"
 @onready var label: Label = $"../CanvasLayer/Label"
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+@onready var v_box_container: VBoxContainer = $"../CanvasLayer/VBoxContainer"
 
 @onready var visual: Node2D = $visual
 
@@ -30,7 +31,8 @@ func _on_fade_fin():
 	visual.visible = false
 	label.visible = false
 	gpu_particles_2d.emitting = false
-
+	gpu_particles_2d.visible = false
+	v_box_container.visible = false
 
 func _on_h_slider_drag_ended(value_changed: float) -> void:
 	AudioServer.set_bus_volume_linear(1,value_changed)

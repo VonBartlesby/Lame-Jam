@@ -54,20 +54,6 @@ grow_vertical = 0
 text = "Begin
 "
 
-[node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=398594399]
-visible = false
-custom_minimum_size = Vector2(18.025, 28.9)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("4_ce3w2")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1022927105]
 anchors_preset = 3
 anchor_left = 1.0
@@ -79,24 +65,6 @@ offset_top = -240.0
 grow_horizontal = 0
 grow_vertical = 0
 alignment = 1
-
-[node name="Music Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=80111246]
-layout_mode = 2
-size_flags_vertical = 3
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Music Volume" unique_id=315409928]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -54.5
-offset_right = 54.5
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Music Volume"
 
 [node name="Master Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=699941974]
 layout_mode = 2
@@ -116,6 +84,24 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Master Volume"
 
+[node name="Music Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=80111246]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Music Volume" unique_id=315409928]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.5
+offset_right = 54.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Music Volume"
+
 [node name="Sfx Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=746219020]
 layout_mode = 2
 size_flags_vertical = 3
@@ -133,6 +119,19 @@ offset_right = 45.5
 offset_bottom = 23.0
 grow_horizontal = 2
 text = "SFX Volume"
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=398594399]
+custom_minimum_size = Vector2(18.025, 28.9)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_ce3w2")
 
 [node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]
 script = ExtResource("2_1ehe0")
@@ -157,6 +156,6 @@ metadata/_edit_lock_ = true
 [node name="Music" parent="." unique_id=1787023913 instance=ExtResource("4_n45e2")]
 
 [connection signal="button_up" from="CanvasLayer/Button" to="CanvasLayer/TextureRect" method="_on_button_button_up"]
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/Music Volume" to="Menu Moon" method="_on_h_slider_drag_ended"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Master Volume" to="Menu Moon" method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/Music Volume" to="Menu Moon" method="_on_h_slider_drag_ended"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Sfx Volume" to="Menu Moon" method="_on_sfx_volume_value_changed"]

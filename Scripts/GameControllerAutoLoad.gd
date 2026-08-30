@@ -1,7 +1,7 @@
 extends Node
 
 var satellites : Array[Satellite]
-var level_index : int = 3
+var level_index : int = 0
 var levels : Array[String] = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",

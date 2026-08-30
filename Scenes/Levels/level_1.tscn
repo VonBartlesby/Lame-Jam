@@ -4,6 +4,11 @@
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
+[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_7p6j4")]
+position = Vector2(475.00003, 12.000061)
+scale = Vector2(4.37, 4.37)
+stationary = true
+
 [node name="Label" type="Label" parent="." unique_id=548500809]
 offset_left = 138.0
 offset_top = -133.0
@@ -16,11 +21,6 @@ text = "In this game your goal is to destroy satellites by hitting them
 Click and drag to aim and then release to launch towards your target"
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_7p6j4")]
-position = Vector2(475.00003, 12.000061)
-scale = Vector2(4.37, 4.37)
-stationary = true
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
 gizmo_extents = 50.0
