@@ -13,7 +13,7 @@ var fade_speed : float = 1.0
 func _ready() -> void:
 	SignalHandler.level_loaded.connect(_start_fade_in)
 	GameControllerAutoLoad.start_fade_out.connect(_start_fade_out)
-	color.a = 0.0
+	_start_fade_in()
 
 func _process(delta: float) -> void:
 	if fading:

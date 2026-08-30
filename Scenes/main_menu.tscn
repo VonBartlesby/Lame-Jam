@@ -38,7 +38,7 @@ offset_bottom = 108.0
 grow_horizontal = 2
 theme = ExtResource("2_opfnp")
 theme_override_font_sizes/font_size = 32
-text = "The quest to make it once again the one place that hasn't been corrupted by capitalism"
+text = "The quest to return it to the one place that hasn't been corrupted by capitalism"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -140,7 +140,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 script = ExtResource("4_ce3w2")
 
 [node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]

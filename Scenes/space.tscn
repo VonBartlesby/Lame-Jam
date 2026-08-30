@@ -21,12 +21,11 @@
 [ext_resource type="Material" uid="uid://dshr5ofmyuo15" path="res://materials/heat_rim.tres" id="11_htfm3"]
 [ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="11_y7rfp"]
 [ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="12_htfm3"]
-[ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
 [ext_resource type="AudioStream" uid="uid://cbm20ktvy3wem" path="res://sound/woosh_rumble.wav" id="16_htfm3"]
 [ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
 [ext_resource type="AudioStream" uid="uid://s0dofdet5an4" path="res://sound/blackhole.wav" id="21_5x04l"]
-[ext_resource type="Theme" uid="uid://c7iw7wjbt70ov" path="res://Textures/Game Theme.tres" id="27_5x04l"]
+[ext_resource type="PackedScene" uid="uid://bxynbhlnsvsmo" path="res://Scenes/ui_controller.tscn" id="26_htfm3"]
 [ext_resource type="PackedScene" uid="uid://dmvdd862ssdfr" path="res://Scenes/main_menu.tscn" id="27_htfm3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_htfm3"]
@@ -384,8 +383,8 @@ ball = NodePath("../Our Moon")
 layer = -100
 
 [node name="Sprite2D" type="TextureRect" parent="CanvasLayer" unique_id=1032879341]
-offset_right = 1468.0
-offset_bottom = 783.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = SubResource("NoiseTexture2D_8n4m7")
 script = ExtResource("7_b5fhv")
 parallax = 0.04
@@ -393,67 +392,7 @@ parallax = 0.04
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2024419180]
 stream = ExtResource("9_7ltla")
 
-[node name="Ui Controller" type="CanvasLayer" parent="." unique_id=905353704]
-script = ExtResource("13_7ltla")
-
-[node name="ResetButton" type="Button" parent="Ui Controller" unique_id=331764287]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -159.25
-offset_top = -58.179993
-offset_right = 159.25
-offset_bottom = -27.179993
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_5x04l")
-text = "Reset
-"
-
-[node name="Charge" type="Label" parent="Ui Controller" unique_id=385829337]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme = ExtResource("27_5x04l")
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-text = "100%"
-
-[node name="Middle Text" type="Label" parent="Ui Controller" unique_id=372664217]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("27_5x04l")
-
-[node name="Next Level" type="Button" parent="Ui Controller" unique_id=886523474]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = 65.0
-offset_right = 45.0
-offset_bottom = 96.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("27_5x04l")
-text = "Next Level
-"
+[node name="Ui Controller" parent="." unique_id=1857707775 instance=ExtResource("26_htfm3")]
 
 [node name="Main Menu" parent="." unique_id=1182735432 instance=ExtResource("27_htfm3")]
 z_index = 2

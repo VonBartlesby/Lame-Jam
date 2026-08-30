@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bxynbhlnsvsmo"]
+
+[ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="1_xobhi"]
+[ext_resource type="Theme" uid="uid://c7iw7wjbt70ov" path="res://Textures/Game Theme.tres" id="2_3qehr"]
+
+[node name="Ui Controller" type="CanvasLayer" unique_id=1857707775]
+script = ExtResource("1_xobhi")
+
+[node name="ResetButton" type="Button" parent="." unique_id=1672559482]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.25
+offset_top = -58.179993
+offset_right = 159.25
+offset_bottom = -27.179993
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_3qehr")
+text = "Reset
+"
+
+[node name="Charge" type="Label" parent="." unique_id=43005864]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 50.0
+offset_right = 55.5
+offset_bottom = 102.0
+grow_horizontal = 2
+theme = ExtResource("2_3qehr")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Middle Text" type="Label" parent="." unique_id=190636348]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -134.0
+offset_right = 20.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3qehr")
+
+[node name="Next Level" type="Button" parent="." unique_id=2070199264]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = 99.0
+offset_right = 46.5
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3qehr")
+text = "Next Level
+"

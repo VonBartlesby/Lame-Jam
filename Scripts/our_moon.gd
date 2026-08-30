@@ -95,7 +95,7 @@ func _on_area_entered(area: Area2D) -> void:
 	elif area.collision_layer == 16:
 		velocity *= 0.95
 		#to fix this
-		velocity = velocity.from_angle(randf_range(-0.1,0.1)) * velocity.length()
+		velocity = velocity.rotated(randf_range(-0.1,0.1))
 
 func impact() -> void:
 	SignalHandler.impacted.emit()
