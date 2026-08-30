@@ -74,8 +74,8 @@ func _process(_delta: float) -> void:
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ltla"]
 lifetime_randomness = 0.1
 particle_flag_disable_z = true
-angle_min = -22.39999
-angle_max = 15.0000105
+angle_min = -321.6
+angle_max = 299.30002
 inherit_velocity_ratio = 0.1
 initial_velocity_min = 1.0
 initial_velocity_max = 2.0
@@ -187,6 +187,7 @@ stream = ExtResource("17_bpkbg")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=1347480971]
 process_mode = 3
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_7ltla")
 script = ExtResource("10_ap0gv")
 

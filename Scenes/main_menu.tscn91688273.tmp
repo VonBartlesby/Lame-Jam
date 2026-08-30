@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://dmvdd862ssdfr"]
+
+[ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://Textures/STAR_0.png" id="1_4nkqq"]
+[ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://Scripts/our_moon.gd" id="2_ehtkc"]
+[ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://Scripts/input_hander.gd" id="3_6dk6o"]
+[ext_resource type="AudioStream" uid="uid://cchphensegg63" path="res://sound/charge.wav" id="4_jr6u5"]
+[ext_resource type="Texture2D" uid="uid://dr7g7karrjo0s" path="res://Textures/Frame 1.png" id="5_6m47u"]
+[ext_resource type="Texture2D" uid="uid://db5481y1ntli" path="res://Textures/Frame 2.png" id="6_84iac"]
+[ext_resource type="Texture2D" uid="uid://0omie6vh57l2" path="res://Textures/Frame 3.png" id="7_5n0dv"]
+[ext_resource type="Texture2D" uid="uid://i7850xaua2qx" path="res://Textures/Frame 4.png" id="8_ne6ao"]
+[ext_resource type="Texture2D" uid="uid://n8403afm734r" path="res://Textures/Frame 5.png" id="9_tt8ml"]
+[ext_resource type="Texture2D" uid="uid://uod5ufes67fa" path="res://Textures/Frame 6.png" id="10_fmarx"]
+[ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="11_hkdq0"]
+[ext_resource type="Script" uid="uid://fop4fwwb88cq" path="res://Scripts/path_finder.gd" id="12_xcoo4"]
+[ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://Textures/icon.svg" id="13_jw7lb"]
+[ext_resource type="Script" uid="uid://dlcexqu45nbte" path="res://Scripts/sound.gd" id="14_6vfk8"]
+[ext_resource type="AudioStream" uid="uid://dt2xb7mwqkiqw" path="res://sound/woosh2.wav" id="15_1xund"]
+[ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="16_msuys"]
+[ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="17_aylim"]
+[ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="18_y82t1"]
+[ext_resource type="Script" uid="uid://s4q36xx2fnm1" path="res://Scripts/gpu_particles_2d.gd" id="19_bmhhk"]
+[ext_resource type="Script" uid="uid://cbhxmx86s3nei" path="res://Scripts/ball_cam.gd" id="20_pddej"]
+[ext_resource type="Script" uid="uid://bhnf58memdwa7" path="res://Scripts/background.gd" id="21_ehtkc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ko05x"]
+radius = 78.59
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_43km2"]
+frames = 6
+frame_0/texture = ExtResource("5_6m47u")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("6_84iac")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("7_5n0dv")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("8_ne6ao")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("9_tt8ml")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("10_fmarx")
+frame_5/duration = 0.1
+
+[sub_resource type="GDScript" id="GDScript_3533h"]
+script/source = "extends Node2D
+
+@export var squash_strength :float=2
+@export var strech_strength :float=2
+@export var max_pull : float = 10
+
+@onready var sprite: Sprite2D = $Moon
+@onready var root: Area2D = $\"..\"
+
+var sqst_str := 0.0001
+var rot_offset :float
+var wobble_strength : float = 0.0
+
+func _ready() -> void: rot_offset=sprite.rotation
+
+func _process(_delta: float) -> void:
+	var v_s = root.velocity.length()
+	look_at(root.position+root.velocity)
+	scale=Vector2(
+		1+v_s*strech_strength*sqst_str,
+		1-v_s*squash_strength*sqst_str)
+	sprite.rotation=-rotation+rot_offset
+	
+	position = Vector2(randf_range(-1,1)*wobble_strength,randf_range(-1,1)*wobble_strength)
+"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dp8uv"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+angle_min = -321.6
+angle_max = 299.30002
+inherit_velocity_ratio = 0.1
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_max = 5.0
+color = Color(1.3882558, 1.3882558, 1.3882558, 1)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+turbulence_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_l12om"]
+offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
+colors = PackedColorArray(0.16941994, 0.15370345, 0.19875267, 1, 0.15288767, 0.1414848, 0.18429346, 1, 0.09239999, 0.09477999, 0.14, 1, 0.09481579, 0.108502634, 0.14473684, 1, 0.3, 0.2946, 0.21900001, 1, 0.09588948, 0.11460158, 0.1468421, 1, 0.097500004, 0.12375, 0.15, 1, 0.0793, 0.085215, 0.13, 1, 0.030438976, 0.05098556, 0.07719918, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nryri"]
+frequency = 0.0027
+fractal_lacunarity = 1.875
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6dk6o"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_nryri")
+color_ramp = SubResource("Gradient_l12om")
+
+[node name="Main Menu" type="Node2D" unique_id=1182735432]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1199778089]
+scroll_scale = Vector2(0.055, 0.055)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1417653845]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_4nkqq")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1464137309]
+scroll_scale = Vector2(0.035, 0.035)
+repeat_size = Vector2(750, 750)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1435363646]
+rotation = 0.36651915
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("1_4nkqq")
+centered = false
+
+[node name="Our Moon" type="Area2D" parent="." unique_id=1920779267]
+position = Vector2(447.5, 356.5)
+scale = Vector2(0.2421875, 0.2421875)
+collision_mask = 6
+script = ExtResource("2_ehtkc")
+velocity = null
+speed = null
+max_charge = null
+charge_speed = 100.0
+
+[node name="Input Hander" type="Node" parent="Our Moon" unique_id=1812181994 node_paths=PackedStringArray("camera")]
+script = ExtResource("3_6dk6o")
+camera = NodePath("")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Our Moon/Input Hander" unique_id=846850189]
+stream = ExtResource("4_jr6u5")
+volume_db = -80.0
+autoplay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=1724131044]
+shape = SubResource("CircleShape2D_ko05x")
+
+[node name="Line2D" type="Line2D" parent="Our Moon" unique_id=321412946]
+texture_repeat = 2
+texture = SubResource("AnimatedTexture_43km2")
+texture_mode = 1
+
+[node name="visual" type="Node2D" parent="Our Moon" unique_id=1271744964]
+script = SubResource("GDScript_3533h")
+
+[node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=1366647874]
+rotation = 1.0384709
+scale = Vector2(0.17500001, 0.17500001)
+texture = ExtResource("11_hkdq0")
+
+[node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=1008923733]
+script = ExtResource("12_xcoo4")
+look_ahead_time = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Our Moon/Path Finder" unique_id=365725082]
+visible = false
+texture = ExtResource("13_jw7lb")
+
+[node name="Sound" type="Node2D" parent="Our Moon" unique_id=395498308]
+process_mode = 3
+script = ExtResource("14_6vfk8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=2078882929]
+stream = ExtResource("15_1xund")
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1588248642]
+stream = ExtResource("15_1xund")
+autoplay = true
+
+[node name="impact" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1073404543]
+stream = ExtResource("16_msuys")
+
+[node name="reflect" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=893967188]
+stream = ExtResource("17_aylim")
+
+[node name="launch" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=909718037]
+stream = ExtResource("18_y82t1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=2014281427]
+process_mode = 3
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_dp8uv")
+script = ExtResource("19_bmhhk")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=352826583 node_paths=PackedStringArray("ball")]
+position_smoothing_enabled = true
+script = ExtResource("20_pddej")
+ball = NodePath("")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=294986192]
+layer = -100
+
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer" unique_id=1585853802 node_paths=PackedStringArray("cam")]
+texture = SubResource("NoiseTexture2D_6dk6o")
+script = ExtResource("21_ehtkc")
+parallax = 0.04
+cam = NodePath("")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
+[connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
+[connection signal="reflected" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_reflected"]
+[connection signal="launched" from="Our Moon/Input Hander" to="Our Moon/Sound" method="_on_input_hander_launched"]
