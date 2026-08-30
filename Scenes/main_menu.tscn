@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dmvdd862ssdfr"]
 
-[ext_resource type="Texture2D" uid="uid://cvwo1oxb4akns" path="res://Textures/STAR_0.png" id="1_4nkqq"]
 [ext_resource type="Script" uid="uid://bm1k1hh2p7tor" path="res://Scripts/Menu Moon.gd" id="2_1ehe0"]
 [ext_resource type="Script" uid="uid://bo2t6guj8xpte" path="res://Scripts/fade.gd" id="4_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://dxo3rol38ldcu" path="res://music.tscn" id="4_n45e2"]
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="11_hkdq0"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dp8uv"]
@@ -19,77 +19,12 @@ color = Color(1.3882558, 1.3882558, 1.3882558, 1)
 hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 
-[sub_resource type="Gradient" id="Gradient_l12om"]
-offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
-colors = PackedColorArray(0.16941994, 0.15370345, 0.19875267, 1, 0.15288767, 0.1414848, 0.18429346, 1, 0.09239999, 0.09477999, 0.14, 1, 0.09481579, 0.108502634, 0.14473684, 1, 0.3, 0.2946, 0.21900001, 1, 0.09588948, 0.11460158, 0.1468421, 1, 0.097500004, 0.12375, 0.15, 1, 0.0793, 0.085215, 0.13, 1, 0.030438976, 0.05098556, 0.07719918, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nryri"]
-frequency = 0.0027
-fractal_lacunarity = 1.875
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6dk6o"]
-generate_mipmaps = false
-noise = SubResource("FastNoiseLite_nryri")
-color_ramp = SubResource("Gradient_l12om")
-
 [node name="Main Menu" type="Node2D" unique_id=1182735432]
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1199778089]
-scroll_scale = Vector2(0.055, 0.055)
-repeat_size = Vector2(1024, 1024)
-repeat_times = 8
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=294986192]
+layer = -99
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1417653845]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_4nkqq")
-centered = false
-
-[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1464137309]
-scroll_scale = Vector2(0.035, 0.035)
-repeat_size = Vector2(750, 750)
-repeat_times = 8
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1435363646]
-rotation = 0.36651915
-scale = Vector2(0.19, 0.19)
-texture = ExtResource("1_4nkqq")
-centered = false
-
-[node name="Our Moon" type="Node2D" parent="." unique_id=25580932]
-position = Vector2(-0.15408327, -1.1636964)
-script = ExtResource("2_1ehe0")
-
-[node name="visual" type="Node2D" parent="Our Moon" unique_id=1271744964]
-rotation = -0.6684611
-scale = Vector2(1, 0.61)
-metadata/_edit_lock_ = true
-
-[node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=1366647874]
-rotation = 1.0384709
-scale = Vector2(0.17500001, 0.17500001)
-texture = ExtResource("11_hkdq0")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=2014281427]
-process_mode = 3
-amount = 16
-process_material = SubResource("ParticleProcessMaterial_dp8uv")
-metadata/_edit_lock_ = true
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=352826583]
-position_smoothing_enabled = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=294986192]
-layer = -100
-
-[node name="Sprite2D" type="TextureRect" parent="Camera2D/CanvasLayer" unique_id=1585853802]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("NoiseTexture2D_6dk6o")
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer" unique_id=1495946895]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1495946895]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -103,7 +38,7 @@ text = "The quest to make it once again the one place that hasn't been corrupted
 horizontal_alignment = 1
 autowrap_mode = 1
 
-[node name="Button" type="Button" parent="Camera2D/CanvasLayer" unique_id=675172583]
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=675172583]
 custom_minimum_size = Vector2(109.255, 53.115)
 anchors_preset = 7
 anchor_left = 0.5
@@ -119,7 +54,73 @@ grow_vertical = 0
 text = "Begin
 "
 
-[node name="TextureRect" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=398594399]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1022927105]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+
+[node name="Master Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=699941974]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Master Volume" unique_id=487825162]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.0
+offset_right = 59.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Master Volume"
+
+[node name="Music Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=80111246]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Music Volume" unique_id=315409928]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.5
+offset_right = 54.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Music Volume"
+
+[node name="Sfx Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=746219020]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Sfx Volume" unique_id=857989880]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.5
+offset_right = 45.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "SFX Volume"
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=398594399]
 custom_minimum_size = Vector2(18.025, 28.9)
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,4 +133,29 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_ce3w2")
 
-[connection signal="button_up" from="Camera2D/CanvasLayer/Button" to="Camera2D/CanvasLayer/TextureRect" method="_on_button_button_up"]
+[node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]
+script = ExtResource("2_1ehe0")
+
+[node name="visual" type="Node2D" parent="Menu Moon" unique_id=1271744964]
+rotation = -0.6684611
+scale = Vector2(1, 0.61)
+metadata/_edit_lock_ = true
+
+[node name="Moon" type="Sprite2D" parent="Menu Moon/visual" unique_id=1366647874]
+rotation = 1.0384709
+scale = Vector2(0.17500001, 0.17500001)
+texture = ExtResource("11_hkdq0")
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Menu Moon" unique_id=2014281427]
+process_mode = 3
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_dp8uv")
+metadata/_edit_lock_ = true
+
+[node name="Music" parent="." unique_id=1787023913 instance=ExtResource("4_n45e2")]
+
+[connection signal="button_up" from="CanvasLayer/Button" to="CanvasLayer/TextureRect" method="_on_button_button_up"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/Master Volume" to="Menu Moon" method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/Music Volume" to="Menu Moon" method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/Sfx Volume" to="Menu Moon" method="_on_sfx_volume_value_changed"]

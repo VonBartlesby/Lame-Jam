@@ -1,31 +1,35 @@
-[gd_scene format=3 uid="uid://dsfd3lhbp44nj"]
+[gd_scene format=3 uid="uid://c1468rtc3d1yl"]
 
-[ext_resource type="Script" uid="uid://bok7qoj8iqfow" path="res://Scripts/satellite.gd" id="1_uatgk"]
-[ext_resource type="Texture2D" uid="uid://ciyaju72dx3af" path="res://Textures/Satellite.png" id="1_wn5i2"]
-[ext_resource type="AudioStream" uid="uid://cqeh14wri86hv" path="res://sound/destroy.wav" id="3_l7wp4"]
+[ext_resource type="Script" uid="uid://jlxmajovwr72" path="res://Scripts/evil_moon.gd" id="1_k3en0"]
+[ext_resource type="Texture2D" uid="uid://wyavytl3qtp5" path="res://Textures/evil_moon.png" id="2_k3en0"]
+[ext_resource type="AudioStream" uid="uid://cqeh14wri86hv" path="res://sound/destroy.wav" id="3_m4cup"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k3en0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 23.0
 
 [sub_resource type="Gradient" id="Gradient_q48jt"]
 offsets = PackedFloat32Array(0, 0.16523606, 0.4613734, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.8392157, 0, 1, 1, 0.50980395, 0.2627451, 0.87058824, 1, 0, 0, 0)
 
-[node name="Satellite" type="Area2D" unique_id=1404198482]
+[node name="Evil Moon" type="Area2D" unique_id=1404198482]
 z_index = 1
-collision_layer = 8
-script = ExtResource("1_uatgk")
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_k3en0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=193436229]
+material = SubResource("CanvasItemMaterial_k3en0")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_k3en0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141320283]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=193436229]
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_wn5i2")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=251180257]
 process_mode = 3
-stream = ExtResource("3_l7wp4")
-bus = &"Sfx"
+stream = ExtResource("3_m4cup")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=166022008]
 process_mode = 3
@@ -44,5 +48,3 @@ angular_velocity_min = -270.0
 angular_velocity_max = 270.0
 scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_q48jt")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

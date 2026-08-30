@@ -7,6 +7,7 @@ extends Node2D
 @onready var reflect_sound:AudioStreamPlayer2D = $reflect
 @onready var launch_sound:AudioStreamPlayer2D = $launch
 @onready var planet:Ball = $".."
+@onready var spaghettified_sound: AudioStreamPlayer2D = $spaghettified
 
 var velocity_sound_volume = 0.2
 
@@ -21,7 +22,11 @@ func _ready() -> void:
 	woosh_sound.volume_linear = 0
 	woosh_high_sound.volume_linear = 0
 	woosh_rumble_sound.volume_linear = 0
-
+	#connect signals
+	SignalHandler.launched.connect(_on_input_hander_launched)
+	SignalHandler.impacted.connect(_on_our_moon_impacted)
+	SignalHandler.reflected.connect(_on_our_moon_reflected)
+	SignalHandler.spaghettified.connect(_on_our_moon_spag)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,3 +59,6 @@ func _on_our_moon_reflected() -> void:
 func _on_input_hander_launched() -> void:
 	launch_sound.play()
 	pass # Replace with function body.
+
+func _on_our_moon_spag() -> void:
+	spaghettified_sound.play()

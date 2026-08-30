@@ -1,6 +1,5 @@
 extends Node
 
-signal launched
 
 @export var camera : Cam
 
@@ -56,7 +55,7 @@ func _unhandled_input(event):
 			moon.started = true
 			moon.charge = 0
 			moon.add_velocity(moon_launch_velocity,false)
-			emit_signal("launched")
+			SignalHandler.launched.emit()
 			
 			mouseDown = false
 			visual.wobble_strength = 0

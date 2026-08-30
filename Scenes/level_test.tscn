@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b4o7xngl6brmt"]
+
+[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_d8tg7"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_vh5rs"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="3_bxe70"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_d8tg7")]
+position = Vector2(1367, 261)
+scale = Vector2(2, 2)
+size = 2.0
+debug = true
+
+[node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("2_vh5rs")]
+metadata/_edit_lock_ = true
+
+[node name="Planet2" parent="." unique_id=754585312 instance=ExtResource("1_d8tg7")]
+position = Vector2(662, 164)
+
+[node name="Planet3" parent="." unique_id=1902160759 instance=ExtResource("1_d8tg7")]
+position = Vector2(1538, 1316)
+scale = Vector2(10, 10)
+size = 10.0
+debug = true
+
+[node name="Satellite" parent="Planet3" unique_id=222989707 instance=ExtResource("2_vh5rs")]
+orbit_offset = 50
+orbit_speed = 0.19999999999999996
+
+[node name="Satellite2" parent="Planet3" unique_id=858213749 instance=ExtResource("2_vh5rs")]
+orbit_offset = 70
+orbit_speed = -0.30000000000000004
+
+[node name="Black Hole" parent="." unique_id=142536034 instance=ExtResource("3_bxe70")]
+position = Vector2(214, 316)
+scale = Vector2(2, 2)
+size = 2.0
+debug = true
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(558, 446)
+gizmo_extents = 50.0
