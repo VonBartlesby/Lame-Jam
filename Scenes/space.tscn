@@ -239,6 +239,7 @@ camera = NodePath("../../Camera2D")
 stream = ExtResource("4_isj1v")
 volume_db = -80.0
 autoplay = true
+bus = &"Sfx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Our Moon" unique_id=298686917]
 shape = SubResource("CircleShape2D_g4v7s")
@@ -274,26 +275,33 @@ script = ExtResource("8_betvx")
 [node name="woosh" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=877844356]
 stream = ExtResource("9_7ltla")
 autoplay = true
+bus = &"Sfx"
 
 [node name="woosh rumble" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1698081685]
 stream = ExtResource("16_htfm3")
 autoplay = true
+bus = &"Sfx"
 
 [node name="woosh high" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=313135290]
 stream = ExtResource("9_7ltla")
 autoplay = true
+bus = &"Sfx"
 
 [node name="impact" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=905842381]
 stream = ExtResource("15_m37bs")
+bus = &"Sfx"
 
 [node name="reflect" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=690279310]
 stream = ExtResource("11_y7rfp")
+bus = &"Sfx"
 
 [node name="launch" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=247356474]
 stream = ExtResource("17_bpkbg")
+bus = &"Sfx"
 
 [node name="spaghettified" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1431086588]
 stream = ExtResource("21_5x04l")
+bus = &"Sfx"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=1347480971]
 process_mode = 3
@@ -391,6 +399,7 @@ parallax = 0.04
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2024419180]
 stream = ExtResource("9_7ltla")
+bus = &"Sfx"
 
 [node name="Ui Controller" parent="." unique_id=1857707775 instance=ExtResource("26_htfm3")]
 
