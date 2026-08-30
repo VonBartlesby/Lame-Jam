@@ -5,7 +5,6 @@ class_name Satellite
 @export_range(-1,1) var orbit_speed : float = 0.1
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var reset_button: Button = $"../../../Ui Controller/ResetButton"
 @onready var destroy_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var explosion: CPUParticles2D = $CPUParticles2D
 
@@ -19,10 +18,9 @@ var dead : float = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	reset_button.connect("button_up",reset)
+	SignalHandler.connect("reset",reset)
 	planet = get_parent()
 	orbit_center = planet.position
-	print(orbit_offset)
 	orbit_distance = planet.size * orbit_offset
 	GameControllerAutoLoad.satellites.append(self)
 

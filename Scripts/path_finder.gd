@@ -5,7 +5,6 @@ extends Node2D
 @onready var our_moon: Ball = $".."
 @onready var masses: Node2D = $"../../Masses"
 
-@onready var reset_button: Button = $"../../Ui Controller/ResetButton"
 
 
 var velocity : Vector2 = Vector2.ZERO
@@ -19,7 +18,7 @@ var loops : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	loops = look_ahead_time * 60 as int
-	reset_button.connect("button_up",_reset)
+	SignalHandler.connect("reset",_reset)
 
 
 func _process(_delta: float) -> void:

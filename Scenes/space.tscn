@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
 [ext_resource type="AudioStream" uid="uid://cbm20ktvy3wem" path="res://sound/woosh_rumble.wav" id="16_htfm3"]
 [ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
+[ext_resource type="AudioStream" uid="uid://s0dofdet5an4" path="res://sound/blackhole.wav" id="21_5x04l"]
 [ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="22_m37bs"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="23_bpkbg"]
 
@@ -253,6 +254,9 @@ stream = ExtResource("11_y7rfp")
 [node name="launch" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=247356474]
 stream = ExtResource("17_bpkbg")
 
+[node name="spaghettified" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1431086588]
+stream = ExtResource("21_5x04l")
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Our Moon" unique_id=1347480971]
 process_mode = 3
 amount = 16
@@ -404,8 +408,3 @@ position = Vector2(214, 316)
 scale = Vector2(2, 2)
 size = 2.0
 debug = true
-
-[connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
-[connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
-[connection signal="reflected" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_reflected"]
-[connection signal="launched" from="Our Moon/Input Hander" to="Our Moon/Sound" method="_on_input_hander_launched"]

@@ -3,10 +3,6 @@ class_name Ball
 extends Area2D
 
 
-signal impacted
-signal reflected
-signal drift_off
-
 @export var velocity : Vector2
 @export var speed : float = 1.0
 @export var max_charge : float = 100
@@ -14,7 +10,6 @@ signal drift_off
 @export var drift_off_timeout : float = 5
 
 @onready var start_point: Marker2D = $"../Start Point"
-@onready var reset_button: Button = $"../Ui Controller/ResetButton"
 @onready var ui_controller: UiController = $"../Ui Controller"
 
 @onready var rings: CPUParticles2D = $Explosion/Rings
@@ -38,20 +33,20 @@ const CHARGE_SPEED_BASE = 0.01
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	reset_button.connect("button_up",_reset)
+	connect("area_entered",_on_area_entered)
+	SignalHandler.reset.connect(_reset)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if velocity.length() > 0.01:
 		move(delta)
-		print(drift_off_timer)
 		if velocity == previous_velocity:
 			drift_off_timer += delta
 		else:
 			drift_off_timer = 0
 		if drift_off_timer > drift_off_timeout:
-			drift_off.emit()
+			SignalHandler.drift_off.emit()
 	previous_velocity = velocity
 
 func move(delta : float) -> void:
@@ -74,8 +69,6 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		if result:
 			var impact_angle = velocity.angle_to(result["normal"])
-			
-			print(impact_angle)
 			if abs(impact_angle) >= 2 or abs(impact_angle) <= 1.64:
 				
 				call_deferred("impact")
@@ -83,17 +76,27 @@ func _on_area_entered(area: Area2D) -> void:
 			else:
 				var shallow_reflected_about_vel : Vector2= velocity - 2 * (velocity.dot(result["normal"])) * result["normal"]
 				velocity = shallow_reflected_about_vel * 0.95
-				emit_signal("reflected")
+				SignalHandler.reflected.emit()
+	elif area.collision_layer == 4:
+		call_deferred("spaghettification")
 
 func impact() -> void:
-	emit_signal("impacted")
+	SignalHandler.impacted.emit()
 	velocity*=0
 	started = false
 	rings.emitting = true
 	particles.emitting = true
 	bang.emitting = true
 	process_mode = Node.PROCESS_MODE_DISABLED
-	
+
+func spaghettification() -> void:
+	SignalHandler.spaghettified.emit()
+	velocity*=0
+	started = false
+	#rings.emitting = true
+	#particles.emitting = true
+	#bang.emitting = true
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _reset() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

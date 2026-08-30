@@ -9,7 +9,7 @@ var zoom_level : float = 1. :
 		zoom_level=z
 func _ready() -> void:
 	offset=ball.global_position
-	ball.connect("drift_off",_on_drift_off)
+	SignalHandler.connect("drift_off",_on_drift_off)
 	
 func _process(delta: float) -> void:
 	offset = lerp(offset,ball.global_position,delta*4.)
