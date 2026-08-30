@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://uod5ufes67fa" path="res://Textures/Frame 6.png" id="9_35bkm"]
 [ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://Textures/icon.svg" id="10_4hog4"]
 [ext_resource type="Script" uid="uid://s4q36xx2fnm1" path="res://Scripts/gpu_particles_2d.gd" id="10_ap0gv"]
+[ext_resource type="Material" uid="uid://dshr5ofmyuo15" path="res://materials/heat_rim.tres" id="11_htfm3"]
 [ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="11_y7rfp"]
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="13_betvx"]
@@ -62,6 +63,7 @@ var wobble_strength : float = 0.0
 func _ready() -> void: rot_offset=sprite.rotation
 
 func _process(_delta: float) -> void:
+	material.set_shader_parameter(\"vel\",root.velocity.rotated(-rot_offset))
 	var v_s = root.velocity.length()
 	look_at(root.position+root.velocity)
 	scale=Vector2(
@@ -207,13 +209,15 @@ texture = SubResource("AnimatedTexture_y7rfp")
 texture_mode = 1
 
 [node name="visual" type="Node2D" parent="Our Moon" unique_id=11191935]
+material = ExtResource("11_htfm3")
 script = SubResource("GDScript_8n4m7")
 squash_strength = 3.0
 strech_strength = 16.0
 
 [node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=888625057]
+use_parent_material = true
 rotation = 1.0384709
-scale = Vector2(0.17500001, 0.17500001)
+scale = Vector2(0.17500003, 0.17500003)
 texture = ExtResource("3_ulv8f")
 
 [node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=453992763]

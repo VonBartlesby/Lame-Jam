@@ -1,0 +1,31 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dshr5ofmyuo15"]
+
+[sub_resource type="Shader" id="Shader_htfm3"]
+code = "shader_type canvas_item;
+uniform sampler2D c : filter_linear, repeat_disable;
+uniform vec2 vel;
+uniform vec3 col : source_color;
+uniform float s=1.;
+void fragment() {
+	vec2 _uv = vec2(-.5)+UV+(vel*s*0.001);
+	float uv_d = length(_uv);
+	float _uv_d = texture(c,vec2(uv_d)).x;
+	COLOR += vec4(
+		col*_uv_d,
+		0.);
+}"
+
+[sub_resource type="Curve" id="Curve_htfm3"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0.36767486, 0), 0.0, 0.34580722, 0, 0, Vector2(0.93478256, 2), 0.23105802, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yq4q2"]
+curve = SubResource("Curve_htfm3")
+
+[resource]
+shader = SubResource("Shader_htfm3")
+shader_parameter/c = SubResource("CurveTexture_yq4q2")
+shader_parameter/vel = Vector2(0, 0)
+shader_parameter/col = Color(1.0884697, 0.73747665, 0, 1)
+shader_parameter/s = 0.5
