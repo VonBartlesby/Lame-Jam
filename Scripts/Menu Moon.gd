@@ -34,6 +34,18 @@ func on_fade_fin():
 	level_select.visible = false
 	label.visible = false
 
+func toggle_menu():
+	if v_box_container.visible:
+		v_box_container.visible = false
+		level_select.visible = false
+	else:
+		v_box_container.visible = true
+		level_select.visible = true
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		toggle_menu()
+
 func _on_h_slider_drag_ended(value_changed: float) -> void:
 	AudioServer.set_bus_volume_linear(1,value_changed)
 

@@ -137,5 +137,6 @@ func _on_level_load() -> void:
 			start_point = child
 	_reset()
 
+
 func _on_drift_off() -> void:
 	shootable = false

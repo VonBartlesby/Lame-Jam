@@ -5,3 +5,14 @@ addons
 /build
 example
 script_templates
+materials/heat_rim.tres
+Textures/_.png.import
+Textures/_n.png.import
+Textures/_s.png.import
+Textures/moon_n.png.import
+Textures/planet_0_n.png.import
+Textures/planet_0_s.png.import
+Textures/planet_0.png.import
+Textures/planet_1__.png.import
+Textures/planet_1__n.png.import
+Textures/planet_1__s.png.import
