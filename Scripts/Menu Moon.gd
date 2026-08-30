@@ -30,3 +30,15 @@ func _on_fade_fin():
 	visual.visible = false
 	label.visible = false
 	gpu_particles_2d.emitting = false
+
+
+func _on_h_slider_drag_ended(value_changed: float) -> void:
+	AudioServer.set_bus_volume_linear(1,value_changed)
+
+
+func _on_sfx_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(2,value)
+
+
+func _on_master_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(0,value)
