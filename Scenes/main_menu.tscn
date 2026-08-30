@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bm1k1hh2p7tor" path="res://Scripts/Menu Moon.gd" id="2_1ehe0"]
 [ext_resource type="PackedScene" uid="uid://c34m7kn06ybfd" path="res://Scenes/level_select.tscn" id="2_n45e2"]
+[ext_resource type="Theme" uid="uid://c7iw7wjbt70ov" path="res://Textures/Game Theme.tres" id="2_opfnp"]
 [ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="3_ce3w2"]
 [ext_resource type="Script" uid="uid://bo2t6guj8xpte" path="res://Scripts/fade.gd" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dxo3rol38ldcu" path="res://music.tscn" id="4_n45e2"]
@@ -53,6 +54,7 @@ offset_right = 26.0
 offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_opfnp")
 text = "Begin
 "
 
@@ -71,6 +73,7 @@ alignment = 1
 [node name="Master Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=699941974]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_opfnp")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -89,6 +92,7 @@ text = "Master Volume"
 [node name="Music Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=80111246]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_opfnp")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -107,6 +111,7 @@ text = "Music Volume"
 [node name="Sfx Volume" type="HSlider" parent="CanvasLayer/VBoxContainer" unique_id=746219020]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_opfnp")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -126,7 +131,6 @@ text = "SFX Volume"
 
 [node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=398594399]
 z_index = 1
-custom_minimum_size = Vector2(18.025, 28.9)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -135,7 +139,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 script = ExtResource("4_ce3w2")
 
 [node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]

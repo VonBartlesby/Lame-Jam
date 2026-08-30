@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://cbm20ktvy3wem" path="res://sound/woosh_rumble.wav" id="16_htfm3"]
 [ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
 [ext_resource type="AudioStream" uid="uid://s0dofdet5an4" path="res://sound/blackhole.wav" id="21_5x04l"]
+[ext_resource type="Theme" uid="uid://c7iw7wjbt70ov" path="res://Textures/Game Theme.tres" id="27_5x04l"]
 [ext_resource type="PackedScene" uid="uid://dmvdd862ssdfr" path="res://Scenes/main_menu.tscn" id="27_htfm3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_htfm3"]
@@ -398,10 +399,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -159.25
-offset_top = -31.0
+offset_top = -58.179993
 offset_right = 159.25
+offset_bottom = -27.179993
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("27_5x04l")
 text = "Reset
 "
 
@@ -442,8 +445,10 @@ offset_right = 45.0
 offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("27_5x04l")
 text = "Next Level
 "
 
 [node name="Main Menu" parent="." unique_id=1182735432 instance=ExtResource("27_htfm3")]
 z_index = 2
+position = Vector2(2, -10)

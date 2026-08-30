@@ -1,0 +1,40 @@
+[gd_resource type="Theme" format=3 uid="uid://c7iw7wjbt70ov"]
+
+[ext_resource type="Texture2D" uid="uid://bf3ihhcfulhyq" path="res://Textures/Button.png" id="1_274cy"]
+[ext_resource type="Texture2D" uid="uid://c0dnpgc1d3fnr" path="res://Textures/moon_slider_knob.png" id="2_tgh21"]
+[ext_resource type="Texture2D" uid="uid://cnqc42gkeopcn" path="res://Textures/moon_slider_knob_highlight.png" id="3_3ofdy"]
+[ext_resource type="Texture2D" uid="uid://cnkkmeyxsqkvw" path="res://Textures/moon_slider barpng.png" id="4_fhx8p"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_trj04"]
+load_path = "res://.godot/imported/Button.png-e45f3d2a60c46f603efd3e6f2000583e.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16hvj"]
+content_margin_bottom = 5.0
+texture = SubResource("CompressedTexture2D_trj04")
+expand_margin_left = 9.0
+expand_margin_right = 9.0
+modulate_color = Color(0.47, 0.47, 0.47, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
+content_margin_bottom = 5.0
+texture = ExtResource("1_274cy")
+expand_margin_left = 9.0
+expand_margin_right = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
+texture = ExtResource("4_fhx8p")
+modulate_color = Color(0.5899791, 0.44041625, 0.21969885, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vr1f0"]
+texture = ExtResource("4_fhx8p")
+modulate_color = Color(0.82, 0.61336, 0.3034, 1)
+
+[resource]
+Button/colors/font_color = Color(0.88, 0.88, 0.88, 1)
+Button/styles/hover = SubResource("StyleBoxTexture_16hvj")
+Button/styles/normal = SubResource("StyleBoxTexture_yhxw7")
+Button/styles/pressed = null
+HSlider/icons/grabber = ExtResource("2_tgh21")
+HSlider/icons/grabber_highlight = ExtResource("3_3ofdy")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_trj04")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_vr1f0")
