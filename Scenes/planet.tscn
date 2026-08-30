@@ -1,7 +1,29 @@
 [gd_scene format=3 uid="uid://0poyklthpt7g"]
 
 [ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://Scripts/GravitationalMass.gd" id="1_vpe2g"]
-[ext_resource type="Texture2D" uid="uid://btjyhndj5tre4" path="res://Textures/planet.png" id="2_m0iey"]
+[ext_resource type="Shader" uid="uid://2276rvwm5yj2" path="res://materials/atmosphere.gdshader" id="2_skk7a"]
+[ext_resource type="Texture2D" uid="uid://p6gvaokl0kg0" path="res://Textures/planet_0.png" id="2_ytj11"]
+[ext_resource type="Texture2D" uid="uid://ccpnah5n3o6m" path="res://Textures/planet_0_n.png" id="3_skk7a"]
+[ext_resource type="Texture2D" uid="uid://mydec36wkb6f" path="res://Textures/planet_0_s.png" id="4_qm2km"]
+
+[sub_resource type="Curve" id="Curve_svads"]
+_data = [Vector2(0.45446268, 0), 0.0, 0.0, 0, 0, Vector2(0.6985428, 0.07205236), 0.913825, 0.913825, 0, 0, Vector2(0.8970856, 0.22925764), 1.76023, 1.76023, 0, 0, Vector2(1, 0.37772924), 3.1851933, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_a578t"]
+curve = SubResource("Curve_svads")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytj11"]
+shader = ExtResource("2_skk7a")
+shader_parameter/c = SubResource("CurveTexture_a578t")
+shader_parameter/a = Color(0.103856385, 0.19405761, 0.24627936, 1)
+shader_parameter/a_p = 1.03
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0qqt7"]
+diffuse_texture = ExtResource("2_ytj11")
+normal_texture = ExtResource("3_skk7a")
+specular_texture = ExtResource("4_qm2km")
+specular_shininess = 0.48
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
 radius = 43.55
@@ -11,8 +33,10 @@ collision_layer = 2
 script = ExtResource("1_vpe2g")
 
 [node name="Planet" type="Sprite2D" parent="." unique_id=723948335]
-scale = Vector2(0.092, 0.092)
-texture = ExtResource("2_m0iey")
+material = SubResource("ShaderMaterial_ytj11")
+scale = Vector2(0.087, 0.087)
+texture = SubResource("CanvasTexture_0qqt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=582415943]
+visible = false
 shape = SubResource("CircleShape2D_57qmd")

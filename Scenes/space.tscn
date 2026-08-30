@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://Scripts/our_moon.gd" id="2_qtpbo"]
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://Scripts/input_hander.gd" id="3_qtpbo"]
-[ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="3_ulv8f"]
 [ext_resource type="Texture2D" uid="uid://dr7g7karrjo0s" path="res://Textures/Frame 1.png" id="4_4fo3t"]
 [ext_resource type="AudioStream" uid="uid://cchphensegg63" path="res://sound/charge.wav" id="4_isj1v"]
 [ext_resource type="Texture2D" uid="uid://db5481y1ntli" path="res://Textures/Frame 2.png" id="5_4v84m"]
@@ -20,6 +19,7 @@
 [ext_resource type="Script" uid="uid://s4q36xx2fnm1" path="res://Scripts/gpu_particles_2d.gd" id="10_ap0gv"]
 [ext_resource type="Material" uid="uid://dshr5ofmyuo15" path="res://materials/heat_rim.tres" id="11_htfm3"]
 [ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="11_y7rfp"]
+[ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="12_htfm3"]
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="13_betvx"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
 [ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="22_m37bs"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="23_bpkbg"]
+[ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="28_5x04l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 78.59
@@ -63,6 +64,8 @@ var wobble_strength : float = 0.0
 func _ready() -> void: rot_offset=sprite.rotation
 
 func _process(_delta: float) -> void:
+	rot_offset+=root.spin
+	root.spin=0
 	material.set_shader_parameter(\"vel\",root.velocity.rotated(-rot_offset))
 	var v_s = root.velocity.length()
 	look_at(root.position+root.velocity)
@@ -161,6 +164,17 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_nryri")
 color_ramp = SubResource("Gradient_l12om")
 
+[sub_resource type="Gradient" id="Gradient_5x04l"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8n4m7"]
+gradient = SubResource("Gradient_5x04l")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="Space" type="Node2D" unique_id=1292661137]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1673503574]
@@ -217,8 +231,8 @@ strech_strength = 16.0
 [node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=888625057]
 use_parent_material = true
 rotation = 1.0384709
-scale = Vector2(0.17500003, 0.17500003)
-texture = ExtResource("3_ulv8f")
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("12_htfm3")
 
 [node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=453992763]
 script = ExtResource("7_dhr8q")
@@ -404,6 +418,23 @@ position = Vector2(214, 316)
 scale = Vector2(2, 2)
 size = 2.0
 debug = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=895369338]
+position = Vector2(981, 244)
+energy = 0.89
+texture = SubResource("GradientTexture2D_8n4m7")
+texture_scale = 50.0
+height = 50.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1746772676]
+color = Color(0.05362276, 0.12857756, 0.24100988, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1399022727]
+energy = 0.3
+height = 1.0
+
+[node name="Planet" parent="." unique_id=1937331240 instance=ExtResource("28_5x04l")]
+position = Vector2(709, 283)
 
 [connection signal="area_entered" from="Our Moon" to="Our Moon" method="_on_area_entered"]
 [connection signal="impacted" from="Our Moon" to="Our Moon/Sound" method="_on_our_moon_impacted"]
