@@ -151,6 +151,17 @@ fill_to = Vector2(0.5, 0)
 offsets = PackedFloat32Array(0, 0.17609699, 0.39203233, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.9272044, 0.7155052, 7.70092e-07, 1, 0.8690322, 0.34711653, 0, 1, 0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_m6fy6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8n4m7"]
+gradient = SubResource("Gradient_m6fy6")
+width = 2056
+height = 2056
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [sub_resource type="Curve" id="Curve_htfm3"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -344,6 +355,13 @@ gravity = Vector2(0, 0)
 scale_amount_min = 4.0
 scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_eyabf")
+
+[node name="PointLight2D" type="PointLight2D" parent="Our Moon/Explosion" unique_id=1420138428]
+color = Color(4.0590982, 2.3692632, 0, 1)
+energy = 0.0
+texture = SubResource("GradientTexture2D_8n4m7")
+texture_scale = 50.0
+height = 30.0
 
 [node name="charge" type="Line2D" parent="Our Moon" unique_id=630035308]
 points = PackedVector2Array(0, 0, 945.54846, 846.45166)
