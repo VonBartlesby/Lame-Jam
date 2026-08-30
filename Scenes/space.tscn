@@ -410,10 +410,5 @@ grow_vertical = 2
 text = "Next Level
 "
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=576034738 node_paths=PackedStringArray("ball")]
-position_smoothing_enabled = true
-script = ExtResource("6_w5eul")
-ball = NodePath("../Our Moon")
-
 [node name="Main Menu" parent="." unique_id=1182735432 instance=ExtResource("27_htfm3")]
-z_index = 1
+z_index = 2

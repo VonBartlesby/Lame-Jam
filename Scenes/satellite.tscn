@@ -12,7 +12,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 0.8392157, 0, 1, 1, 0.50980395, 0.26274
 
 [node name="Satellite" type="Area2D" unique_id=1404198482]
 z_index = 1
-collision_layer = 16
+collision_layer = 0
 script = ExtResource("1_uatgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141320283]

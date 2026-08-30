@@ -17,6 +17,7 @@ var levels : Array[String] = [
 var current_level : Node2D = null
 var next_level : PackedScene
 
+signal start_fade_out
 
 @onready var space: Node2D = $"../Space"
 
@@ -44,7 +45,6 @@ func load_level() -> void:
 	current_level = next_level.instantiate()
 	space.add_child(current_level)
 	SignalHandler.level_loaded.emit()
-	SignalHandler.fade_fin.emit()
 
 func _load_level_from_index(index:int):
 	level_index = index
@@ -59,4 +59,4 @@ func _prepare_next_level():
 func prepare_level():
 	print("loading level ",level_index," from disk")
 	next_level = load(levels[level_index])
-	load_level()
+	start_fade_out.emit()
