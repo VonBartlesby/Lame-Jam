@@ -27,5 +27,5 @@ curve = SubResource("Curve_htfm3")
 shader = SubResource("Shader_htfm3")
 shader_parameter/c = SubResource("CurveTexture_yq4q2")
 shader_parameter/vel = Vector2(0, 0)
-shader_parameter/col = Color(1.0884697, 0.73747665, 0, 1)
+shader_parameter/col = Color(1.4156048, 0.6024742, 0, 1)
 shader_parameter/s = 0.5
