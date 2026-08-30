@@ -84,8 +84,15 @@ func _on_area_entered(area: Area2D) -> void:
 				var shallow_reflected_about_vel : Vector2= velocity - 2 * (velocity.dot(result["normal"])) * result["normal"]
 				velocity = shallow_reflected_about_vel * 0.95
 				SignalHandler.reflected.emit()
+	
+	
 	elif area.collision_layer == 4:
 		call_deferred("spaghettification")
+	
+	
+	elif area.collision_layer == 16:
+		velocity *= 0.95
+		velocity = velocity.from_angle(randf_range(-0.1,0.1)) * velocity.length()
 
 func impact() -> void:
 	SignalHandler.impacted.emit()
@@ -121,7 +128,9 @@ func set_charge_text():
 	ui_controller.set_charge_text(charge_percentage)
 
 func _on_level_load() -> void:
-	start_point = $"..".get_child(-1).get_child(-1)
+	for child in $"..".get_child(-1).get_children():
+		if child is Marker2D:
+			start_point = child
 	_reset()
 
 func _on_drift_off() -> void:

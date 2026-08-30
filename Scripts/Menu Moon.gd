@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 
 func _on_begin_button():
 	move = true
+	button.disabled = true
 	SignalHandler.next_level.emit()
 
 func _on_fade_fin():
