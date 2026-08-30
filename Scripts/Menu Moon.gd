@@ -2,13 +2,15 @@ extends Node2D
 
 
 
-@onready var button: Button = $"../CanvasLayer/Button"
-@onready var texture_rect: ColorRect = $"../CanvasLayer/TextureRect"
-@onready var label: Label = $"../CanvasLayer/Label"
-@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
-@onready var v_box_container: VBoxContainer = $"../CanvasLayer/VBoxContainer"
+@onready var button: Button = $"CanvasLayer/Button"
+@onready var texture_rect: ColorRect = $"CanvasLayer/TextureRect"
+@onready var label: Label = $"CanvasLayer/Label"
+@onready var gpu_particles_2d: GPUParticles2D = $"Menu Moon/GPUParticles2D"
 
-@onready var visual: Node2D = $visual
+@onready var v_box_container: VBoxContainer = $"CanvasLayer/VBoxContainer"
+
+@onready var visual: Node2D = $"Menu Moon/visual"
+
 
 var move = false
 # Called when the node enters the scene tree for the first time.

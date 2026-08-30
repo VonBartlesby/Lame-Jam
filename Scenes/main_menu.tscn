@@ -20,6 +20,7 @@ hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 
 [node name="Main Menu" type="Node2D" unique_id=1182735432]
+script = ExtResource("2_1ehe0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=294986192]
 layer = -99
@@ -134,7 +135,6 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("4_ce3w2")
 
 [node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]
-script = ExtResource("2_1ehe0")
 
 [node name="visual" type="Node2D" parent="Menu Moon" unique_id=1271744964]
 rotation = -0.6684611
