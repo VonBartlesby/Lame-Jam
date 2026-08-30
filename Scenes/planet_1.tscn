@@ -16,7 +16,7 @@ curve = SubResource("Curve_svads")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ytj11"]
 shader = ExtResource("2_cjc4u")
 shader_parameter/c = SubResource("CurveTexture_a578t")
-shader_parameter/a = Color(0.105000004, 0.25, 0.19441669, 1)
+shader_parameter/a = Color(0.33703664, 0.6923198, 0.556128, 1)
 shader_parameter/a_p = 0.65
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4xy80"]

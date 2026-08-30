@@ -28,6 +28,17 @@
 [ext_resource type="AudioStream" uid="uid://s0dofdet5an4" path="res://sound/blackhole.wav" id="21_5x04l"]
 [ext_resource type="PackedScene" uid="uid://dmvdd862ssdfr" path="res://Scenes/main_menu.tscn" id="27_htfm3"]
 
+[sub_resource type="Gradient" id="Gradient_m6fy6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nryri"]
+gradient = SubResource("Gradient_m6fy6")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_htfm3"]
 light_mode = 1
 
@@ -151,6 +162,15 @@ fill_to = Vector2(0.5, 0)
 offsets = PackedFloat32Array(0, 0.17609699, 0.39203233, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.9272044, 0.7155052, 7.70092e-07, 1, 0.8690322, 0.34711653, 0, 1, 0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_7p2hp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8n4m7"]
+gradient = SubResource("Gradient_7p2hp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [sub_resource type="Gradient" id="Gradient_5x04l"]
 offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
 colors = PackedColorArray(0.16941994, 0.15370345, 0.19875267, 1, 0.15288767, 0.1414848, 0.18429346, 1, 0.09239999, 0.09477999, 0.14, 1, 0.09481579, 0.108502634, 0.14473684, 1, 0.3, 0.2946, 0.21900001, 1, 0.09588948, 0.11460158, 0.1468421, 1, 0.097500004, 0.12375, 0.15, 1, 0.0793, 0.085215, 0.13, 1, 0.030438976, 0.05098556, 0.07719918, 1)
@@ -169,8 +189,14 @@ script = ExtResource("1_yq4q2")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=571050598]
 color = Color(1.4151802, 1.1487826, 0.8995719, 1)
-energy = 0.65
+energy = 0.47
 height = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1027920487]
+position = Vector2(-13110, -10851)
+texture = SubResource("GradientTexture2D_nryri")
+texture_scale = 50.0
+height = 50.0
 
 [node name="parallaxes" type="Node2D" parent="." unique_id=1650236100]
 light_mask = 0
@@ -336,6 +362,13 @@ gravity = Vector2(0, 0)
 scale_amount_min = 4.0
 scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_eyabf")
+
+[node name="PointLight2D" type="PointLight2D" parent="Our Moon/Explosion" unique_id=1060094020]
+color = Color(3.6700065, 2.2576818, 0, 1)
+energy = 0.0
+texture = SubResource("GradientTexture2D_8n4m7")
+texture_scale = 24.0
+height = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true

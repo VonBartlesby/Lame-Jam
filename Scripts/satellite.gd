@@ -8,6 +8,7 @@ class_name Satellite
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var destroy_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var explosion: CPUParticles2D = $CPUParticles2D
+@onready var light: PointLight2D = $PointLight2D
 
 
 
@@ -41,15 +42,22 @@ func _process(delta: float) -> void:
 
 func fucking_die() -> void:
 	sprite_2d.visible = false
-	process_mode = Node.PROCESS_MODE_DISABLED
+	set_process(false)
 	dead = true
 	destroy_sound.play()
 	explosion.emitting = true
+	light.energy=1.
+	var t := get_tree().create_tween()
+	t.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	t.bind_node(self)
+	t.tween_property(light,"energy",0.,2.)
+	t.set_ease(Tween.EASE_IN)
+	t.play()
 	GameControllerAutoLoad.check_win()
 
 func reset() -> void:
 	sprite_2d.visible = true
-	process_mode =Node.PROCESS_MODE_ALWAYS
+	set_process(false)
 	time = 0
 	dead = false
 

@@ -10,6 +10,15 @@
 offsets = PackedFloat32Array(0, 0.16523606, 0.4613734, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0.8392157, 0, 1, 1, 0.50980395, 0.2627451, 0.87058824, 1, 0, 0, 0)
 
+[sub_resource type="Gradient" id="Gradient_7p2hp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7wp4"]
+gradient = SubResource("Gradient_7p2hp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="Satellite" type="Area2D" unique_id=1404198482]
 z_index = 1
 collision_layer = 16
@@ -43,5 +52,12 @@ angular_velocity_min = -270.0
 angular_velocity_max = 270.0
 scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_q48jt")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=176679982]
+color = Color(1.4648298, 0.88859105, 0, 1)
+energy = 0.0
+texture = SubResource("GradientTexture2D_l7wp4")
+texture_scale = 12.0
+height = 10.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

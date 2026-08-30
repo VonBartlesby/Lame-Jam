@@ -16,6 +16,7 @@ extends Area2D
 @onready var rings: CPUParticles2D = $Explosion/Rings
 @onready var particles: CPUParticles2D = $Explosion/Particles
 @onready var bang: CPUParticles2D = $Explosion/Bang
+@onready var light: PointLight2D = $Explosion/PointLight2D
 
 var spin :float=0.
 
@@ -101,6 +102,11 @@ func impact() -> void:
 	rings.emitting = true
 	particles.emitting = true
 	bang.emitting = true
+	light.energy=1.
+	var t := get_tree().create_tween()
+	t.tween_property(light,"energy",0.,2.)
+	t.set_ease(Tween.EASE_IN)
+	t.play()
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func spaghettification() -> void:
@@ -113,7 +119,7 @@ func spaghettification() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _reset() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = Node.PROCESS_MODE_INHERIT
 	velocity = Vector2.ZERO
 	if not start_point == null:
 		global_position = start_point.global_position
