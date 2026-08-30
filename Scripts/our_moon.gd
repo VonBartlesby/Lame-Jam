@@ -17,6 +17,7 @@ extends Area2D
 @onready var particles: CPUParticles2D = $Explosion/Particles
 @onready var bang: CPUParticles2D = $Explosion/Bang
 
+var spin :float=0.
 
 var started : bool = false
 var shootable : bool = false
@@ -58,7 +59,9 @@ func move(delta : float) -> void:
 		
 
 func add_velocity(vel:Vector2,recharge : bool = true) -> void:
+	var _v=velocity
 	velocity+=vel
+	spin+=_v.angle_to(velocity)*2.5
 	if recharge:
 		charge += vel.length() * CHARGE_SPEED_BASE * charge_speed
 
