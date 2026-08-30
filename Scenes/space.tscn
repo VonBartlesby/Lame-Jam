@@ -151,6 +151,14 @@ fill_to = Vector2(0.5, 0)
 offsets = PackedFloat32Array(0, 0.17609699, 0.39203233, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.9272044, 0.7155052, 7.70092e-07, 1, 0.8690322, 0.34711653, 0, 1, 0, 0, 0, 1)
 
+[sub_resource type="Curve" id="Curve_htfm3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7p2hp"]
+offsets = PackedFloat32Array(0.15512048, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
 [sub_resource type="Gradient" id="Gradient_5x04l"]
 offsets = PackedFloat32Array(0, 0.072674416, 0.3633721, 0.4862826, 0.48902607, 0.4903978, 0.5843023, 0.7005814, 1)
 colors = PackedColorArray(0.16941994, 0.15370345, 0.19875267, 1, 0.15288767, 0.1414848, 0.18429346, 1, 0.09239999, 0.09477999, 0.14, 1, 0.09481579, 0.108502634, 0.14473684, 1, 0.3, 0.2946, 0.21900001, 1, 0.09588948, 0.11460158, 0.1468421, 1, 0.097500004, 0.12375, 0.15, 1, 0.0793, 0.085215, 0.13, 1, 0.030438976, 0.05098556, 0.07719918, 1)
@@ -336,6 +344,13 @@ gravity = Vector2(0, 0)
 scale_amount_min = 4.0
 scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_eyabf")
+
+[node name="charge" type="Line2D" parent="Our Moon" unique_id=630035308]
+points = PackedVector2Array(0, 0, 945.54846, 846.45166)
+width = 200.0
+width_curve = SubResource("Curve_htfm3")
+default_color = Color(1, 1, 0, 1)
+gradient = SubResource("Gradient_7p2hp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true
