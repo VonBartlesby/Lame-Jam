@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 @onready var button: Button = $"../CanvasLayer/Button"
 @onready var texture_rect: ColorRect = $"../CanvasLayer/TextureRect"
 @onready var label: Label = $"../CanvasLayer/Label"

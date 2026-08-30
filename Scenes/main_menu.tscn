@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bm1k1hh2p7tor" path="res://Scripts/Menu Moon.gd" id="2_1ehe0"]
 [ext_resource type="Script" uid="uid://bo2t6guj8xpte" path="res://Scripts/fade.gd" id="4_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://dxo3rol38ldcu" path="res://music.tscn" id="4_n45e2"]
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="11_hkdq0"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dp8uv"]
@@ -85,5 +86,7 @@ process_mode = 3
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_dp8uv")
 metadata/_edit_lock_ = true
+
+[node name="Music" parent="." unique_id=1787023913 instance=ExtResource("4_n45e2")]
 
 [connection signal="button_up" from="CanvasLayer/Button" to="CanvasLayer/TextureRect" method="_on_button_button_up"]
