@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="13_betvx"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
+[ext_resource type="AudioStream" uid="uid://cbm20ktvy3wem" path="res://sound/woosh_rumble.wav" id="16_htfm3"]
 [ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
 [ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="22_m37bs"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="23_bpkbg"]
@@ -168,11 +169,15 @@ texture = ExtResource("10_4hog4")
 process_mode = 3
 script = ExtResource("8_betvx")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=877844356]
+[node name="woosh" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=877844356]
 stream = ExtResource("9_7ltla")
 autoplay = true
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=313135290]
+[node name="woosh rumble" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=1698081685]
+stream = ExtResource("16_htfm3")
+autoplay = true
+
+[node name="woosh high" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=313135290]
 stream = ExtResource("9_7ltla")
 autoplay = true
 
