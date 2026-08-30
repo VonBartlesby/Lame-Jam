@@ -18,6 +18,7 @@ config/icon="res://Textures/icon.svg"
 [autoload]
 
 GameControllerAutoLoad="*uid://clws0gj5j0y5a"
+SignalHandler="*uid://e5ws8xp5sgax"
 
 [display]
 

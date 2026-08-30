@@ -1,14 +1,17 @@
+@icon("res://Icons/Weezer.png")
 class_name Ball
 extends Area2D
 
 
 signal impacted
 signal reflected
+signal drift_off
 
 @export var velocity : Vector2
 @export var speed : float = 1.0
 @export var max_charge : float = 100
 @export var charge_speed : float = 1.0
+@export var drift_off_timeout : float = 5
 
 @onready var start_point: Marker2D = $"../Start Point"
 @onready var reset_button: Button = $"../Ui Controller/ResetButton"
@@ -21,6 +24,8 @@ signal reflected
 
 var started : bool = false
 var shootable : bool = true
+var drift_off_timer : float = 0
+var previous_velocity : Vector2 = Vector2.ZERO
 var charge : float :
 	set(c):
 		charge = minf(c,max_charge)
@@ -40,11 +45,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if velocity.length() > 0.01:
 		move(delta)
+		if velocity == previous_velocity:
+			drift_off_timer += delta
+		else:
+			drift_off_timer = 0
+		if drift_off_timer > drift_off_timeout:
+			drift_off.emit()
+
 
 func move(delta : float) -> void:
 	position += velocity * delta * speed
 
 func add_velocity(vel:Vector2,recharge : bool = true) -> void:
+	previous_velocity = velocity
 	velocity+=vel
 	if recharge:
 		charge += vel.length() * CHARGE_SPEED_BASE * charge_speed

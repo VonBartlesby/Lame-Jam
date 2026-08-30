@@ -9,6 +9,7 @@ var zoom_level : float = 1. :
 		zoom_level=z
 func _ready() -> void:
 	offset=ball.global_position
+	ball.connect("drift_off",_on_drift_off)
 	
 func _process(delta: float) -> void:
 	offset = lerp(offset,ball.global_position,delta*4.)
@@ -20,3 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		zoom_level += 0.25
 	if event.is_action("ui_down"):
 		zoom_level -= 0.25
+
+func _on_drift_off():
+	process_mode = Node.PROCESS_MODE_DISABLED
