@@ -7,6 +7,22 @@ var levels : Array[String] = [
 	"res://Scenes/Levels/level_2.tscn",
 	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_4.tscn",
+	"res://Scenes/Levels/level_5.tscn",
+	"res://Scenes/Levels/level_6.tscn",
+	"res://Scenes/Levels/level_7.tscn",
+	"res://Scenes/Levels/level_8.tscn",
+	"res://Scenes/Levels/level_9.tscn",
+	"res://Scenes/Levels/level_10.tscn",
+	"res://Scenes/Levels/level_11.tscn",
+	"res://Scenes/Levels/level_12.tscn",
+	"res://Scenes/Levels/level_13.tscn",
+	"res://Scenes/Levels/level_14.tscn",
+	"res://Scenes/Levels/level_15.tscn",
+	"res://Scenes/Levels/level_16.tscn",
+	"res://Scenes/Levels/level_17.tscn",
+	"res://Scenes/Levels/level_18.tscn",
+	"res://Scenes/Levels/level_19.tscn",
+	"res://Scenes/Levels/level_20.tscn",
 	
 	"res://Scenes/level_test.tscn",]
 var current_level : Node2D = null
@@ -32,7 +48,7 @@ func check_win() -> void:
 			return
 	SignalHandler.win.emit()
 
-func load() -> void:
+func load_level() -> void:
 	satellites = []
 	
 	space.add_child(current_level)
@@ -45,4 +61,10 @@ func _load_next_level():
 	if current_level != null:
 		current_level.queue_free()
 	current_level = next_level.instantiate()
-	call_deferred("load")
+	call_deferred("load_level")
+
+func load_level_index(level:int):
+	level_index = level - 1
+	SignalHandler.emit_signal("fade_fin")
+	SignalHandler.emit_signal("next_level")
+	
