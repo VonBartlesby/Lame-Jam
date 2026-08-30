@@ -227,6 +227,7 @@ color = Color(0, 0.21457802, 0.3576195, 1)
 scale = Vector2(0.2421875, 0.2421875)
 collision_mask = 22
 script = ExtResource("2_qtpbo")
+charge_speed = 2.0
 
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344 node_paths=PackedStringArray("camera")]
 script = ExtResource("3_qtpbo")

@@ -30,6 +30,7 @@ position = Vector2(463, 405)
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("1_6tcp3")]
 scale = Vector2(2, 2)
+start_rotation = 120.996
 
 [node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("2_nfly3")]
 position = Vector2(679, 276)

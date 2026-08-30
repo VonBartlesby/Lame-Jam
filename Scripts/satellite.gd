@@ -58,7 +58,7 @@ func fucking_die() -> void:
 
 func reset() -> void:
 	sprite_2d.visible = true
-	set_process(false)
+	set_process(true)
 	time = 0
 	dead = false
 

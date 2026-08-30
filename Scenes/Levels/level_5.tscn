@@ -18,31 +18,28 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="." unique_id=1913309939]
-offset_left = 57.0
-offset_top = 301.0
-offset_right = 231.0
-offset_bottom = 454.0
-text = "Bigger planets have a larger gravitational pull"
+offset_left = 307.0
+offset_top = 374.0
+offset_right = 481.0
+offset_bottom = 527.0
+text = "You can recharge your shot by collecting gravitational energy.
+
+The closer you are to a large mass the faster it will charge"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_efpaj")]
-position = Vector2(709, 764)
-scale = Vector2(2, 2)
-size = 2.0
-
-[node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("1_efpaj")]
-position = Vector2(442, 359)
-scale = Vector2(4, 4)
-size = 4.0
+position = Vector2(772, 340)
+scale = Vector2(6, 6)
+size = 6.0
 debug = true
 
-[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_arbu7")]
-position = Vector2(807, 541)
-scale = Vector2(3, 3)
-stationary = true
-
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
-position = Vector2(140.00006, 551)
+position = Vector2(311, 201.00003)
 scale = Vector2(0.99999994, 0.99999994)
 gizmo_extents = 50.0
+
+[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_arbu7")]
+position = Vector2(1551.9999, 329)
+scale = Vector2(6, 6)
+stationary = true

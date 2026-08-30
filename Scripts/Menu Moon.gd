@@ -7,6 +7,9 @@ extends Node2D
 @onready var label: Label = $CanvasLayer/Label
 @onready var v_box_container: VBoxContainer = $CanvasLayer/VBoxContainer
 @onready var level_select: ScrollContainer = $"CanvasLayer/Level Select"
+@onready var master_volume: HSlider = $"CanvasLayer/VBoxContainer/Master Volume"
+@onready var sfx_volume: HSlider = $"CanvasLayer/VBoxContainer/Sfx Volume"
+@onready var music_volume: HSlider = $"CanvasLayer/VBoxContainer/Music Volume"
 
 
 
@@ -15,7 +18,9 @@ var move = false
 func _ready() -> void:
 	#GameControllerAutoLoad.start_fade_in.connect(_on_fade_fin)
 	button.connect("button_up",_on_begin_button)
-
+	master_volume.value_changed.connect(_on_master_volume_value_changed)
+	sfx_volume.value_changed.connect(_on_sfx_volume_value_changed)
+	music_volume.value_changed.connect(_on_h_slider_drag_ended)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

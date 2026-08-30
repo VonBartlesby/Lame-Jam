@@ -23,9 +23,9 @@ func _process(delta: float) -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("ui_up"):
-		zoom_level += 0.25
+		zoom_level += 0.1
 	if event.is_action("ui_down"):
-		zoom_level -= 0.25
+		zoom_level -= 0.1
 
 func _on_drift_off():
 	follow_speed = 0

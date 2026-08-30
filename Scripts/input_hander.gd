@@ -26,6 +26,7 @@ const WOBBLE_RATIO : float = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalHandler.impacted.connect(_on_our_moon_impacted)
 	line_2d.add_point(Vector2.ZERO)
 	line_2d.add_point(Vector2.ZERO)
 
@@ -90,6 +91,8 @@ func _unhandled_input(event):
 
 func _on_our_moon_impacted() -> void:
 	mouseDown = false
+	charge.visible = false
 	moon_launch_velocity = Vector2.ZERO
 	line_2d.clear_points()
 	visual.wobble_strength = 0
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
