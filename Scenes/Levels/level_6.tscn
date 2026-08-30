@@ -8,15 +8,16 @@
 [node name="Level" type="Node2D" unique_id=1877995342]
 
 [node name="Label" type="Label" parent="." unique_id=2116998295]
-offset_left = 874.0
-offset_top = 332.0
-offset_right = 1048.0
-offset_bottom = 537.0
+offset_left = 414.0
+offset_top = 24.0
+offset_right = 588.0
+offset_bottom = 229.0
 text = "Moons can also orbit planets, they aren't strong enough to pull you in, but they are hard enough to stop you."
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="." unique_id=1913309939]
+visible = false
 offset_left = 538.0
 offset_top = 80.0
 offset_right = 712.0

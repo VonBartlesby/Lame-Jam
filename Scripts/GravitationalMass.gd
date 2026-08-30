@@ -4,6 +4,7 @@ class_name GravitationalMass
 
 @export var size = 1.0
 @export var debug : bool = false
+@export var solid : bool = true
 @export var BASE_GRAVITY_STRENGTH : float = 4000000
 var gravityStrength : float = 1.0
 

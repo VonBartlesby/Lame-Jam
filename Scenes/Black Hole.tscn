@@ -5,12 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://cydxbdhnfric5" path="res://Textures/icon.svg" id="3_4e3t6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
-radius = 11.0
+radius = 6.0827627
 
 [node name="Black Hole" type="Area2D" unique_id=1221522964]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_o3a1b")
+solid = false
 BASE_GRAVITY_STRENGTH = 8000000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=582415943]
