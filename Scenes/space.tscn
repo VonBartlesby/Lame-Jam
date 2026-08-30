@@ -28,6 +28,9 @@
 [ext_resource type="AudioStream" uid="uid://s0dofdet5an4" path="res://sound/blackhole.wav" id="21_5x04l"]
 [ext_resource type="PackedScene" uid="uid://dmvdd862ssdfr" path="res://Scenes/main_menu.tscn" id="27_htfm3"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_htfm3"]
+light_mode = 1
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 78.59
 
@@ -164,26 +167,42 @@ color_ramp = SubResource("Gradient_5x04l")
 [node name="Space" type="Node2D" unique_id=1292661137]
 script = ExtResource("1_yq4q2")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1673503574]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=571050598]
+color = Color(1.4151802, 1.1487826, 0.8995719, 1)
+energy = 0.65
+height = 1.0
+
+[node name="parallaxes" type="Node2D" parent="." unique_id=1650236100]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_htfm3")
+
+[node name="Parallax2D" type="Parallax2D" parent="parallaxes" unique_id=1673503574]
+use_parent_material = true
 scroll_scale = Vector2(0.055, 0.055)
 repeat_size = Vector2(1024, 1024)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=484838966]
+[node name="Sprite2D" type="Sprite2D" parent="parallaxes/Parallax2D" unique_id=484838966]
+use_parent_material = true
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_4fhbr")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=110286170]
+[node name="Parallax2D2" type="Parallax2D" parent="parallaxes" unique_id=110286170]
+use_parent_material = true
 scroll_scale = Vector2(0.035, 0.035)
 repeat_size = Vector2(750, 750)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=358669426]
+[node name="Sprite2D" type="Sprite2D" parent="parallaxes/Parallax2D2" unique_id=358669426]
+use_parent_material = true
 rotation = 0.36651915
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("7_4fhbr")
 centered = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1222745113]
+color = Color(0, 0.21457802, 0.3576195, 1)
 
 [node name="Our Moon" type="Area2D" parent="." unique_id=1914234917]
 scale = Vector2(0.2421875, 0.2421875)
@@ -210,8 +229,7 @@ texture_mode = 1
 [node name="visual" type="Node2D" parent="Our Moon" unique_id=11191935]
 material = ExtResource("11_htfm3")
 script = SubResource("GDScript_8n4m7")
-squash_strength = 3.0
-strech_strength = 16.0
+strech_strength = 6.0
 
 [node name="Moon" type="Sprite2D" parent="Our Moon/visual" unique_id=888625057]
 use_parent_material = true

@@ -11,6 +11,7 @@ func _ready() -> void:
 	resize.call_deferred()
 	get_viewport().size_changed.connect(resize,CONNECT_DEFERRED)
 func _process(_delta: float) -> void:
-	var cam_offset = cam.position * parallax
-	texture.noise.offset=Vector3(cam_offset.x,cam_offset.y,0.)
-	#FastNoiseLite
+	if cam != null:
+		var cam_offset = cam.position * parallax
+		texture.noise.offset=Vector3(cam_offset.x,cam_offset.y,0.)
+		#FastNoiseLite
