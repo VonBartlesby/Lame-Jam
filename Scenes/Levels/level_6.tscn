@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://djv6hs0njgtmm"]
+
+[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_hggss"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_rt0ev"]
+[ext_resource type="PackedScene" uid="uid://c1468rtc3d1yl" path="res://Scenes/evil_moon.tscn" id="3_rt0ev"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="4_vrotf"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Label" type="Label" parent="." unique_id=2116998295]
+visible = false
+offset_left = 824.0
+offset_top = 209.0
+offset_right = 998.0
+offset_bottom = 362.0
+text = "Satellites can orbit planets.
+
+Be careful, if you crash into a planet you will have to reset"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1913309939]
+offset_left = 57.0
+offset_top = 301.0
+offset_right = 231.0
+offset_bottom = 454.0
+text = "Bigger planets have a larger gravitational pull"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Planet3" parent="." unique_id=338070861 instance=ExtResource("1_hggss")]
+position = Vector2(778, 619)
+
+[node name="Satellite" parent="Planet3" unique_id=1404198482 instance=ExtResource("2_rt0ev")]
+position = Vector2(76, -26)
+orbit_offset = 154
+orbit_speed = 0.258
+
+[node name="Evil Moon" parent="Planet3" unique_id=1807886266 instance=ExtResource("3_rt0ev")]
+position = Vector2(-94, 55)
+orbit_offset = 257
+
+[node name="Evil Moon2" parent="Planet3" unique_id=327953062 instance=ExtResource("3_rt0ev")]
+position = Vector2(15, -146)
+orbit_offset = 257
+start_rotation = 128.769
+
+[node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("1_hggss")]
+position = Vector2(337, 353)
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
+
+[node name="Black Hole" parent="." unique_id=1221522964 instance=ExtResource("4_vrotf")]
+position = Vector2(1015, 772)
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(127, 167)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0

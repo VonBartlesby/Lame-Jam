@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmvdd862ssdfr"]
 
 [ext_resource type="Script" uid="uid://bm1k1hh2p7tor" path="res://Scripts/Menu Moon.gd" id="2_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://c34m7kn06ybfd" path="res://Scenes/level_select.tscn" id="2_n45e2"]
 [ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="3_ce3w2"]
 [ext_resource type="Script" uid="uid://bo2t6guj8xpte" path="res://Scripts/fade.gd" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dxo3rol38ldcu" path="res://music.tscn" id="4_n45e2"]
@@ -132,6 +133,8 @@ size_flags_vertical = 3
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_ce3w2")
+
+[node name="Level Select" parent="CanvasLayer" unique_id=18226342 instance=ExtResource("2_n45e2")]
 
 [node name="Menu Moon" type="Node2D" parent="." unique_id=25580932]
 script = ExtResource("2_1ehe0")

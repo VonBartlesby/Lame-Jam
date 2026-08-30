@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ccdbblg887ihv"]
+
+[ext_resource type="Script" uid="uid://bklcjr02cx4ig" path="res://Scenes/level_select_button.gd" id="1_n4isp"]
+
+[sub_resource type="Gradient" id="Gradient_ce3w2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hj4l2"]
+gradient = SubResource("Gradient_ce3w2")
+
+[node name="Button" type="Button" unique_id=1036696773]
+custom_minimum_size = Vector2(0, 117.33)
+text = "Level 1"
+icon = SubResource("GradientTexture2D_hj4l2")
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("1_n4isp")
