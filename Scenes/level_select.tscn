@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c34m7kn06ybfd"]
 
-[ext_resource type="Script" uid="uid://65yiselmvj8g" path="res://Scripts/level_select_grid_container.gd" id="1_1fiak"]
+[ext_resource type="Script" uid="uid://blnsx101emode" path="res://Scripts/level_select_grid_container.gd" id="1_1fiak"]
+[ext_resource type="Theme" uid="uid://c7iw7wjbt70ov" path="res://Textures/Game Theme.tres" id="1_nkys2"]
 
 [node name="Level Select" type="ScrollContainer" unique_id=18226342]
 custom_minimum_size = Vector2(0, 300)
@@ -12,5 +13,8 @@ horizontal_scroll_mode = 0
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=723153507]
 layout_mode = 2
+theme = ExtResource("1_nkys2")
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
 columns = 4
 script = ExtResource("1_1fiak")

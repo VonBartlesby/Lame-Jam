@@ -180,6 +180,8 @@ frequency = 0.0027
 fractal_lacunarity = 1.875
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8n4m7"]
+width = 1920
+height = 1080
 generate_mipmaps = false
 noise = SubResource("FastNoiseLite_7p2hp")
 color_ramp = SubResource("Gradient_5x04l")
@@ -382,6 +384,8 @@ ball = NodePath("../Our Moon")
 layer = -100
 
 [node name="Sprite2D" type="TextureRect" parent="CanvasLayer" unique_id=1032879341]
+offset_right = 1468.0
+offset_bottom = 783.0
 texture = SubResource("NoiseTexture2D_8n4m7")
 script = ExtResource("7_b5fhv")
 parallax = 0.04
@@ -416,6 +420,7 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme = ExtResource("27_5x04l")
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "100%"
 
@@ -431,6 +436,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("27_5x04l")
 
 [node name="Next Level" type="Button" parent="Ui Controller" unique_id=886523474]
 visible = false
