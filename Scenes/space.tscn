@@ -346,6 +346,7 @@ scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_eyabf")
 
 [node name="charge" type="Line2D" parent="Our Moon" unique_id=630035308]
+visible = false
 points = PackedVector2Array(0, 0, 945.54846, 846.45166)
 width = 200.0
 width_curve = SubResource("Curve_htfm3")

@@ -56,6 +56,7 @@ func _unhandled_input(event):
 			
 			
 		elif mouseDown && event.button_index == MOUSE_BUTTON_LEFT:
+			print("let go")
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			moon.shootable = false
 			moon.started = true
@@ -71,8 +72,10 @@ func _unhandled_input(event):
 	elif event is InputEventMouseMotion:
 		mouseCurrentPosition -= (event.screen_relative * 0.8)
 		
-		charge.set_point_position(1,-mouseCurrentPosition )
+		charge.set_point_position(1,-mouseCurrentPosition.normalized() * magnituge)
+		
 		if mouseDown:
+			Input.warp_mouse(-mouseCurrentPosition.normalized() * magnituge)
 			line_2d.clear_points()
 			charge.visible = false
 			var points = path_finder.launch(moon_launch_velocity)
