@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b3ykdurmykata"]
+
+[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_xq0e5"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_6grq2"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Label" type="Label" parent="." unique_id=2116998295]
+visible = false
+offset_left = 824.0
+offset_top = 209.0
+offset_right = 998.0
+offset_bottom = 362.0
+text = "Satellites can orbit planets.
+
+Be careful, if you crash into a planet you will have to reset"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1913309939]
+offset_left = 57.0
+offset_top = 301.0
+offset_right = 231.0
+offset_bottom = 454.0
+text = "Bigger planets have a larger gravitational pull"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_xq0e5")]
+position = Vector2(709, 764)
+scale = Vector2(2, 2)
+size = 2.0
+
+[node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("1_xq0e5")]
+position = Vector2(442, 359)
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
+
+[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_6grq2")]
+position = Vector2(807, 541)
+scale = Vector2(3, 3)
+stationary = true
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(140.00006, 551)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0

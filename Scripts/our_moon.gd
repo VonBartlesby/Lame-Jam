@@ -11,6 +11,7 @@ extends Area2D
 
 
 @onready var ui_controller: UiController = $"../Ui Controller"
+@onready var trail: GPUParticles2D = $GPUParticles2D
 
 @onready var rings: CPUParticles2D = $Explosion/Rings
 @onready var particles: CPUParticles2D = $Explosion/Particles
@@ -109,6 +110,8 @@ func _reset() -> void:
 	shootable = true
 	started = false
 	charge = 100
+	trail.restart()
+	
 
 func set_charge_text():
 	charge_percentage = charge/max_charge*100

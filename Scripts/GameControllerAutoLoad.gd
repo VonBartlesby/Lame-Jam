@@ -1,10 +1,12 @@
 extends Node
 
 var satellites : Array[Satellite]
-var level_index : int = 0
+var level_index : int = 3
 var levels : Array[String] = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",
+	"res://Scenes/Levels/level_3.tscn",
+	"res://Scenes/Levels/level_4.tscn",
 	
 	"res://Scenes/level_test.tscn",]
 var current_level : Node2D = null

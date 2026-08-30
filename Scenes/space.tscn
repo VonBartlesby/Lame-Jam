@@ -189,7 +189,6 @@ centered = false
 scale = Vector2(0.2421875, 0.2421875)
 collision_mask = 6
 script = ExtResource("2_qtpbo")
-charge_speed = 100.0
 
 [node name="Input Hander" type="Node" parent="Our Moon" unique_id=1186404344 node_paths=PackedStringArray("camera")]
 script = ExtResource("3_qtpbo")
@@ -222,7 +221,7 @@ texture = ExtResource("3_ulv8f")
 
 [node name="Path Finder" type="Node2D" parent="Our Moon" unique_id=453992763]
 script = ExtResource("7_dhr8q")
-look_ahead_time = 3.0
+look_ahead_time = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Our Moon/Path Finder" unique_id=1821288481]
 visible = false

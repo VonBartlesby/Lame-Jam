@@ -5,10 +5,10 @@
 [node name="Level" type="Node2D" unique_id=1877995342]
 
 [node name="Label" type="Label" parent="." unique_id=548500809]
-offset_left = 407.0
-offset_top = 180.0
-offset_right = 620.0
-offset_bottom = 255.0
+offset_left = 138.0
+offset_top = -133.0
+offset_right = 351.0
+offset_bottom = 98.0
 text = "In this game your goal is to destroy satellites by hitting them
 
 
@@ -18,10 +18,9 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_7p6j4")]
-position = Vector2(744, 325.00003)
+position = Vector2(475.00003, 12.000061)
 scale = Vector2(4.37, 4.37)
 stationary = true
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
-position = Vector2(269, 313)
 gizmo_extents = 50.0
