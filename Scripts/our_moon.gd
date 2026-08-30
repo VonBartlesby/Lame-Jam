@@ -9,7 +9,7 @@ extends Area2D
 @export var charge_speed : float = 1.0
 @export var drift_off_timeout : float = 5
 
-@onready var start_point: Marker2D = $"../Start Point"
+
 @onready var ui_controller: UiController = $"../Ui Controller"
 
 @onready var rings: CPUParticles2D = $Explosion/Rings
@@ -29,12 +29,14 @@ var charge : float :
 			shootable = true
 
 var charge_percentage : float
+var start_point : Marker2D
 const CHARGE_SPEED_BASE = 0.01
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connect("area_entered",_on_area_entered)
 	SignalHandler.reset.connect(_reset)
+	SignalHandler.level_loaded.connect(_on_level_load)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -101,7 +103,8 @@ func spaghettification() -> void:
 func _reset() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	velocity = Vector2.ZERO
-	global_position = start_point.global_position
+	if not start_point == null:
+		global_position = start_point.global_position
 	shootable = true
 	started = false
 	charge = 100
@@ -109,3 +112,7 @@ func _reset() -> void:
 func set_charge_text():
 	charge_percentage = charge/max_charge*100
 	ui_controller.set_charge_text(charge_percentage)
+
+func _on_level_load() -> void:
+	start_point = $"..".get_child(-1).get_child(-1)
+	_reset()

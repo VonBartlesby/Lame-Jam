@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ck0v5h08xm645"]
+
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="1_7qxk6"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(269, 313)
+gizmo_extents = 50.0
+
+[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("1_7qxk6")]
+position = Vector2(861, 336)
+scale = Vector2(4.37, 4.37)
+stationary = true

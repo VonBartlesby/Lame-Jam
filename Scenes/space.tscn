@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dyyslt200puif"]
 
+[ext_resource type="Script" uid="uid://o76qfiiv81vk" path="res://Scripts/space.gd" id="1_yq4q2"]
 [ext_resource type="Script" uid="uid://cseoxmv43kykj" path="res://Scripts/our_moon.gd" id="2_qtpbo"]
 [ext_resource type="Script" uid="uid://b8fjk6hritoqp" path="res://Scripts/input_hander.gd" id="3_qtpbo"]
 [ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="3_ulv8f"]
@@ -21,13 +22,10 @@
 [ext_resource type="Material" uid="uid://dshr5ofmyuo15" path="res://materials/heat_rim.tres" id="11_htfm3"]
 [ext_resource type="AudioStream" uid="uid://o00th32ykq0g" path="res://sound/bounce1.wav" id="11_y7rfp"]
 [ext_resource type="Script" uid="uid://qh5lfna08nbi" path="res://Scripts/ui_controller.gd" id="13_7ltla"]
-[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="13_betvx"]
 [ext_resource type="AudioStream" uid="uid://fls1w8rwtydj" path="res://sound/impact1.wav" id="15_m37bs"]
 [ext_resource type="AudioStream" uid="uid://cbm20ktvy3wem" path="res://sound/woosh_rumble.wav" id="16_htfm3"]
 [ext_resource type="AudioStream" uid="uid://8xse8xg5l7lh" path="res://sound/launch.wav" id="17_bpkbg"]
 [ext_resource type="AudioStream" uid="uid://s0dofdet5an4" path="res://sound/blackhole.wav" id="21_5x04l"]
-[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="22_m37bs"]
-[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="23_bpkbg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 78.59
@@ -163,6 +161,7 @@ noise = SubResource("FastNoiseLite_nryri")
 color_ramp = SubResource("Gradient_l12om")
 
 [node name="Space" type="Node2D" unique_id=1292661137]
+script = ExtResource("1_yq4q2")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1673503574]
 scroll_scale = Vector2(0.055, 0.055)
@@ -366,45 +365,36 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "100%"
 
+[node name="Middle Text" type="Label" parent="Ui Controller" unique_id=372664217]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Next Level" type="Button" parent="Ui Controller" unique_id=886523474]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 65.0
+offset_right = 45.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next Level
+"
+
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=576034738 node_paths=PackedStringArray("ball")]
 position_smoothing_enabled = true
 script = ExtResource("6_w5eul")
 ball = NodePath("../Our Moon")
-
-[node name="Start Point" type="Marker2D" parent="." unique_id=366558031]
-position = Vector2(447, 357)
-gizmo_extents = 50.0
-
-[node name="Masses" type="Node2D" parent="." unique_id=1161130699]
-
-[node name="Planet" parent="Masses" unique_id=1221522964 instance=ExtResource("13_betvx")]
-position = Vector2(1367, 261)
-scale = Vector2(2, 2)
-size = 2.0
-debug = true
-
-[node name="Satellite" parent="Masses/Planet" unique_id=1404198482 instance=ExtResource("23_bpkbg")]
-metadata/_edit_lock_ = true
-
-[node name="Planet2" parent="Masses" unique_id=1399453171 instance=ExtResource("13_betvx")]
-position = Vector2(662, 164)
-
-[node name="Planet3" parent="Masses" unique_id=774382330 instance=ExtResource("13_betvx")]
-position = Vector2(1538, 1316)
-scale = Vector2(10, 10)
-size = 10.0
-debug = true
-
-[node name="Satellite" parent="Masses/Planet3" unique_id=1123598587 instance=ExtResource("23_bpkbg")]
-orbit_offset = 50
-orbit_speed = 0.19999999999999996
-
-[node name="Satellite2" parent="Masses/Planet3" unique_id=562062103 instance=ExtResource("23_bpkbg")]
-orbit_offset = 70
-orbit_speed = -0.30000000000000004
-
-[node name="Black Hole" parent="Masses" unique_id=342033505 instance=ExtResource("22_m37bs")]
-position = Vector2(214, 316)
-scale = Vector2(2, 2)
-size = 2.0
-debug = true
