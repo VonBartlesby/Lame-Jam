@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 
 
 func fucking_die() -> void:
+	SignalHandler.emit_signal("destroy_satellite")
 	sprite_2d.visible = false
 	set_process(false)
 	dead = true

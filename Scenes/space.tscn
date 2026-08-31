@@ -383,6 +383,8 @@ default_color = Color(1, 1, 0, 1)
 gradient = SubResource("Gradient_7p2hp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293050878 node_paths=PackedStringArray("ball")]
+offset = Vector2(112.02, 10.51)
+ignore_rotation = false
 position_smoothing_enabled = true
 script = ExtResource("6_w5eul")
 ball = NodePath("../Our Moon")
