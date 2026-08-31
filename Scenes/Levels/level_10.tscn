@@ -2,35 +2,629 @@
 
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="1_8ihbw"]
 [ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="1_m1tcw"]
-[ext_resource type="Script" uid="uid://5a63qbete16n" path="res://Scenes/asteroid_belt.gd" id="3_icg2m"]
+[ext_resource type="PackedScene" uid="uid://c3tnp3dhi7dno" path="res://Scenes/asteroid.tscn" id="4_icg2m"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
 [node name="Label" type="Label" parent="." unique_id=548500809]
-offset_left = 928.0
-offset_top = 420.0
-offset_right = 1141.0
-offset_bottom = 651.0
+offset_left = 945.0
+offset_top = 408.0
+offset_right = 1158.0
+offset_bottom = 639.0
 text = "The asteroids will slow you down"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="AsteroidBelt" type="Node2D" parent="." unique_id=749937782]
+position = Vector2(599, 305)
+
+[node name="Asteroid" parent="AsteroidBelt" unique_id=1404198482 instance=ExtResource("4_icg2m")]
+position = Vector2(254.342, -121.364685)
+
+[node name="@Area2D@49235" parent="AsteroidBelt" unique_id=76961710 instance=ExtResource("4_icg2m")]
+position = Vector2(104.42825, -179.20149)
+
+[node name="@Area2D@49236" parent="AsteroidBelt" unique_id=269829368 instance=ExtResource("4_icg2m")]
+position = Vector2(371.23123, 134.29051)
+
+[node name="@Area2D@49237" parent="AsteroidBelt" unique_id=300858427 instance=ExtResource("4_icg2m")]
+position = Vector2(373.50885, -160.50737)
+
+[node name="@Area2D@49238" parent="AsteroidBelt" unique_id=136776832 instance=ExtResource("4_icg2m")]
+position = Vector2(251.54478, -73.70396)
+
+[node name="@Area2D@49239" parent="AsteroidBelt" unique_id=652973957 instance=ExtResource("4_icg2m")]
+position = Vector2(282.64865, -9.356647)
+
+[node name="@Area2D@49240" parent="AsteroidBelt" unique_id=1345667393 instance=ExtResource("4_icg2m")]
+position = Vector2(316.14856, 307.38278)
+
+[node name="@Area2D@49241" parent="AsteroidBelt" unique_id=1809422400 instance=ExtResource("4_icg2m")]
+position = Vector2(-180.34311, 317.77594)
+
+[node name="@Area2D@49242" parent="AsteroidBelt" unique_id=1264850836 instance=ExtResource("4_icg2m")]
+position = Vector2(230.88475, 114.43024)
+
+[node name="@Area2D@49243" parent="AsteroidBelt" unique_id=1728788297 instance=ExtResource("4_icg2m")]
+position = Vector2(231.89063, 7.14726)
+
+[node name="@Area2D@49244" parent="AsteroidBelt" unique_id=142878046 instance=ExtResource("4_icg2m")]
+position = Vector2(314.06436, -201.22046)
+
+[node name="@Area2D@49245" parent="AsteroidBelt" unique_id=1855223587 instance=ExtResource("4_icg2m")]
+position = Vector2(111.2863, 196.84998)
+
+[node name="@Area2D@49246" parent="AsteroidBelt" unique_id=983341371 instance=ExtResource("4_icg2m")]
+position = Vector2(199.53671, -138.67708)
+
+[node name="@Area2D@49247" parent="AsteroidBelt" unique_id=1268772212 instance=ExtResource("4_icg2m")]
+position = Vector2(-30.728104, 20.5103)
+
+[node name="@Area2D@49248" parent="AsteroidBelt" unique_id=1724158208 instance=ExtResource("4_icg2m")]
+position = Vector2(-0.9516606, -35.03023)
+
+[node name="@Area2D@49249" parent="AsteroidBelt" unique_id=1828109338 instance=ExtResource("4_icg2m")]
+position = Vector2(-246.38911, 334.19174)
+
+[node name="@Area2D@49250" parent="AsteroidBelt" unique_id=1067902867 instance=ExtResource("4_icg2m")]
+position = Vector2(298.25085, 84.99033)
+
+[node name="@Area2D@49251" parent="AsteroidBelt" unique_id=654072052 instance=ExtResource("4_icg2m")]
+position = Vector2(124.18121, -402.29642)
+
+[node name="@Area2D@49252" parent="AsteroidBelt" unique_id=1132727005 instance=ExtResource("4_icg2m")]
+position = Vector2(15.232131, 94.42403)
+
+[node name="@Area2D@49253" parent="AsteroidBelt" unique_id=909842785 instance=ExtResource("4_icg2m")]
+position = Vector2(-55.201862, 24.606438)
+
+[node name="@Area2D@49254" parent="AsteroidBelt" unique_id=1839879452 instance=ExtResource("4_icg2m")]
+position = Vector2(20.525995, -128.12384)
+
+[node name="@Area2D@49255" parent="AsteroidBelt" unique_id=697424081 instance=ExtResource("4_icg2m")]
+position = Vector2(121.05234, -419.072)
+
+[node name="@Area2D@49256" parent="AsteroidBelt" unique_id=500482983 instance=ExtResource("4_icg2m")]
+position = Vector2(109.82929, -47.734013)
+
+[node name="@Area2D@49257" parent="AsteroidBelt" unique_id=806015002 instance=ExtResource("4_icg2m")]
+position = Vector2(66.15096, 17.608284)
+
+[node name="@Area2D@49258" parent="AsteroidBelt" unique_id=454042653 instance=ExtResource("4_icg2m")]
+position = Vector2(-144.86246, -33.0933)
+
+[node name="@Area2D@49259" parent="AsteroidBelt" unique_id=621797493 instance=ExtResource("4_icg2m")]
+position = Vector2(-246.61263, -104.039986)
+
+[node name="@Area2D@49260" parent="AsteroidBelt" unique_id=2126500566 instance=ExtResource("4_icg2m")]
+position = Vector2(252.57121, 187.9098)
+
+[node name="@Area2D@49261" parent="AsteroidBelt" unique_id=378759466 instance=ExtResource("4_icg2m")]
+position = Vector2(65.51603, 212.70758)
+
+[node name="@Area2D@49262" parent="AsteroidBelt" unique_id=1886808300 instance=ExtResource("4_icg2m")]
+position = Vector2(-229.66379, 13.186023)
+
+[node name="@Area2D@49263" parent="AsteroidBelt" unique_id=938355504 instance=ExtResource("4_icg2m")]
+position = Vector2(-115.34954, -201.34015)
+
+[node name="@Area2D@49264" parent="AsteroidBelt" unique_id=802715583 instance=ExtResource("4_icg2m")]
+position = Vector2(-14.987501, 18.625143)
+
+[node name="@Area2D@49265" parent="AsteroidBelt" unique_id=1458995882 instance=ExtResource("4_icg2m")]
+position = Vector2(224.02411, -183.34018)
+
+[node name="@Area2D@49266" parent="AsteroidBelt" unique_id=1774903902 instance=ExtResource("4_icg2m")]
+position = Vector2(-36.33836, -34.889103)
+
+[node name="@Area2D@49267" parent="AsteroidBelt" unique_id=790972007 instance=ExtResource("4_icg2m")]
+position = Vector2(-131.54044, -178.73547)
+
+[node name="@Area2D@49268" parent="AsteroidBelt" unique_id=411883831 instance=ExtResource("4_icg2m")]
+position = Vector2(6.0964913, 42.447247)
+
+[node name="@Area2D@49269" parent="AsteroidBelt" unique_id=1935359605 instance=ExtResource("4_icg2m")]
+position = Vector2(-40.6968, 35.828472)
+
+[node name="@Area2D@49270" parent="AsteroidBelt" unique_id=1122582328 instance=ExtResource("4_icg2m")]
+position = Vector2(-287.36288, -76.01134)
+
+[node name="@Area2D@49271" parent="AsteroidBelt" unique_id=1348503122 instance=ExtResource("4_icg2m")]
+position = Vector2(86.7439, 20.129105)
+
+[node name="@Area2D@49272" parent="AsteroidBelt" unique_id=15455509 instance=ExtResource("4_icg2m")]
+position = Vector2(135.69206, -52.688797)
+
+[node name="@Area2D@49273" parent="AsteroidBelt" unique_id=937326630 instance=ExtResource("4_icg2m")]
+position = Vector2(69.24433, -148.61151)
+
+[node name="@Area2D@49274" parent="AsteroidBelt" unique_id=1518784229 instance=ExtResource("4_icg2m")]
+position = Vector2(-150.98862, -86.96484)
+
+[node name="@Area2D@49275" parent="AsteroidBelt" unique_id=717656381 instance=ExtResource("4_icg2m")]
+position = Vector2(-114.17219, -380.2249)
+
+[node name="@Area2D@49276" parent="AsteroidBelt" unique_id=594039446 instance=ExtResource("4_icg2m")]
+position = Vector2(118.917946, 389.80682)
+
+[node name="@Area2D@49277" parent="AsteroidBelt" unique_id=457916953 instance=ExtResource("4_icg2m")]
+position = Vector2(305.93573, -319.7099)
+
+[node name="@Area2D@49278" parent="AsteroidBelt" unique_id=7379571 instance=ExtResource("4_icg2m")]
+position = Vector2(16.39485, 264.37497)
+
+[node name="@Area2D@49279" parent="AsteroidBelt" unique_id=906222730 instance=ExtResource("4_icg2m")]
+position = Vector2(251.72961, -181.00475)
+
+[node name="@Area2D@49280" parent="AsteroidBelt" unique_id=2006869509 instance=ExtResource("4_icg2m")]
+position = Vector2(279.81998, 106.79299)
+
+[node name="@Area2D@49281" parent="AsteroidBelt" unique_id=2081370112 instance=ExtResource("4_icg2m")]
+position = Vector2(165.37157, -92.82904)
+
+[node name="@Area2D@49282" parent="AsteroidBelt" unique_id=665279963 instance=ExtResource("4_icg2m")]
+position = Vector2(107.863304, -218.89296)
+
+[node name="@Area2D@49283" parent="AsteroidBelt" unique_id=1796126356 instance=ExtResource("4_icg2m")]
+position = Vector2(198.80582, 86.30088)
+
+[node name="@Area2D@49284" parent="AsteroidBelt" unique_id=1319831303 instance=ExtResource("4_icg2m")]
+position = Vector2(-25.213799, 295.6354)
+
+[node name="@Area2D@49285" parent="AsteroidBelt" unique_id=1761616505 instance=ExtResource("4_icg2m")]
+position = Vector2(113.1921, 85.7632)
+
+[node name="@Area2D@49286" parent="AsteroidBelt" unique_id=2108065753 instance=ExtResource("4_icg2m")]
+position = Vector2(-41.521095, -18.978714)
+
+[node name="@Area2D@49287" parent="AsteroidBelt" unique_id=1172713988 instance=ExtResource("4_icg2m")]
+position = Vector2(242.14, 347.29938)
+
+[node name="@Area2D@49288" parent="AsteroidBelt" unique_id=1229439608 instance=ExtResource("4_icg2m")]
+position = Vector2(-49.370567, -148.66014)
+
+[node name="@Area2D@49289" parent="AsteroidBelt" unique_id=494202303 instance=ExtResource("4_icg2m")]
+position = Vector2(-211.05191, 243.97258)
+
+[node name="@Area2D@49290" parent="AsteroidBelt" unique_id=895215766 instance=ExtResource("4_icg2m")]
+position = Vector2(24.250843, -250.15056)
+
+[node name="@Area2D@49291" parent="AsteroidBelt" unique_id=358298002 instance=ExtResource("4_icg2m")]
+position = Vector2(65.04727, 145.6575)
+
+[node name="@Area2D@49292" parent="AsteroidBelt" unique_id=395430544 instance=ExtResource("4_icg2m")]
+position = Vector2(127.77766, -243.21265)
+
+[node name="@Area2D@49293" parent="AsteroidBelt" unique_id=911165208 instance=ExtResource("4_icg2m")]
+position = Vector2(-215.7103, -161.19969)
+
+[node name="@Area2D@49294" parent="AsteroidBelt" unique_id=1326207056 instance=ExtResource("4_icg2m")]
+position = Vector2(-119.450325, -167.85284)
+
+[node name="@Area2D@49295" parent="AsteroidBelt" unique_id=1687729750 instance=ExtResource("4_icg2m")]
+position = Vector2(301.78714, 113.75173)
+
+[node name="@Area2D@49296" parent="AsteroidBelt" unique_id=1316974016 instance=ExtResource("4_icg2m")]
+position = Vector2(211.76616, 351.69653)
+
+[node name="@Area2D@49297" parent="AsteroidBelt" unique_id=324695967 instance=ExtResource("4_icg2m")]
+position = Vector2(-90.49038, 187.24702)
+
+[node name="@Area2D@49298" parent="AsteroidBelt" unique_id=885441034 instance=ExtResource("4_icg2m")]
+position = Vector2(-153.12846, 115.393234)
+
+[node name="@Area2D@49299" parent="AsteroidBelt" unique_id=235479774 instance=ExtResource("4_icg2m")]
+position = Vector2(132.42839, -348.72385)
+
+[node name="@Area2D@49300" parent="AsteroidBelt" unique_id=921565789 instance=ExtResource("4_icg2m")]
+position = Vector2(262.51254, -344.8648)
+
+[node name="@Area2D@49301" parent="AsteroidBelt" unique_id=306725962 instance=ExtResource("4_icg2m")]
+position = Vector2(296.45078, -273.1268)
+
+[node name="@Area2D@49302" parent="AsteroidBelt" unique_id=254297777 instance=ExtResource("4_icg2m")]
+position = Vector2(233.86633, 219.72241)
+
+[node name="@Area2D@49303" parent="AsteroidBelt" unique_id=69058640 instance=ExtResource("4_icg2m")]
+position = Vector2(123.76025, -143.22954)
+
+[node name="@Area2D@49304" parent="AsteroidBelt" unique_id=1751519307 instance=ExtResource("4_icg2m")]
+position = Vector2(-381.11325, 102.86919)
+
+[node name="@Area2D@49305" parent="AsteroidBelt" unique_id=301752312 instance=ExtResource("4_icg2m")]
+position = Vector2(87.16971, 230.69768)
+
+[node name="@Area2D@49306" parent="AsteroidBelt" unique_id=1412912557 instance=ExtResource("4_icg2m")]
+position = Vector2(46.978466, -386.3834)
+
+[node name="@Area2D@49307" parent="AsteroidBelt" unique_id=1155766019 instance=ExtResource("4_icg2m")]
+position = Vector2(93.49076, 137.10478)
+
+[node name="@Area2D@49308" parent="AsteroidBelt" unique_id=1589734972 instance=ExtResource("4_icg2m")]
+position = Vector2(-142.55278, -308.0536)
+
+[node name="@Area2D@49309" parent="AsteroidBelt" unique_id=466874227 instance=ExtResource("4_icg2m")]
+position = Vector2(-184.20197, -151.78842)
+
+[node name="@Area2D@49310" parent="AsteroidBelt" unique_id=1152056996 instance=ExtResource("4_icg2m")]
+position = Vector2(216.52377, -240.96336)
+
+[node name="@Area2D@49311" parent="AsteroidBelt" unique_id=997771494 instance=ExtResource("4_icg2m")]
+position = Vector2(143.22505, 23.122107)
+
+[node name="@Area2D@49312" parent="AsteroidBelt" unique_id=245167545 instance=ExtResource("4_icg2m")]
+position = Vector2(-47.510654, 418.80795)
+
+[node name="@Area2D@49313" parent="AsteroidBelt" unique_id=2011930787 instance=ExtResource("4_icg2m")]
+position = Vector2(-340.4286, 235.53299)
+
+[node name="@Area2D@49314" parent="AsteroidBelt" unique_id=1146470465 instance=ExtResource("4_icg2m")]
+position = Vector2(139.27162, 0.33222392)
+
+[node name="@Area2D@49315" parent="AsteroidBelt" unique_id=1112790916 instance=ExtResource("4_icg2m")]
+position = Vector2(-40.066284, -41.824257)
+
+[node name="@Area2D@49316" parent="AsteroidBelt" unique_id=1928191383 instance=ExtResource("4_icg2m")]
+position = Vector2(-167.71045, -1.3299131)
+
+[node name="@Area2D@49317" parent="AsteroidBelt" unique_id=1260552844 instance=ExtResource("4_icg2m")]
+position = Vector2(-311.05396, -222.50372)
+
+[node name="@Area2D@49318" parent="AsteroidBelt" unique_id=1382097535 instance=ExtResource("4_icg2m")]
+position = Vector2(-256.18918, 171.1128)
+
+[node name="@Area2D@49319" parent="AsteroidBelt" unique_id=1368489900 instance=ExtResource("4_icg2m")]
+position = Vector2(69.42218, 249.18456)
+
+[node name="@Area2D@49320" parent="AsteroidBelt" unique_id=1818852738 instance=ExtResource("4_icg2m")]
+position = Vector2(199.93854, 18.416834)
+
+[node name="@Area2D@49321" parent="AsteroidBelt" unique_id=644303939 instance=ExtResource("4_icg2m")]
+position = Vector2(-359.9186, 13.497625)
+
+[node name="@Area2D@49322" parent="AsteroidBelt" unique_id=715593975 instance=ExtResource("4_icg2m")]
+position = Vector2(-173.06725, -205.94467)
+
+[node name="@Area2D@49323" parent="AsteroidBelt" unique_id=1954398896 instance=ExtResource("4_icg2m")]
+position = Vector2(-294.2979, 282.09286)
+
+[node name="@Area2D@49324" parent="AsteroidBelt" unique_id=120883905 instance=ExtResource("4_icg2m")]
+position = Vector2(152.60895, -227.41277)
+
+[node name="@Area2D@49325" parent="AsteroidBelt" unique_id=353520878 instance=ExtResource("4_icg2m")]
+position = Vector2(86.11777, 11.424755)
+
+[node name="@Area2D@49326" parent="AsteroidBelt" unique_id=1830764373 instance=ExtResource("4_icg2m")]
+position = Vector2(119.95344, 119.96616)
+
+[node name="@Area2D@49327" parent="AsteroidBelt" unique_id=350648287 instance=ExtResource("4_icg2m")]
+position = Vector2(-56.63882, 168.20604)
+
+[node name="@Area2D@49328" parent="AsteroidBelt" unique_id=751775154 instance=ExtResource("4_icg2m")]
+position = Vector2(320.91403, 27.864271)
+
+[node name="@Area2D@49329" parent="AsteroidBelt" unique_id=336651694 instance=ExtResource("4_icg2m")]
+position = Vector2(81.942055, 251.11038)
+
+[node name="@Area2D@49330" parent="AsteroidBelt" unique_id=2018056498 instance=ExtResource("4_icg2m")]
+position = Vector2(141.69739, 178.18317)
+
+[node name="@Area2D@49331" parent="AsteroidBelt" unique_id=1295441290 instance=ExtResource("4_icg2m")]
+position = Vector2(-260.18414, -265.34384)
+
+[node name="@Area2D@49332" parent="AsteroidBelt" unique_id=2003309425 instance=ExtResource("4_icg2m")]
+position = Vector2(357.66913, -99.247444)
+
+[node name="@Area2D@49333" parent="AsteroidBelt" unique_id=641218599 instance=ExtResource("4_icg2m")]
+position = Vector2(-42.04283, -437.46707)
+
+[node name="@Area2D@49334" parent="AsteroidBelt" unique_id=601506311 instance=ExtResource("4_icg2m")]
+position = Vector2(-183.88979, -262.67896)
+
+[node name="@Area2D@49335" parent="AsteroidBelt" unique_id=2026936664 instance=ExtResource("4_icg2m")]
+position = Vector2(-31.216793, -10.099292)
+
+[node name="@Area2D@49336" parent="AsteroidBelt" unique_id=63192142 instance=ExtResource("4_icg2m")]
+position = Vector2(-233.1931, -263.9147)
+
+[node name="@Area2D@49337" parent="AsteroidBelt" unique_id=1583530995 instance=ExtResource("4_icg2m")]
+position = Vector2(240.46416, -60.047714)
+
+[node name="@Area2D@49338" parent="AsteroidBelt" unique_id=759142251 instance=ExtResource("4_icg2m")]
+position = Vector2(59.6637, 365.51965)
+
+[node name="@Area2D@49339" parent="AsteroidBelt" unique_id=54502877 instance=ExtResource("4_icg2m")]
+position = Vector2(-277.58978, 95.82054)
+
+[node name="@Area2D@49340" parent="AsteroidBelt" unique_id=970848210 instance=ExtResource("4_icg2m")]
+position = Vector2(-223.30064, 132.52216)
+
+[node name="@Area2D@49341" parent="AsteroidBelt" unique_id=551625393 instance=ExtResource("4_icg2m")]
+position = Vector2(-19.937805, 190.55307)
+
+[node name="@Area2D@49342" parent="AsteroidBelt" unique_id=180491742 instance=ExtResource("4_icg2m")]
+position = Vector2(-16.609436, 62.502876)
+
+[node name="@Area2D@49343" parent="AsteroidBelt" unique_id=1722716147 instance=ExtResource("4_icg2m")]
+position = Vector2(305.78387, -205.44157)
+
+[node name="@Area2D@49344" parent="AsteroidBelt" unique_id=1419389250 instance=ExtResource("4_icg2m")]
+position = Vector2(-373.22452, 121.84703)
+
+[node name="@Area2D@49345" parent="AsteroidBelt" unique_id=2122125916 instance=ExtResource("4_icg2m")]
+position = Vector2(63.867107, 259.79437)
+
+[node name="@Area2D@49346" parent="AsteroidBelt" unique_id=1364905861 instance=ExtResource("4_icg2m")]
+position = Vector2(-36.119358, 428.5117)
+
+[node name="@Area2D@49347" parent="AsteroidBelt" unique_id=1603961576 instance=ExtResource("4_icg2m")]
+position = Vector2(82.477684, -23.006107)
+
+[node name="@Area2D@49348" parent="AsteroidBelt" unique_id=1959177655 instance=ExtResource("4_icg2m")]
+position = Vector2(-234.63457, 195.99525)
+
+[node name="@Area2D@49349" parent="AsteroidBelt" unique_id=412277400 instance=ExtResource("4_icg2m")]
+position = Vector2(-110.68628, 89.07917)
+
+[node name="@Area2D@49350" parent="AsteroidBelt" unique_id=1628659807 instance=ExtResource("4_icg2m")]
+position = Vector2(-168.24745, -125.19037)
+
+[node name="@Area2D@49351" parent="AsteroidBelt" unique_id=132745516 instance=ExtResource("4_icg2m")]
+position = Vector2(158.37527, 293.7059)
+
+[node name="@Area2D@49352" parent="AsteroidBelt" unique_id=1741082871 instance=ExtResource("4_icg2m")]
+position = Vector2(-255.42671, -79.58322)
+
+[node name="@Area2D@49353" parent="AsteroidBelt" unique_id=2112338827 instance=ExtResource("4_icg2m")]
+position = Vector2(-338.2141, 62.12781)
+
+[node name="@Area2D@49354" parent="AsteroidBelt" unique_id=322568423 instance=ExtResource("4_icg2m")]
+position = Vector2(-297.30695, 211.40813)
+
+[node name="@Area2D@49355" parent="AsteroidBelt" unique_id=446816893 instance=ExtResource("4_icg2m")]
+position = Vector2(-389.0844, -41.609318)
+
+[node name="@Area2D@49356" parent="AsteroidBelt" unique_id=1118331036 instance=ExtResource("4_icg2m")]
+position = Vector2(0.65282154, -0.079947926)
+
+[node name="@Area2D@49357" parent="AsteroidBelt" unique_id=1704515694 instance=ExtResource("4_icg2m")]
+position = Vector2(170.23137, 201.81839)
+
+[node name="@Area2D@49358" parent="AsteroidBelt" unique_id=957997369 instance=ExtResource("4_icg2m")]
+position = Vector2(-39.347065, 5.9841166)
+
+[node name="@Area2D@49359" parent="AsteroidBelt" unique_id=402631630 instance=ExtResource("4_icg2m")]
+position = Vector2(12.226215, -30.761665)
+
+[node name="@Area2D@49360" parent="AsteroidBelt" unique_id=372749623 instance=ExtResource("4_icg2m")]
+position = Vector2(203.72675, 136.87329)
+
+[node name="@Area2D@49361" parent="AsteroidBelt" unique_id=1582401787 instance=ExtResource("4_icg2m")]
+position = Vector2(141.24272, 75.586105)
+
+[node name="@Area2D@49362" parent="AsteroidBelt" unique_id=1515563712 instance=ExtResource("4_icg2m")]
+position = Vector2(9.248604, 63.639915)
+
+[node name="@Area2D@49363" parent="AsteroidBelt" unique_id=905666557 instance=ExtResource("4_icg2m")]
+position = Vector2(-52.670586, -307.84787)
+
+[node name="@Area2D@49364" parent="AsteroidBelt" unique_id=1512991080 instance=ExtResource("4_icg2m")]
+position = Vector2(-195.34502, -38.529526)
+
+[node name="@Area2D@49365" parent="AsteroidBelt" unique_id=673612848 instance=ExtResource("4_icg2m")]
+position = Vector2(15.647629, -92.95018)
+
+[node name="@Area2D@49366" parent="AsteroidBelt" unique_id=249955876 instance=ExtResource("4_icg2m")]
+position = Vector2(33.6205, 285.04965)
+
+[node name="@Area2D@49367" parent="AsteroidBelt" unique_id=1675747533 instance=ExtResource("4_icg2m")]
+position = Vector2(-349.25696, -87.73606)
+
+[node name="@Area2D@49368" parent="AsteroidBelt" unique_id=671959740 instance=ExtResource("4_icg2m")]
+position = Vector2(229.58488, -98.79548)
+
+[node name="@Area2D@49369" parent="AsteroidBelt" unique_id=1745833589 instance=ExtResource("4_icg2m")]
+position = Vector2(-41.55302, -292.56665)
+
+[node name="@Area2D@49370" parent="AsteroidBelt" unique_id=1391851393 instance=ExtResource("4_icg2m")]
+position = Vector2(-189.02055, -357.82315)
+
+[node name="@Area2D@49371" parent="AsteroidBelt" unique_id=608984476 instance=ExtResource("4_icg2m")]
+position = Vector2(227.97362, -33.715878)
+
+[node name="@Area2D@49372" parent="AsteroidBelt" unique_id=246213548 instance=ExtResource("4_icg2m")]
+position = Vector2(331.0986, 161.5917)
+
+[node name="@Area2D@49373" parent="AsteroidBelt" unique_id=1921927205 instance=ExtResource("4_icg2m")]
+position = Vector2(201.25908, 8.012174)
+
+[node name="@Area2D@49374" parent="AsteroidBelt" unique_id=595511975 instance=ExtResource("4_icg2m")]
+position = Vector2(114.594986, -241.43842)
+
+[node name="@Area2D@49375" parent="AsteroidBelt" unique_id=1331491482 instance=ExtResource("4_icg2m")]
+position = Vector2(-66.845825, 27.224403)
+
+[node name="@Area2D@49376" parent="AsteroidBelt" unique_id=102967978 instance=ExtResource("4_icg2m")]
+position = Vector2(98.88398, 27.068666)
+
+[node name="@Area2D@49377" parent="AsteroidBelt" unique_id=1077890614 instance=ExtResource("4_icg2m")]
+position = Vector2(139.04562, 214.37541)
+
+[node name="@Area2D@49378" parent="AsteroidBelt" unique_id=640445198 instance=ExtResource("4_icg2m")]
+position = Vector2(120.67753, 169.33766)
+
+[node name="@Area2D@49379" parent="AsteroidBelt" unique_id=1594711104 instance=ExtResource("4_icg2m")]
+position = Vector2(75.12771, -107.20808)
+
+[node name="@Area2D@49380" parent="AsteroidBelt" unique_id=1893153546 instance=ExtResource("4_icg2m")]
+position = Vector2(43.695877, -7.8185377)
+
+[node name="@Area2D@49381" parent="AsteroidBelt" unique_id=1770059161 instance=ExtResource("4_icg2m")]
+position = Vector2(35.745056, 29.46293)
+
+[node name="@Area2D@49382" parent="AsteroidBelt" unique_id=820184394 instance=ExtResource("4_icg2m")]
+position = Vector2(164.29019, -10.349845)
+
+[node name="@Area2D@49383" parent="AsteroidBelt" unique_id=801582727 instance=ExtResource("4_icg2m")]
+position = Vector2(-69.38628, -7.527803)
+
+[node name="@Area2D@49384" parent="AsteroidBelt" unique_id=341054315 instance=ExtResource("4_icg2m")]
+position = Vector2(18.947666, -2.6526117)
+
+[node name="@Area2D@49385" parent="AsteroidBelt" unique_id=1953391607 instance=ExtResource("4_icg2m")]
+position = Vector2(-164.9073, -94.927185)
+
+[node name="@Area2D@49386" parent="AsteroidBelt" unique_id=1033979090 instance=ExtResource("4_icg2m")]
+position = Vector2(198.57036, 164.0556)
+
+[node name="@Area2D@49387" parent="AsteroidBelt" unique_id=140776341 instance=ExtResource("4_icg2m")]
+position = Vector2(-8.294105, -120.39629)
+
+[node name="@Area2D@49388" parent="AsteroidBelt" unique_id=176622820 instance=ExtResource("4_icg2m")]
+position = Vector2(68.34833, 36.794483)
+
+[node name="@Area2D@49389" parent="AsteroidBelt" unique_id=490122964 instance=ExtResource("4_icg2m")]
+position = Vector2(-149.6189, 181.50485)
+
+[node name="@Area2D@49390" parent="AsteroidBelt" unique_id=479495406 instance=ExtResource("4_icg2m")]
+position = Vector2(68.70891, -248.01494)
+
+[node name="@Area2D@49391" parent="AsteroidBelt" unique_id=476612365 instance=ExtResource("4_icg2m")]
+position = Vector2(-205.69203, 120.88466)
+
+[node name="@Area2D@49392" parent="AsteroidBelt" unique_id=203315986 instance=ExtResource("4_icg2m")]
+position = Vector2(432.00623, -28.246367)
+
+[node name="@Area2D@49393" parent="AsteroidBelt" unique_id=1032266539 instance=ExtResource("4_icg2m")]
+position = Vector2(51.114952, 23.622713)
+
+[node name="@Area2D@49394" parent="AsteroidBelt" unique_id=315154677 instance=ExtResource("4_icg2m")]
+position = Vector2(-43.87855, -120.35658)
+
+[node name="@Area2D@49395" parent="AsteroidBelt" unique_id=580424861 instance=ExtResource("4_icg2m")]
+position = Vector2(-69.46506, -354.20898)
+
+[node name="@Area2D@49396" parent="AsteroidBelt" unique_id=1842245083 instance=ExtResource("4_icg2m")]
+position = Vector2(87.46401, 150.60776)
+
+[node name="@Area2D@49397" parent="AsteroidBelt" unique_id=2107192182 instance=ExtResource("4_icg2m")]
+position = Vector2(357.65094, 172.46707)
+
+[node name="@Area2D@49398" parent="AsteroidBelt" unique_id=1315965763 instance=ExtResource("4_icg2m")]
+position = Vector2(-23.454775, -78.628815)
+
+[node name="@Area2D@49399" parent="AsteroidBelt" unique_id=1566424875 instance=ExtResource("4_icg2m")]
+position = Vector2(-114.41975, 239.6545)
+
+[node name="@Area2D@49400" parent="AsteroidBelt" unique_id=1346207442 instance=ExtResource("4_icg2m")]
+position = Vector2(87.81751, -110.88572)
+
+[node name="@Area2D@49401" parent="AsteroidBelt" unique_id=1770255153 instance=ExtResource("4_icg2m")]
+position = Vector2(437.1019, 25.44824)
+
+[node name="@Area2D@49402" parent="AsteroidBelt" unique_id=966476249 instance=ExtResource("4_icg2m")]
+position = Vector2(-41.909695, -161.74284)
+
+[node name="@Area2D@49403" parent="AsteroidBelt" unique_id=859582834 instance=ExtResource("4_icg2m")]
+position = Vector2(252.189, 37.477577)
+
+[node name="@Area2D@49404" parent="AsteroidBelt" unique_id=777140397 instance=ExtResource("4_icg2m")]
+position = Vector2(-172.63823, -112.2595)
+
+[node name="@Area2D@49405" parent="AsteroidBelt" unique_id=810485195 instance=ExtResource("4_icg2m")]
+position = Vector2(-75.167435, -108.17663)
+
+[node name="@Area2D@49406" parent="AsteroidBelt" unique_id=1483221205 instance=ExtResource("4_icg2m")]
+position = Vector2(216.8265, -330.98425)
+
+[node name="@Area2D@49407" parent="AsteroidBelt" unique_id=705913843 instance=ExtResource("4_icg2m")]
+position = Vector2(7.9991755, -406.63562)
+
+[node name="@Area2D@49408" parent="AsteroidBelt" unique_id=1321335641 instance=ExtResource("4_icg2m")]
+position = Vector2(-174.12425, 55.600307)
+
+[node name="@Area2D@49409" parent="AsteroidBelt" unique_id=1800154345 instance=ExtResource("4_icg2m")]
+position = Vector2(-214.93694, 144.30327)
+
+[node name="@Area2D@49410" parent="AsteroidBelt" unique_id=1994619319 instance=ExtResource("4_icg2m")]
+position = Vector2(-139.24153, 389.3156)
+
+[node name="@Area2D@49411" parent="AsteroidBelt" unique_id=1824443030 instance=ExtResource("4_icg2m")]
+position = Vector2(20.255066, 395.95834)
+
+[node name="@Area2D@49412" parent="AsteroidBelt" unique_id=141655048 instance=ExtResource("4_icg2m")]
+position = Vector2(-171.5277, -352.14465)
+
+[node name="@Area2D@49413" parent="AsteroidBelt" unique_id=880569737 instance=ExtResource("4_icg2m")]
+position = Vector2(266.82285, -157.44093)
+
+[node name="@Area2D@49414" parent="AsteroidBelt" unique_id=1801188140 instance=ExtResource("4_icg2m")]
+position = Vector2(-112.0226, 354.95667)
+
+[node name="@Area2D@49415" parent="AsteroidBelt" unique_id=1461293705 instance=ExtResource("4_icg2m")]
+position = Vector2(-151.48643, 371.41684)
+
+[node name="@Area2D@49416" parent="AsteroidBelt" unique_id=935962994 instance=ExtResource("4_icg2m")]
+position = Vector2(-336.33398, -3.1405337)
+
+[node name="@Area2D@49417" parent="AsteroidBelt" unique_id=75028933 instance=ExtResource("4_icg2m")]
+position = Vector2(-122.69406, -25.633812)
+
+[node name="@Area2D@49418" parent="AsteroidBelt" unique_id=956020620 instance=ExtResource("4_icg2m")]
+position = Vector2(-43.792767, 273.13654)
+
+[node name="@Area2D@49419" parent="AsteroidBelt" unique_id=558623329 instance=ExtResource("4_icg2m")]
+position = Vector2(32.372505, 437.37418)
+
+[node name="@Area2D@49420" parent="AsteroidBelt" unique_id=273996904 instance=ExtResource("4_icg2m")]
+position = Vector2(-137.37039, -250.02675)
+
+[node name="@Area2D@49421" parent="AsteroidBelt" unique_id=986495558 instance=ExtResource("4_icg2m")]
+position = Vector2(263.22256, 314.54422)
+
+[node name="@Area2D@49422" parent="AsteroidBelt" unique_id=471302450 instance=ExtResource("4_icg2m")]
+position = Vector2(21.880322, -137.67984)
+
+[node name="@Area2D@49423" parent="AsteroidBelt" unique_id=2137597639 instance=ExtResource("4_icg2m")]
+position = Vector2(-195.44223, 38.30164)
+
+[node name="@Area2D@49424" parent="AsteroidBelt" unique_id=2004446452 instance=ExtResource("4_icg2m")]
+position = Vector2(-284.9166, 74.004906)
+
+[node name="@Area2D@49425" parent="AsteroidBelt" unique_id=165360889 instance=ExtResource("4_icg2m")]
+position = Vector2(176.4672, 393.39435)
+
+[node name="@Area2D@49426" parent="AsteroidBelt" unique_id=1935699194 instance=ExtResource("4_icg2m")]
+position = Vector2(-1.6661097, 6.114719)
+
+[node name="@Area2D@49427" parent="AsteroidBelt" unique_id=810218162 instance=ExtResource("4_icg2m")]
+position = Vector2(37.977604, 50.0413)
+
+[node name="@Area2D@49428" parent="AsteroidBelt" unique_id=1069094291 instance=ExtResource("4_icg2m")]
+position = Vector2(-64.5178, -22.019545)
+
+[node name="@Area2D@49429" parent="AsteroidBelt" unique_id=1038105518 instance=ExtResource("4_icg2m")]
+position = Vector2(229.00006, -337.28723)
+
+[node name="@Area2D@49430" parent="AsteroidBelt" unique_id=2065821544 instance=ExtResource("4_icg2m")]
+position = Vector2(-281.02032, -303.42383)
+
+[node name="@Area2D@49431" parent="AsteroidBelt" unique_id=736558713 instance=ExtResource("4_icg2m")]
+position = Vector2(-171.96024, 27.055134)
+
+[node name="@Area2D@49432" parent="AsteroidBelt" unique_id=1530781746 instance=ExtResource("4_icg2m")]
+position = Vector2(-96.25277, -428.20676)
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
 position = Vector2(1117, 313)
 gizmo_extents = 50.0
 
-[node name="AsteroidBelt" type="Node2D" parent="." unique_id=749937782]
-position = Vector2(600, 307)
-script = ExtResource("3_icg2m")
-asteroid_amount = 250
-size = 500.0
-
 [node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_m1tcw")]
 position = Vector2(600, 306)
 debug = true
 
-[node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("1_8ihbw")]
-position = Vector2(-62.827026, 139.50543)
-rotation = 1.9939458
+[node name="Satellite" parent="Planet" unique_id=1923157735 instance=ExtResource("1_8ihbw")]
+position = Vector2(-59.424316, -140.98846)
+rotation = 4.3135004
 orbit_offset = 153
 orbit_speed = 1.0
