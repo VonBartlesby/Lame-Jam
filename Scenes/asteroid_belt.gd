@@ -6,7 +6,7 @@ extends Node2D
 
 
 
-@export_range(0,1000,0.1) var size : float = 50
+@export_range(0,100,0.1) var size : float = 50
 
 @export var reroll : bool = false
 @export var save : bool = false
