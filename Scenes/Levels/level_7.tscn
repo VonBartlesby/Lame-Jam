@@ -34,6 +34,10 @@ size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("2_10co4")]
+position = Vector2(-83.89091, -13.686333)
+rotation = 3.3033123
+orbit_offset = 85
+debug = true
 
 [node name="Planet2" parent="." unique_id=1823928759 instance=ExtResource("1_vb8ac")]
 position = Vector2(935.99994, 703.0001)
@@ -42,6 +46,11 @@ size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet2" unique_id=529104024 instance=ExtResource("2_10co4")]
+position = Vector2(56.34285, -56.793335)
+rotation = 3.3033123
+orbit_offset = 80
+start_rotation = 125.506
+debug = true
 
 [node name="Planet3" parent="." unique_id=713229174 instance=ExtResource("1_vb8ac")]
 position = Vector2(277.00003, 1203)
@@ -50,14 +59,23 @@ size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet3" unique_id=1451027612 instance=ExtResource("2_10co4")]
+position = Vector2(-94.747375, -15.457489)
+rotation = 3.3033123
+orbit_offset = 96
+debug = true
 
 [node name="Planet4" parent="." unique_id=335385685 instance=ExtResource("1_vb8ac")]
-position = Vector2(1165.0001, 1635)
+position = Vector2(836, 1632)
 scale = Vector2(4, 4)
 size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_10co4")]
+position = Vector2(81.77966, 57.55072)
+rotation = 3.1115756
+orbit_offset = 100
+start_rotation = 216.855
+debug = true
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
 position = Vector2(594, 141)
