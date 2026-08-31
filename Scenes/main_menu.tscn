@@ -68,7 +68,7 @@ offset_bottom = 108.0
 grow_horizontal = 2
 theme = ExtResource("2_opfnp")
 theme_override_font_sizes/font_size = 32
-text = "The quest to return it to the one place that hasn't been corrupted by capitalism"
+text = "A game about being a moon who hates satellites"
 horizontal_alignment = 1
 autowrap_mode = 2
 
