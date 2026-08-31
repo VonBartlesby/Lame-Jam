@@ -24,7 +24,6 @@ offsets = PackedFloat32Array(0, 0.16523606, 0.4613734, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.25, 0.25, 0.25, 1, 0.41, 0.41, 0.41, 0.60784316, 1, 0, 0, 0)
 
 [node name="Asteroid" type="Area2D" unique_id=1404198482]
-z_index = 1
 collision_layer = 16
 script = ExtResource("1_rvlwq")
 

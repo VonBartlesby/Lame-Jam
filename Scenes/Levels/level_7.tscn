@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_10co4"]
 [ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="3_dbpl7"]
 [ext_resource type="PackedScene" uid="uid://3rav677e0c0d" path="res://Scenes/planet_2.tscn" id="4_hubum"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="5_dbpl7"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
@@ -36,8 +37,8 @@ size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("2_10co4")]
-position = Vector2(-77.51807, -34.870453)
-rotation = 3.5643106
+position = Vector2(-75.53986, 38.97088)
+rotation = 2.6653075
 orbit_offset = 85
 debug = true
 
@@ -47,8 +48,8 @@ scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Planet2#Satellite" parent="Planet5" unique_id=529104024 instance=ExtResource("2_10co4")]
-position = Vector2(-219.91428, -189.94836)
-rotation = -2.979873
+position = Vector2(11.43364, -79.178734)
+rotation = 2.6653075
 orbit_offset = 80
 start_rotation = 125.506
 debug = true
@@ -59,8 +60,8 @@ scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Planet3#Satellite" parent="Planet2" unique_id=1451027612 instance=ExtResource("2_10co4")]
-position = Vector2(-92.93685, -304.61438)
-rotation = -2.979873
+position = Vector2(-85.315605, 44.01416)
+rotation = 2.6653075
 orbit_offset = 96
 debug = true
 
@@ -70,8 +71,8 @@ scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_10co4")]
-position = Vector2(48.366486, 87.52533)
-rotation = 3.5643106
+position = Vector2(98.60953, 16.618164)
+rotation = 2.6653075
 orbit_offset = 100
 start_rotation = 216.855
 debug = true
@@ -80,3 +81,6 @@ debug = true
 position = Vector2(594, 141)
 scale = Vector2(0.99999994, 0.99999994)
 gizmo_extents = 50.0
+
+[node name="Black Hole" parent="." unique_id=551237592 instance=ExtResource("5_dbpl7")]
+position = Vector2(572, 927)
