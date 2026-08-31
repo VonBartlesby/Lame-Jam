@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1468rtc3d1yl"]
 
 [ext_resource type="Script" uid="uid://jlxmajovwr72" path="res://Scripts/evil_moon.gd" id="1_k3en0"]
-[ext_resource type="Texture2D" uid="uid://wyavytl3qtp5" path="res://Textures/evil_moon.png" id="2_k3en0"]
+[ext_resource type="Texture2D" uid="uid://b3lry43rl3ysx" path="res://materials/moon.tres" id="2_qioix"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k3en0"]
 
@@ -16,8 +16,9 @@ script = ExtResource("1_k3en0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=193436229]
 material = SubResource("CanvasItemMaterial_k3en0")
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_k3en0")
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_qioix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141320283]
+visible = false
 shape = SubResource("CircleShape2D_g4v7s")
