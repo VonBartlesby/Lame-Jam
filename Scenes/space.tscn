@@ -77,6 +77,11 @@ func _process(_delta: float) -> void:
 	position = Vector2(randf_range(-1,1)*wobble_strength,randf_range(-1,1)*wobble_strength)
 "
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_htfm3"]
+random_pitch = 1.2599211
+streams_count = 1
+stream_0/stream = ExtResource("11_y7rfp")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ltla"]
 lifetime_randomness = 0.1
 particle_flag_disable_z = true
@@ -292,7 +297,8 @@ stream = ExtResource("15_m37bs")
 bus = &"Sfx"
 
 [node name="reflect" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=690279310]
-stream = ExtResource("11_y7rfp")
+stream = SubResource("AudioStreamRandomizer_htfm3")
+volume_db = -9.0
 bus = &"Sfx"
 
 [node name="launch" type="AudioStreamPlayer2D" parent="Our Moon/Sound" unique_id=247356474]
