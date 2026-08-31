@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://0bnftamd1kcn"]
+
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="1_1as26"]
+[ext_resource type="PackedScene" uid="uid://3rav677e0c0d" path="res://Scenes/planet_2.tscn" id="1_p6pm5"]
+[ext_resource type="PackedScene" uid="uid://c1468rtc3d1yl" path="res://Scenes/evil_moon.tscn" id="2_p2usv"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="3_0i80u"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(594, 141)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0
+
+[node name="Satellite" parent="." unique_id=38929357 instance=ExtResource("3_0i80u")]
+position = Vector2(923, 263)
+scale = Vector2(2.18, 2.18)
+stationary = true
+
+[node name="Satellite2" parent="." unique_id=1477203839 instance=ExtResource("3_0i80u")]
+position = Vector2(1259, -1160)
+rotation = 1.4201055
+scale = Vector2(2, 2)
+stationary = true
+
+[node name="Evil Moon" parent="." unique_id=1417649257 instance=ExtResource("2_p2usv")]
+position = Vector2(2074, -185)
+scale = Vector2(3.56, 3.56)
+stationary = true
+
+[node name="Evil Moon2" parent="." unique_id=229763252 instance=ExtResource("2_p2usv")]
+position = Vector2(2010, 89)
+rotation = -1.0359423
+scale = Vector2(3.11, 3.11)
+stationary = true
+
+[node name="Black Hole2" parent="." unique_id=850375368 instance=ExtResource("1_1as26")]
+position = Vector2(1259, -1160)
+debug = true
+BASE_GRAVITY_STRENGTH = 0.0
+
+[node name="CollisionShape2D" parent="Black Hole2" index="0" unique_id=582415943]
+disabled = true
+
+[node name="Black Hole Visual" parent="Black Hole2" index="1" unique_id=1429464974]
+visible = false
+
+[node name="Evil Moon" parent="Black Hole2" unique_id=490739384 instance=ExtResource("2_p2usv")]
+scale = Vector2(1.765, 1.765)
+orbit_offset = 70
+orbit_speed = 0.3599999999999999
+start_rotation = 330.0
+
+[node name="Evil Moon2" parent="Black Hole2" unique_id=1465031126 instance=ExtResource("2_p2usv")]
+scale = Vector2(1.765, 1.765)
+orbit_offset = 70
+orbit_speed = 0.3599999999999999
+start_rotation = 150.0
+
+[node name="Black Hole" parent="." unique_id=1221522964 instance=ExtResource("1_1as26")]
+position = Vector2(923, 263)
+debug = true
+BASE_GRAVITY_STRENGTH = 0.0
+
+[node name="CollisionShape2D" parent="Black Hole" index="0" unique_id=582415943]
+disabled = true
+
+[node name="Black Hole Visual" parent="Black Hole" index="1" unique_id=1429464974]
+visible = false
+
+[node name="Evil Moon" parent="Black Hole" unique_id=1404198482 instance=ExtResource("2_p2usv")]
+scale = Vector2(1.765, 1.765)
+orbit_offset = 70
+orbit_speed = 0.3599999999999999
+
+[node name="Evil Moon2" parent="Black Hole" unique_id=496728787 instance=ExtResource("2_p2usv")]
+scale = Vector2(1.765, 1.765)
+orbit_offset = 70
+orbit_speed = 0.3599999999999999
+start_rotation = 180.0
+
+[node name="Planet" parent="." unique_id=1855783494 instance=ExtResource("1_p6pm5")]
+position = Vector2(1254.0001, -245.00002)
+scale = Vector2(6.68, 6.68)
+size = 6.68
+debug = true
+
+[node name="Satellite3" parent="." unique_id=1747611690 instance=ExtResource("3_0i80u")]
+position = Vector2(2147.04, -30)
+rotation = 0.94945914
+scale = Vector2(3.75, 3.75)
+
+[editable path="Black Hole2"]
+[editable path="Black Hole"]
