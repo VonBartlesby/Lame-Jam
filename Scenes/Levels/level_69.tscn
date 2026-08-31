@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dqjqxy14ahxq5"]
+
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_4abe3"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="3_0fch3"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(283.99997, 508)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0
+
+[node name="Black Hole" parent="." unique_id=1221522964 instance=ExtResource("3_0fch3")]
+position = Vector2(40, 508)
+scale = Vector2(3.975, 3.975)
+size = 3.975
+debug = true
+
+[node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_4abe3")]
+position = Vector2(733, 513)
+scale = Vector2(2.875, 2.875)
+
+[node name="Satellite2" parent="." unique_id=338242864 instance=ExtResource("2_4abe3")]
+position = Vector2(-180.99998, 507.00003)
+rotation = -1.134464
+scale = Vector2(2.685, 2.685)
