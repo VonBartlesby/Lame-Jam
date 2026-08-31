@@ -40,6 +40,7 @@ func set_charge_text(charge_value:float):
 
 func _reset_button_clicked() -> void:
 	SignalHandler.reset.emit()
+	GameControllerAutoLoad.death_counter += 1
 	middle_text.text = ""
 	next_level.visible = false
 	wobble = false
@@ -53,8 +54,11 @@ func _on_launch():
 func _next_button_clicked():
 	SignalHandler.next_level.emit()
 
-func _on_win():
-	middle_text.text = "Winner"
+func _on_win(tries : int):
+	var word = "resets"
+	if tries == 1:
+		word = "reset"
+	middle_text.text = "You completed the level with %d %s" % [tries,word]
 	next_level.visible = true
 
 func _on_level_load():
