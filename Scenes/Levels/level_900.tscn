@@ -24,13 +24,14 @@ scale = Vector2(2, 2)
 stationary = true
 
 [node name="Evil Moon" parent="." unique_id=1417649257 instance=ExtResource("2_p2usv")]
-position = Vector2(2074, -185)
+position = Vector2(337, 135.99998)
+rotation = -0.6241757
 scale = Vector2(3.56, 3.56)
 stationary = true
 
 [node name="Evil Moon2" parent="." unique_id=229763252 instance=ExtResource("2_p2usv")]
-position = Vector2(2010, 89)
-rotation = -1.0359423
+position = Vector2(10, -18.99997)
+rotation = -1.6601181
 scale = Vector2(3.11, 3.11)
 stationary = true
 
@@ -86,8 +87,8 @@ size = 6.68
 debug = true
 
 [node name="Satellite3" parent="." unique_id=1747611690 instance=ExtResource("3_0i80u")]
-position = Vector2(2147.04, -30)
-rotation = 0.94945914
+position = Vector2(149, 128)
+rotation = 0.3252834
 scale = Vector2(3.75, 3.75)
 
 [editable path="Black Hole2"]
