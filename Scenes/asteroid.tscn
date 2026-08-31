@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://c3tnp3dhi7dno"]
 
 [ext_resource type="Script" uid="uid://cpuw2sr1wpjku" path="res://Scripts/asteroid.gd" id="1_rvlwq"]
-[ext_resource type="Texture2D" uid="uid://wyavytl3qtp5" path="res://Textures/evil_moon.png" id="2_bi0dy"]
+[ext_resource type="Texture2D" uid="uid://bj0v5f30nc1ay" path="res://Textures/assroid.png" id="2_f2ils"]
 [ext_resource type="AudioStream" uid="uid://caj4lyhco8bch" path="res://sound/bang_1.wav" id="3_rfhhd"]
+[ext_resource type="Texture2D" uid="uid://df0bx7467c6dr" path="res://Textures/assroid_n.png" id="3_xliy4"]
 [ext_resource type="AudioStream" uid="uid://bcsdr2ou0s5so" path="res://sound/bang_2.wav" id="4_f2ils"]
 [ext_resource type="AudioStream" uid="uid://bxgm7oksfbh2n" path="res://sound/bang_3.wav" id="5_xliy4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k3en0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wb0au"]
+diffuse_texture = ExtResource("2_f2ils")
+normal_texture = ExtResource("3_xliy4")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 5.0
@@ -30,9 +35,8 @@ script = ExtResource("1_rvlwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=193436229]
 material = SubResource("CanvasItemMaterial_k3en0")
-scale = Vector2(0.01, 0.01)
-skew = 0.72082096
-texture = ExtResource("2_bi0dy")
+scale = Vector2(0.085, 0.085)
+texture = SubResource("CanvasTexture_wb0au")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141320283]
 shape = SubResource("CircleShape2D_g4v7s")

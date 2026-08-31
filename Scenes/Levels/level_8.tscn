@@ -23,63 +23,63 @@ orbit_offset = 212
 start_rotation = 240.0
 
 [node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_wb0au")]
-position = Vector2(49.26422, 141.67932)
-rotation = 0.7125587
+position = Vector2(-142.68533, -46.26979)
+rotation = 2.931573
 start_rotation = 30.0
 
 [node name="Satellite2" parent="Planet4" unique_id=1476020913 instance=ExtResource("2_wb0au")]
-position = Vector2(-28.17561, 147.33002)
-rotation = 0.7125587
+position = Vector2(-100.43425, -111.413475)
+rotation = 2.931573
 start_rotation = 60.0
 
 [node name="Satellite3" parent="Planet4" unique_id=1136130450 instance=ExtResource("2_wb0au")]
-position = Vector2(-98.06581, 113.50374)
-rotation = 0.7125587
+position = Vector2(-31.271856, -146.70403)
+rotation = 2.931573
 start_rotation = 90.0
 
 [node name="Satellite4" parent="Planet4" unique_id=988763453 instance=ExtResource("2_wb0au")]
-position = Vector2(-141.67934, 49.264236)
-rotation = 0.7125587
+position = Vector2(46.269775, -142.68535)
+rotation = 2.931573
 start_rotation = 120.0
 
 [node name="Satellite5" parent="Planet4" unique_id=1641641849 instance=ExtResource("2_wb0au")]
-position = Vector2(-147.33002, -28.175613)
-rotation = 0.7125587
+position = Vector2(111.41347, -100.434265)
+rotation = 2.931573
 start_rotation = 150.0
 
 [node name="Satellite6" parent="Planet4" unique_id=214404686 instance=ExtResource("2_wb0au")]
-position = Vector2(-113.503746, -98.065796)
-rotation = 0.7125587
+position = Vector2(146.70401, -31.271904)
+rotation = 2.931573
 start_rotation = 180.0
 
 [node name="Satellite7" parent="Planet4" unique_id=866766626 instance=ExtResource("2_wb0au")]
-position = Vector2(-49.26424, -141.67934)
-rotation = 0.7125587
+position = Vector2(142.68533, 46.269806)
+rotation = 2.931573
 start_rotation = 210.0
 
 [node name="Satellite8" parent="Planet4" unique_id=1123931208 instance=ExtResource("2_wb0au")]
-position = Vector2(28.175644, -147.33002)
-rotation = 0.7125587
+position = Vector2(100.434235, 111.41348)
+rotation = 2.931573
 start_rotation = 240.0
 
 [node name="Satellite9" parent="Planet4" unique_id=1137542988 instance=ExtResource("2_wb0au")]
-position = Vector2(98.06583, -113.50373)
-rotation = 0.7125587
+position = Vector2(31.271881, 146.70404)
+rotation = 2.931573
 start_rotation = 270.0
 
 [node name="Satellite10" parent="Planet4" unique_id=1140791111 instance=ExtResource("2_wb0au")]
-position = Vector2(141.67935, -49.26422)
-rotation = 0.7125587
+position = Vector2(-46.269756, 142.68536)
+rotation = 2.931573
 start_rotation = 300.0
 
 [node name="Satellite12" parent="Planet4" unique_id=404462806 instance=ExtResource("2_wb0au")]
-position = Vector2(147.33002, 28.175598)
-rotation = 0.7125587
+position = Vector2(-111.413445, 100.43428)
+rotation = 2.931573
 start_rotation = 330.0
 
 [node name="Satellite11" parent="Planet4" unique_id=1828075537 instance=ExtResource("2_wb0au")]
-position = Vector2(113.50375, 98.06578)
-rotation = 0.7125587
+position = Vector2(-146.70401, 31.271927)
+rotation = 2.931573
 start_rotation = 360.0
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
