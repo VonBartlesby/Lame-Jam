@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ckcdj0koyis67"]
+
+[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_llkvf"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_bltum"]
+[ext_resource type="Script" uid="uid://5a63qbete16n" path="res://Scenes/asteroid_belt.gd" id="3_u6nm6"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="4_x8h7c"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Planet5" parent="." unique_id=1221522964 instance=ExtResource("1_llkvf")]
+position = Vector2(1032, -67)
+scale = Vector2(2.38, 2.38)
+size = 2.38
+debug = true
+
+[node name="Satellite" parent="Planet5" unique_id=1404198482 instance=ExtResource("2_bltum")]
+position = Vector2(71.97412, 57.30379)
+rotation = 5.9083905
+scale = Vector2(2, 2)
+orbit_offset = 92
+start_rotation = 60.0
+debug = true
+
+[node name="Planet6" parent="." unique_id=1447393540 instance=ExtResource("1_llkvf")]
+position = Vector2(742, 170)
+scale = Vector2(2, 2)
+size = 2.0
+
+[node name="Satellite11" parent="Planet6" unique_id=1781101848 instance=ExtResource("2_bltum")]
+position = Vector2(80.90607, -3.899788)
+rotation = 6.235021
+scale = Vector2(2, 2)
+orbit_offset = 81
+orbit_speed = 0.19999999999999996
+debug = true
+
+[node name="AsteroidBelt2" type="Node2D" parent="." unique_id=2032135291]
+position = Vector2(596, 312)
+script = ExtResource("3_u6nm6")
+asteroid_amount = 78
+size = 44.9
+ring_mode = true
+density = 0.0
+rings = 20
+size_start = 23.1
+add = 0.78
+
+[node name="Black Hole" parent="." unique_id=1135854295 instance=ExtResource("4_x8h7c")]
+position = Vector2(593, 315)
+
+[node name="Black Hole2" parent="." unique_id=156382248 instance=ExtResource("4_x8h7c")]
+position = Vector2(1175, -51)
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(283.99997, 508)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0

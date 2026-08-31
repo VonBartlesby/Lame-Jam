@@ -1,3 +1,4 @@
+@tool
 extends Area2D
 class_name Satellite
 
@@ -10,7 +11,7 @@ class_name Satellite
 @onready var destroy_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var explosion: CPUParticles2D = $CPUParticles2D
 @onready var light: PointLight2D = $PointLight2D
-
+@export var debug: bool = false
 
 
 var planet : GravitationalMass
@@ -31,13 +32,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if debug:
+		orbit_distance = planet.size * orbit_offset
 	if not stationary:
 		time += delta * orbit_speed
 		if abs(time) > 2:
 			time = 0
-		var vec = Vector2.from_angle((PI * time) + deg_to_rad(start_rotation)) * orbit_distance + planet.global_position
+		var vec = (Vector2.from_angle((PI * time) + deg_to_rad(start_rotation)) * orbit_distance) + planet.global_position
 		rotation = PI * time
 		global_position = vec
+	
 
 
 

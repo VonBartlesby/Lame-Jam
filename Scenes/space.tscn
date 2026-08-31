@@ -28,6 +28,17 @@
 [ext_resource type="PackedScene" uid="uid://bxynbhlnsvsmo" path="res://Scenes/ui_controller.tscn" id="26_htfm3"]
 [ext_resource type="PackedScene" uid="uid://dmvdd862ssdfr" path="res://Scenes/main_menu.tscn" id="27_htfm3"]
 
+[sub_resource type="Gradient" id="Gradient_x7jvd"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nryri"]
+gradient = SubResource("Gradient_x7jvd")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_htfm3"]
 light_mode = 1
 
@@ -193,8 +204,31 @@ color_ramp = SubResource("Gradient_5x04l")
 [node name="Space" type="Node2D" unique_id=1292661137]
 script = ExtResource("1_yq4q2")
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=975146626]
+position = Vector2(-5711, -7088)
+color = Color(1.4648298, 1.3726315, 0.7733432, 1)
+energy = 1.94
+texture = SubResource("GradientTexture2D_nryri")
+texture_scale = 50.0
+height = 368.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=669681427]
+position = Vector2(-2891, 8427)
+color = Color(0.7733432, 1.1190864, 1.4648298, 1)
+energy = 0.89
+texture = SubResource("GradientTexture2D_nryri")
+texture_scale = 50.0
+height = 368.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=824278256]
+position = Vector2(8314, -489)
+color = Color(1.1623044, 1.3135669, 1.4648298, 1)
+energy = 0.18
+texture = SubResource("GradientTexture2D_nryri")
+texture_scale = 50.0
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=571050598]
-color = Color(1.4151802, 1.1487826, 0.8995719, 1)
+color = Color(0.83857435, 0.81669384, 0.7962249, 1)
 energy = 0.65
 height = 1.0
 
@@ -228,7 +262,7 @@ texture = ExtResource("7_4fhbr")
 centered = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1222745113]
-color = Color(0, 0.21457802, 0.3576195, 1)
+color = Color(0, 0.053999994, 0.09, 1)
 
 [node name="Our Moon" type="Area2D" parent="." unique_id=1914234917]
 scale = Vector2(0.2421875, 0.2421875)

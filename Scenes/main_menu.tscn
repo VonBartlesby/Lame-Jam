@@ -7,6 +7,36 @@
 [ext_resource type="Script" uid="uid://bo2t6guj8xpte" path="res://Scripts/fade.gd" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dxo3rol38ldcu" path="res://music.tscn" id="4_n45e2"]
 
+[sub_resource type="Shader" id="Shader_htfm3"]
+code = "shader_type canvas_item;
+uniform sampler2D c : filter_linear, repeat_disable;
+uniform vec2 vel;
+uniform vec3 col : source_color;
+uniform float s=1.;
+void fragment() {
+	vec2 _uv = vec2(-.5)+UV+(vel*s*0.001);
+	float uv_d = length(_uv);
+	float _uv_d = texture(c,vec2(uv_d)).x;
+	COLOR += vec4(
+		col*_uv_d,
+		0.);
+}"
+
+[sub_resource type="Curve" id="Curve_htfm3"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0.5396975, 0), 0.0, 0.34580722, 0, 0, Vector2(0.93478256, 2), 0.23105802, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yq4q2"]
+curve = SubResource("Curve_htfm3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opfnp"]
+shader = SubResource("Shader_htfm3")
+shader_parameter/c = SubResource("CurveTexture_yq4q2")
+shader_parameter/vel = Vector2(76, -162)
+shader_parameter/col = Color(1.4156048, 0.6024742, 0, 1)
+shader_parameter/s = 1.525
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dp8uv"]
 particle_flag_disable_z = true
 angle_min = -321.6
@@ -151,10 +181,10 @@ scale = Vector2(1, 0.61)
 metadata/_edit_lock_ = true
 
 [node name="Moon" type="Sprite2D" parent="Menu Moon/visual" unique_id=1366647874]
+material = SubResource("ShaderMaterial_opfnp")
 rotation = 1.0384709
 scale = Vector2(0.17500001, 0.17500001)
 texture = ExtResource("3_ce3w2")
-metadata/_edit_lock_ = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Menu Moon" unique_id=2014281427]
 process_mode = 3
