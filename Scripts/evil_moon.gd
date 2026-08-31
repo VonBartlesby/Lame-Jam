@@ -26,6 +26,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if get_parent() is GravitationalMass:
+		planet = get_parent()
 		time += delta * orbit_speed
 		if abs(time) > 2:
 			time = 0
@@ -36,6 +37,5 @@ func _process(delta: float) -> void:
 
 func _reset():
 	if get_parent() is GravitationalMass:
-		print("fuck you")
 		orbit_distance = planet.size * orbit_offset
 		time = 0

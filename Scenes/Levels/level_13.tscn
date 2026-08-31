@@ -33,8 +33,7 @@ size = 4.0
 debug = true
 
 [node name="Evil Moon" parent="Planet" unique_id=1404198482 instance=ExtResource("2_d3xne")]
-position = Vector2(-118.96485, -91.36391)
-rotation = 3.7931929
+rotation = 3.7352252
 start_rotation = 0.19
 
 [node name="AsteroidBelt" type="Node2D" parent="Planet/Evil Moon" unique_id=749937782]
@@ -337,15 +336,15 @@ position = Vector2(-5.8840923, 303.15692)
 position = Vector2(-179.78374, -118.97392)
 
 [node name="Satellite" parent="Planet" unique_id=117009454 instance=ExtResource("1_s5cxv")]
-position = Vector2(-88.60501, -8.375626)
-rotation = -3.047345
+position = Vector2(16.419998, 87.47218)
+rotation = -4.8979464
 orbit_offset = 89
 orbit_speed = -0.30000000000000004
 debug = true
 
 [node name="Satellite2" parent="Planet" unique_id=1493031727 instance=ExtResource("1_s5cxv")]
-position = Vector2(117.97087, -161.50194)
-rotation = 5.3170877
+position = Vector2(-162.79747, -116.17653)
+rotation = 3.7352252
 orbit_offset = 200
 start_rotation = 1.5
 debug = true
@@ -357,9 +356,10 @@ size = 2.0
 
 [node name="Black Hole" parent="." unique_id=230190268 instance=ExtResource("5_j1sqg")]
 position = Vector2(1145, 234)
+scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Black Hole2" parent="." unique_id=1161594597 instance=ExtResource("5_j1sqg")]
 position = Vector2(68, -1413)
-scale = Vector2(8, 8)
+scale = Vector2(3, 3)
 size = 3.0
