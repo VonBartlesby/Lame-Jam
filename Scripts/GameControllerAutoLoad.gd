@@ -4,6 +4,7 @@ var satellites : Array[Satellite]
 #starts at -1 as the start of the game will increment it
 var level_index : int = -1
 var death_counter : int = 0
+var completed_levels : Array[bool] = []
 var levels : Array[String] = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",
@@ -33,6 +34,9 @@ func _ready() -> void:
 	SignalHandler.next_level.connect(_prepare_next_level)
 	SignalHandler.index_level.connect(_load_level_from_index)
 
+	for level in levels:
+		completed_levels.append(false)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -43,6 +47,7 @@ func check_win() -> void:
 		if not satellite.dead:
 			return
 	SignalHandler.win.emit(death_counter)
+	completed_levels[level_index] = true
 
 func load_level() -> void:
 	satellites = []
@@ -68,3 +73,5 @@ func prepare_level():
 	print("loading level ",level_index," from disk")
 	next_level = load(levels[level_index])
 	start_fade_out.emit()
+
+	

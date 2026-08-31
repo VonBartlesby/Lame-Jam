@@ -67,3 +67,9 @@ grow_vertical = 2
 theme = ExtResource("2_3qehr")
 text = "Next Level
 "
+
+[node name="Label" type="Label" parent="." unique_id=2113511129]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_3qehr")
+text = "ESC - open menu"
