@@ -20,7 +20,7 @@ extends Area2D
 @onready var light: PointLight2D = $Explosion/PointLight2D
 
 var spin :float=0.
-
+var drifted : bool = false
 var started : bool = false
 var shootable : bool = false
 var drift_off_timer : float = 0
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 			drift_off_timer += delta
 		else:
 			drift_off_timer = 0
-		if drift_off_timer > drift_off_timeout:
+		if drift_off_timer > drift_off_timeout and not drifted:
 			SignalHandler.drift_off.emit()
 	previous_velocity = velocity
 
@@ -130,6 +130,7 @@ func _reset() -> void:
 	started = false
 	charge = 100
 	visual.visible = true
+	drifted = false
 	trail.restart()
 	
 
@@ -145,4 +146,5 @@ func _on_level_load() -> void:
 
 
 func _on_drift_off() -> void:
+	drifted = true
 	shootable = false
