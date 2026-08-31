@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cdy1v5lk4falt"]
+
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="1_pqpx4"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="1_svmjr"]
+[ext_resource type="PackedScene" uid="uid://3rav677e0c0d" path="res://Scenes/planet_2.tscn" id="2_udswc"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Label" type="Label" parent="." unique_id=548500809]
+visible = false
+offset_left = 138.0
+offset_top = -133.0
+offset_right = 351.0
+offset_bottom = 98.0
+text = "In this game your goal is to destroy satellites by hitting them
+
+
+
+Click and drag to aim and then release to launch towards your target"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(1028, 549)
+gizmo_extents = 50.0
+
+[node name="Black Hole" parent="." unique_id=1221522964 instance=ExtResource("1_svmjr")]
+position = Vector2(856, 497)
+
+[node name="Black Hole2" parent="." unique_id=1203731632 instance=ExtResource("1_svmjr")]
+position = Vector2(745, 341)
+
+[node name="Black Hole3" parent="." unique_id=1386930383 instance=ExtResource("1_svmjr")]
+position = Vector2(538, 231)
+
+[node name="Planet" parent="." unique_id=1978581183 instance=ExtResource("2_udswc")]
+position = Vector2(492, 62)
+
+[node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("1_pqpx4")]
+position = Vector2(61.798706, 53.897324)
+rotation = 0.7172099
+orbit_offset = 82
+debug = true

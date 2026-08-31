@@ -1,0 +1,365 @@
+[gd_scene format=3 uid="uid://c7a488luhmlnw"]
+
+[ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="1_p4iho"]
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="1_s5cxv"]
+[ext_resource type="PackedScene" uid="uid://c1468rtc3d1yl" path="res://Scenes/evil_moon.tscn" id="2_d3xne"]
+[ext_resource type="PackedScene" uid="uid://c3tnp3dhi7dno" path="res://Scenes/asteroid.tscn" id="3_d3xne"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="5_j1sqg"]
+[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="6_l5t5e"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Label" type="Label" parent="." unique_id=548500809]
+visible = false
+offset_left = 138.0
+offset_top = -133.0
+offset_right = 351.0
+offset_bottom = 98.0
+text = "In this game your goal is to destroy satellites by hitting them
+
+
+
+Click and drag to aim and then release to launch towards your target"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+gizmo_extents = 50.0
+
+[node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_p4iho")]
+position = Vector2(951.00006, -992.00006)
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
+
+[node name="Evil Moon" parent="Planet" unique_id=1404198482 instance=ExtResource("2_d3xne")]
+position = Vector2(-118.96485, -91.36391)
+rotation = 3.7931929
+start_rotation = 0.19
+
+[node name="AsteroidBelt" type="Node2D" parent="Planet/Evil Moon" unique_id=749937782]
+
+[node name="@Area2D@69169" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1186786652 instance=ExtResource("3_d3xne")]
+position = Vector2(61.510876, 351.14664)
+
+[node name="@Area2D@69170" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2073234295 instance=ExtResource("3_d3xne")]
+position = Vector2(288.3068, -148.02094)
+
+[node name="@Area2D@69171" parent="Planet/Evil Moon/AsteroidBelt" unique_id=295484432 instance=ExtResource("3_d3xne")]
+position = Vector2(-211.88855, -0.21522598)
+
+[node name="@Area2D@69172" parent="Planet/Evil Moon/AsteroidBelt" unique_id=734121936 instance=ExtResource("3_d3xne")]
+position = Vector2(-332.63586, 225.52777)
+
+[node name="@Area2D@69173" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1598472960 instance=ExtResource("3_d3xne")]
+position = Vector2(-72.08037, -16.932173)
+
+[node name="@Area2D@69174" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1650249751 instance=ExtResource("3_d3xne")]
+position = Vector2(9.519351, 3.5889056)
+
+[node name="@Area2D@69175" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1636602830 instance=ExtResource("3_d3xne")]
+position = Vector2(76.339294, 19.080055)
+
+[node name="@Area2D@69176" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1350523275 instance=ExtResource("3_d3xne")]
+position = Vector2(-183.22864, 35.611504)
+
+[node name="@Area2D@69177" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1738971589 instance=ExtResource("3_d3xne")]
+position = Vector2(-144.59186, 37.33003)
+
+[node name="@Area2D@69178" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1382226933 instance=ExtResource("3_d3xne")]
+position = Vector2(81.44294, 252.98305)
+
+[node name="@Area2D@69179" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1093392192 instance=ExtResource("3_d3xne")]
+position = Vector2(-95.629776, 394.79596)
+
+[node name="@Area2D@69180" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1047217105 instance=ExtResource("3_d3xne")]
+position = Vector2(-45.855415, -277.9019)
+
+[node name="@Area2D@69181" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2043865280 instance=ExtResource("3_d3xne")]
+position = Vector2(403.55093, -139.85767)
+
+[node name="@Area2D@69182" parent="Planet/Evil Moon/AsteroidBelt" unique_id=652599973 instance=ExtResource("3_d3xne")]
+position = Vector2(-367.20758, -20.032194)
+
+[node name="@Area2D@69183" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1777937357 instance=ExtResource("3_d3xne")]
+position = Vector2(151.48987, -240.70079)
+
+[node name="@Area2D@69184" parent="Planet/Evil Moon/AsteroidBelt" unique_id=106096174 instance=ExtResource("3_d3xne")]
+position = Vector2(-59.25829, 18.9873)
+
+[node name="@Area2D@69185" parent="Planet/Evil Moon/AsteroidBelt" unique_id=62064002 instance=ExtResource("3_d3xne")]
+position = Vector2(225.34738, -299.4736)
+
+[node name="@Area2D@69186" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1411026293 instance=ExtResource("3_d3xne")]
+position = Vector2(-233.40842, 300.35083)
+
+[node name="@Area2D@69187" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1289871969 instance=ExtResource("3_d3xne")]
+position = Vector2(-8.105486, 168.00195)
+
+[node name="@Area2D@69188" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1375348214 instance=ExtResource("3_d3xne")]
+position = Vector2(-132.1505, 156.96075)
+
+[node name="@Area2D@69189" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2005615261 instance=ExtResource("3_d3xne")]
+position = Vector2(-194.84035, -66.63486)
+
+[node name="@Area2D@69190" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1393000909 instance=ExtResource("3_d3xne")]
+position = Vector2(-92.30408, 109.4271)
+
+[node name="@Area2D@69191" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1966065701 instance=ExtResource("3_d3xne")]
+position = Vector2(196.53508, 73.1646)
+
+[node name="@Area2D@69192" parent="Planet/Evil Moon/AsteroidBelt" unique_id=593079278 instance=ExtResource("3_d3xne")]
+position = Vector2(48.95758, -70.797066)
+
+[node name="@Area2D@69193" parent="Planet/Evil Moon/AsteroidBelt" unique_id=334108518 instance=ExtResource("3_d3xne")]
+position = Vector2(0.9592162, 13.031081)
+
+[node name="@Area2D@69194" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1105682402 instance=ExtResource("3_d3xne")]
+position = Vector2(168.37796, 48.73819)
+
+[node name="@Area2D@69195" parent="Planet/Evil Moon/AsteroidBelt" unique_id=770746580 instance=ExtResource("3_d3xne")]
+position = Vector2(56.82717, -261.5719)
+
+[node name="@Area2D@69196" parent="Planet/Evil Moon/AsteroidBelt" unique_id=28604167 instance=ExtResource("3_d3xne")]
+position = Vector2(370.18976, 43.02738)
+
+[node name="@Area2D@69197" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2095821963 instance=ExtResource("3_d3xne")]
+position = Vector2(81.55538, -27.757605)
+
+[node name="@Area2D@69198" parent="Planet/Evil Moon/AsteroidBelt" unique_id=363269816 instance=ExtResource("3_d3xne")]
+position = Vector2(37.630386, 212.07315)
+
+[node name="@Area2D@69199" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1906241902 instance=ExtResource("3_d3xne")]
+position = Vector2(-14.704392, 4.6619415)
+
+[node name="@Area2D@69200" parent="Planet/Evil Moon/AsteroidBelt" unique_id=82166965 instance=ExtResource("3_d3xne")]
+position = Vector2(-274.52844, 98.05029)
+
+[node name="@Area2D@69201" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1311009854 instance=ExtResource("3_d3xne")]
+position = Vector2(119.10519, -128.73311)
+
+[node name="@Area2D@69202" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1327096854 instance=ExtResource("3_d3xne")]
+position = Vector2(152.37378, -406.56332)
+
+[node name="@Area2D@69203" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1444122283 instance=ExtResource("3_d3xne")]
+position = Vector2(329.6311, -52.208084)
+
+[node name="@Area2D@69204" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1951627257 instance=ExtResource("3_d3xne")]
+position = Vector2(69.00796, -71.21839)
+
+[node name="@Area2D@69205" parent="Planet/Evil Moon/AsteroidBelt" unique_id=242531849 instance=ExtResource("3_d3xne")]
+position = Vector2(-62.82405, -12.758825)
+
+[node name="@Area2D@69206" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1086865082 instance=ExtResource("3_d3xne")]
+position = Vector2(75.76336, -60.27024)
+
+[node name="@Area2D@69207" parent="Planet/Evil Moon/AsteroidBelt" unique_id=814520763 instance=ExtResource("3_d3xne")]
+position = Vector2(-105.85581, -215.38425)
+
+[node name="@Area2D@69208" parent="Planet/Evil Moon/AsteroidBelt" unique_id=470361989 instance=ExtResource("3_d3xne")]
+position = Vector2(-177.01285, 48.35829)
+
+[node name="@Area2D@69209" parent="Planet/Evil Moon/AsteroidBelt" unique_id=374083282 instance=ExtResource("3_d3xne")]
+position = Vector2(398.27127, -96.40798)
+
+[node name="@Area2D@69210" parent="Planet/Evil Moon/AsteroidBelt" unique_id=196710873 instance=ExtResource("3_d3xne")]
+position = Vector2(-296.40173, 73.46108)
+
+[node name="@Area2D@69211" parent="Planet/Evil Moon/AsteroidBelt" unique_id=430718517 instance=ExtResource("3_d3xne")]
+position = Vector2(179.22392, 55.45932)
+
+[node name="@Area2D@69212" parent="Planet/Evil Moon/AsteroidBelt" unique_id=816289643 instance=ExtResource("3_d3xne")]
+position = Vector2(-85.40982, 63.105057)
+
+[node name="@Area2D@69213" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2103220863 instance=ExtResource("3_d3xne")]
+position = Vector2(-111.18791, -141.60606)
+
+[node name="@Area2D@69214" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1590908201 instance=ExtResource("3_d3xne")]
+position = Vector2(-210.78069, -263.42572)
+
+[node name="@Area2D@69215" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1731976070 instance=ExtResource("3_d3xne")]
+position = Vector2(-247.13695, -248.15222)
+
+[node name="@Area2D@69216" parent="Planet/Evil Moon/AsteroidBelt" unique_id=291159187 instance=ExtResource("3_d3xne")]
+position = Vector2(-5.9498773, -98.752266)
+
+[node name="@Area2D@69217" parent="Planet/Evil Moon/AsteroidBelt" unique_id=106810556 instance=ExtResource("3_d3xne")]
+position = Vector2(-275.18692, -14.622611)
+
+[node name="@Area2D@69218" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1107673592 instance=ExtResource("3_d3xne")]
+position = Vector2(153.77437, -199.86731)
+
+[node name="@Area2D@69219" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1994545907 instance=ExtResource("3_d3xne")]
+position = Vector2(-212.5515, -320.99756)
+
+[node name="@Area2D@69220" parent="Planet/Evil Moon/AsteroidBelt" unique_id=380900987 instance=ExtResource("3_d3xne")]
+position = Vector2(202.9582, 251.83368)
+
+[node name="@Area2D@69221" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2142422415 instance=ExtResource("3_d3xne")]
+position = Vector2(381.82684, -163.30054)
+
+[node name="@Area2D@69222" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1015024232 instance=ExtResource("3_d3xne")]
+position = Vector2(33.26315, -161.33975)
+
+[node name="@Area2D@69223" parent="Planet/Evil Moon/AsteroidBelt" unique_id=381627819 instance=ExtResource("3_d3xne")]
+position = Vector2(354.1739, -43.503574)
+
+[node name="@Area2D@69224" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1976671366 instance=ExtResource("3_d3xne")]
+position = Vector2(178.25812, 46.56624)
+
+[node name="@Area2D@69225" parent="Planet/Evil Moon/AsteroidBelt" unique_id=617263432 instance=ExtResource("3_d3xne")]
+position = Vector2(-262.45203, -117.65009)
+
+[node name="@Area2D@69226" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1381119016 instance=ExtResource("3_d3xne")]
+position = Vector2(-405.13156, 69.29015)
+
+[node name="@Area2D@69227" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2053077385 instance=ExtResource("3_d3xne")]
+position = Vector2(-85.97297, 34.314175)
+
+[node name="@Area2D@69228" parent="Planet/Evil Moon/AsteroidBelt" unique_id=664193439 instance=ExtResource("3_d3xne")]
+position = Vector2(3.0629778, 200.35397)
+
+[node name="@Area2D@69229" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1609242740 instance=ExtResource("3_d3xne")]
+position = Vector2(-183.44012, 155.1859)
+
+[node name="@Area2D@69230" parent="Planet/Evil Moon/AsteroidBelt" unique_id=657762805 instance=ExtResource("3_d3xne")]
+position = Vector2(25.361994, 118.671875)
+
+[node name="@Area2D@69231" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1659259879 instance=ExtResource("3_d3xne")]
+position = Vector2(52.121902, 73.95435)
+
+[node name="@Area2D@69232" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2103844269 instance=ExtResource("3_d3xne")]
+position = Vector2(-214.60791, -13.222123)
+
+[node name="@Area2D@69233" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1164476402 instance=ExtResource("3_d3xne")]
+position = Vector2(98.66089, 426.94788)
+
+[node name="@Area2D@69234" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1922273686 instance=ExtResource("3_d3xne")]
+position = Vector2(-160.91364, 14.69735)
+
+[node name="@Area2D@69235" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1343650465 instance=ExtResource("3_d3xne")]
+position = Vector2(-17.832348, -153.60251)
+
+[node name="@Area2D@69236" parent="Planet/Evil Moon/AsteroidBelt" unique_id=334481180 instance=ExtResource("3_d3xne")]
+position = Vector2(13.483986, 357.80725)
+
+[node name="@Area2D@69237" parent="Planet/Evil Moon/AsteroidBelt" unique_id=159279316 instance=ExtResource("3_d3xne")]
+position = Vector2(27.408346, 27.880814)
+
+[node name="@Area2D@69238" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1215824545 instance=ExtResource("3_d3xne")]
+position = Vector2(-46.72461, 53.484352)
+
+[node name="@Area2D@69239" parent="Planet/Evil Moon/AsteroidBelt" unique_id=403924025 instance=ExtResource("3_d3xne")]
+position = Vector2(-95.15161, 72.64484)
+
+[node name="@Area2D@69240" parent="Planet/Evil Moon/AsteroidBelt" unique_id=971771359 instance=ExtResource("3_d3xne")]
+position = Vector2(-1.8512905, -24.353672)
+
+[node name="@Area2D@69241" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1147676073 instance=ExtResource("3_d3xne")]
+position = Vector2(-27.618193, 36.762)
+
+[node name="@Area2D@69242" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1851742035 instance=ExtResource("3_d3xne")]
+position = Vector2(-412.19757, -41.16087)
+
+[node name="@Area2D@69243" parent="Planet/Evil Moon/AsteroidBelt" unique_id=682631163 instance=ExtResource("3_d3xne")]
+position = Vector2(-4.939303, 51.07454)
+
+[node name="@Area2D@69244" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1544347577 instance=ExtResource("3_d3xne")]
+position = Vector2(30.44682, 42.05751)
+
+[node name="@Area2D@69245" parent="Planet/Evil Moon/AsteroidBelt" unique_id=225333928 instance=ExtResource("3_d3xne")]
+position = Vector2(61.08444, 12.210643)
+
+[node name="@Area2D@69246" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1862898727 instance=ExtResource("3_d3xne")]
+position = Vector2(236.00351, 86.31757)
+
+[node name="@Area2D@69247" parent="Planet/Evil Moon/AsteroidBelt" unique_id=978164439 instance=ExtResource("3_d3xne")]
+position = Vector2(179.1663, 31.332941)
+
+[node name="@Area2D@69248" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2120883491 instance=ExtResource("3_d3xne")]
+position = Vector2(52.71997, 40.074635)
+
+[node name="@Area2D@69249" parent="Planet/Evil Moon/AsteroidBelt" unique_id=207458911 instance=ExtResource("3_d3xne")]
+position = Vector2(-262.43103, -203.02332)
+
+[node name="@Area2D@69250" parent="Planet/Evil Moon/AsteroidBelt" unique_id=130710435 instance=ExtResource("3_d3xne")]
+position = Vector2(-180.54822, 305.703)
+
+[node name="@Area2D@69251" parent="Planet/Evil Moon/AsteroidBelt" unique_id=495697778 instance=ExtResource("3_d3xne")]
+position = Vector2(155.58598, 160.03693)
+
+[node name="@Area2D@69252" parent="Planet/Evil Moon/AsteroidBelt" unique_id=530498639 instance=ExtResource("3_d3xne")]
+position = Vector2(-63.51438, -263.30762)
+
+[node name="@Area2D@69253" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1613620128 instance=ExtResource("3_d3xne")]
+position = Vector2(-134.36478, 312.20245)
+
+[node name="@Area2D@69254" parent="Planet/Evil Moon/AsteroidBelt" unique_id=976166918 instance=ExtResource("3_d3xne")]
+position = Vector2(196.95859, -235.7558)
+
+[node name="@Area2D@69255" parent="Planet/Evil Moon/AsteroidBelt" unique_id=508753668 instance=ExtResource("3_d3xne")]
+position = Vector2(-210.02718, -72.73466)
+
+[node name="@Area2D@69256" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1405469662 instance=ExtResource("3_d3xne")]
+position = Vector2(-116.58624, 7.5824566)
+
+[node name="@Area2D@69257" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2007279146 instance=ExtResource("3_d3xne")]
+position = Vector2(-151.77327, -21.020544)
+
+[node name="@Area2D@69258" parent="Planet/Evil Moon/AsteroidBelt" unique_id=660484184 instance=ExtResource("3_d3xne")]
+position = Vector2(180.61137, -62.358757)
+
+[node name="@Area2D@69259" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1803642764 instance=ExtResource("3_d3xne")]
+position = Vector2(134.86528, 91.792755)
+
+[node name="@Area2D@69260" parent="Planet/Evil Moon/AsteroidBelt" unique_id=151453179 instance=ExtResource("3_d3xne")]
+position = Vector2(54.026783, -22.811764)
+
+[node name="@Area2D@69261" parent="Planet/Evil Moon/AsteroidBelt" unique_id=309600671 instance=ExtResource("3_d3xne")]
+position = Vector2(-41.083187, 256.53436)
+
+[node name="@Area2D@69262" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1247289070 instance=ExtResource("3_d3xne")]
+position = Vector2(-20.358116, -23.63384)
+
+[node name="@Area2D@69263" parent="Planet/Evil Moon/AsteroidBelt" unique_id=2077344500 instance=ExtResource("3_d3xne")]
+position = Vector2(-12.896, -5.6532664)
+
+[node name="@Area2D@69264" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1802957758 instance=ExtResource("3_d3xne")]
+position = Vector2(62.599915, -112.80369)
+
+[node name="@Area2D@69265" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1410519054 instance=ExtResource("3_d3xne")]
+position = Vector2(80.524765, -142.74016)
+
+[node name="@Area2D@69266" parent="Planet/Evil Moon/AsteroidBelt" unique_id=722651176 instance=ExtResource("3_d3xne")]
+position = Vector2(-5.8840923, 303.15692)
+
+[node name="@Area2D@69267" parent="Planet/Evil Moon/AsteroidBelt" unique_id=1012224295 instance=ExtResource("3_d3xne")]
+position = Vector2(-179.78374, -118.97392)
+
+[node name="Satellite" parent="Planet" unique_id=117009454 instance=ExtResource("1_s5cxv")]
+position = Vector2(-88.60501, -8.375626)
+rotation = -3.047345
+orbit_offset = 89
+orbit_speed = -0.30000000000000004
+debug = true
+
+[node name="Satellite2" parent="Planet" unique_id=1493031727 instance=ExtResource("1_s5cxv")]
+position = Vector2(117.97087, -161.50194)
+rotation = 5.3170877
+orbit_offset = 200
+start_rotation = 1.5
+debug = true
+
+[node name="Planet2" parent="." unique_id=1700728810 instance=ExtResource("6_l5t5e")]
+position = Vector2(1868, -1842)
+scale = Vector2(2, 2)
+size = 2.0
+
+[node name="Black Hole" parent="." unique_id=230190268 instance=ExtResource("5_j1sqg")]
+position = Vector2(1145, 234)
+size = 4.0
+
+[node name="Black Hole2" parent="." unique_id=1161594597 instance=ExtResource("5_j1sqg")]
+position = Vector2(68, -1413)
+scale = Vector2(8, 8)
+size = 3.0

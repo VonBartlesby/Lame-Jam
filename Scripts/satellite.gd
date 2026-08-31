@@ -23,7 +23,7 @@ var dead : float = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalHandler.connect("reset",reset)
-	if not stationary:
+	if get_parent() is GravitationalMass:
 		planet = get_parent()
 		orbit_center = planet.position
 		orbit_distance = planet.size * orbit_offset
@@ -34,7 +34,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if debug:
 		orbit_distance = planet.size * orbit_offset
-	if not stationary:
+	if get_parent() is GravitationalMass:
 		time += delta * orbit_speed
 		if abs(time) > 2:
 			time = 0
@@ -68,5 +68,5 @@ func reset() -> void:
 	dead = false
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.collision_layer == 1:
+	if area.collision_layer == 1 and not dead:
 		call_deferred("fucking_die")

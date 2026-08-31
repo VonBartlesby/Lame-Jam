@@ -69,7 +69,6 @@ func generate_field():
 	var while_count = 0
 	for i in range(1,asteroid_amount):
 		var new_asteroid = ASTEROID.instantiate(PackedScene.GenEditState.GEN_EDIT_STATE_INSTANCE)
-		#add_child(new_asteroid)
 		var too_close = true
 		while_count = 0
 		var while_max = 1
