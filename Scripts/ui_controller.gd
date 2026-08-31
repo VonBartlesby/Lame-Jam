@@ -5,6 +5,40 @@ class_name UiController
 @onready var middle_text: Label = $"Middle Text"
 @onready var next_level: Button = $"Next Level"
 
+const CRASH_MESSAGES : Array[String] = [
+	"On to attempt number %d",
+	"You Crashed",
+	"Boom boom",
+	"Goodbye dinosaurs",
+	"Ouch!",
+	"Not like that...",
+	"Everyone is dead"
+]
+
+const WIN_MESSAGES : Array[String] = [
+	"You completed the level with %d %s",
+	"%d%s times the charm",
+	"%d %s were harmed in the completion of this level",
+	"That one egg was %d eggs?",
+]
+
+const DRIFT_MESSAGES : Array[String] = [
+	"You drifted off into the vast emptiness",
+	"Goodbye forever",
+	"Ummm that's the wrong way",
+	"Where are you going?",
+	"Off to the store for some milk",
+	"Won't be back in time for supper"
+]
+
+const SPAG_MESSAGES : Array[String] = [
+	"You fell into a black hole",
+	"Moon spaghetti",
+	"Vorp",
+	"Not getting out of that one",
+	"*interstellar music*",
+]
+
 const CHARGE_TEXT = "%d%%"
 
 var wobble : bool = false
@@ -55,10 +89,31 @@ func _next_button_clicked():
 	SignalHandler.next_level.emit()
 
 func _on_win(tries : int):
-	var word = "resets"
-	if tries == 1:
-		word = "reset"
-	middle_text.text = "You completed the level with %d %s" % [tries,word]
+	var message = randi_range(0,WIN_MESSAGES.size()-1)
+	var word = "FUCK!"
+	
+	if message == 0:
+		word = "resets"
+		if tries == 1:
+			word = "reset"
+		middle_text.text = WIN_MESSAGES[message] % [tries,word]
+	elif message == 1:
+		word = "th"
+		if tries % 10 as int == 2:
+			word ="nd"
+		elif tries % 10 as int == 3:
+			word = "rd"
+		elif tries % 10 as int == 1:
+			word = "st"
+		middle_text.text = WIN_MESSAGES[message] % [tries+1,word]
+	elif message == 2:
+		word = "moons"
+		if tries == 1:
+			word = "moon"
+		middle_text.text = WIN_MESSAGES[message] % [tries,word]
+	elif message == 3:
+		middle_text.text = WIN_MESSAGES[message] % [tries+1]
+	
 	next_level.visible = true
 
 func _on_level_load():
@@ -66,10 +121,16 @@ func _on_level_load():
 	next_level.visible = false
 	
 func _on_crash():
-	middle_text.text = "You crashed"
+	var message = randi_range(0,WIN_MESSAGES.size()-1)
+	if message == 0:
+		middle_text.text = CRASH_MESSAGES[message] % [GameControllerAutoLoad.death_counter+1]
+	else:
+		middle_text.text = CRASH_MESSAGES[message]
 
 func _on_spag():
-	middle_text.text = "You got sucked into a black hole"
+	var message = randi_range(0,SPAG_MESSAGES.size()-1)
+	middle_text.text = SPAG_MESSAGES[message]
 
 func _on_drift_off():
-	middle_text.text = "You drifted off into the vast emptiness"
+	var message = randi_range(0,DRIFT_MESSAGES.size()-1)
+	middle_text.text = DRIFT_MESSAGES[message]
