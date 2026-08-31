@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpr5f28ac3xjr"]
 
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="1_6tcp3"]
+[ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="1_nfly3"]
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="2_nfly3"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
@@ -25,18 +26,17 @@ text = "Use the mouse wheel to zoom out so you can see your targets better"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("2_nfly3")]
+[node name="Planet3" parent="." unique_id=1221522964 instance=ExtResource("1_nfly3")]
+position = Vector2(679, 276)
+scale = Vector2(2, 2)
+size = 2.0
+
+[node name="Planet" parent="." unique_id=1678679467 instance=ExtResource("2_nfly3")]
 position = Vector2(463, 405)
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("1_6tcp3")]
 scale = Vector2(2, 2)
 start_rotation = 120.996
-
-[node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("2_nfly3")]
-position = Vector2(679, 276)
-scale = Vector2(2, 2)
-size = 2.0
-debug = true
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
 position = Vector2(912, 135)

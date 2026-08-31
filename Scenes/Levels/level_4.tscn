@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_xq0e5"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_6grq2"]
+[ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="2_vwhew"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
@@ -31,11 +32,10 @@ position = Vector2(709, 764)
 scale = Vector2(2, 2)
 size = 2.0
 
-[node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("1_xq0e5")]
+[node name="Planet3" parent="." unique_id=1591020777 instance=ExtResource("2_vwhew")]
 position = Vector2(442, 359)
 scale = Vector2(4, 4)
 size = 4.0
-debug = true
 
 [node name="Satellite" parent="." unique_id=1404198482 instance=ExtResource("2_6grq2")]
 position = Vector2(807, 541)
