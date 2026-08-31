@@ -51,7 +51,7 @@ func fade_to_start():
 	await get_tree().create_timer(4.0).timeout
 	riser_vol_target = -60.0 # fade out riser
 
-func fade_to_music():
+func fade_to_music(_tries : int):
 	stream.switch_to_clip_by_name("Music")
 	
 func fade_to_ambient():
