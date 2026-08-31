@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b5jcdbh7nuorf"]
+
+[ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_7xrl5"]
+[ext_resource type="PackedScene" uid="uid://c1468rtc3d1yl" path="res://Scenes/evil_moon.tscn" id="3_ong76"]
+[ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="4_8267o"]
+
+[node name="Level" type="Node2D" unique_id=1877995342]
+
+[node name="Label" type="Label" parent="." unique_id=2116998295]
+offset_left = 292.0
+offset_top = 421.0
+offset_right = 466.0
+offset_bottom = 626.0
+text = "These moons have no gravity"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1913309939]
+offset_left = 75.0
+offset_top = 44.0
+offset_right = 249.0
+offset_bottom = 197.0
+text = "Black holes have a stronger pull, but you need to be pulled right into the middle to get destoryed.
+
+Use this to sling shot around the moons"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Black Hole" parent="." unique_id=1221522964 instance=ExtResource("4_8267o")]
+position = Vector2(335, 98)
+
+[node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
+position = Vector2(280, 319.99997)
+scale = Vector2(0.99999994, 0.99999994)
+gizmo_extents = 50.0
+
+[node name="Evil Moon" parent="." unique_id=1404198482 instance=ExtResource("3_ong76")]
+position = Vector2(667, 411.00003)
+scale = Vector2(5.73, 5.73)
+stationary = true
+
+[node name="Evil Moon2" parent="." unique_id=245295262 instance=ExtResource("3_ong76")]
+position = Vector2(414.00003, 172)
+scale = Vector2(2.37, 2.37)
+stationary = true
+
+[node name="Evil Moon3" parent="." unique_id=1466468057 instance=ExtResource("3_ong76")]
+position = Vector2(515, 262)
+scale = Vector2(3.585, 3.585)
+stationary = true
+
+[node name="Satellite" parent="." unique_id=708366585 instance=ExtResource("2_7xrl5")]
+position = Vector2(567, 42)
+stationary = true

@@ -50,7 +50,7 @@ func launch(launch_vel : Vector2) -> Array:
 			if planet is GravitationalMass:
 				velocity += planet.get_force_to_body(self) * 0.01666666666667
 				var distance_to_planet = abs(global_position-planet.global_position).length()
-				if distance_to_planet < 50:
+				if distance_to_planet < 50 and planet.solid:
 					points.append(position)
 					return points
 		move()

@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 
 func fucking_die() -> void:
+	SignalHandler.emit_signal("destroy_asteroid")
 	sprite_2d.visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 	destroy_sound.play()

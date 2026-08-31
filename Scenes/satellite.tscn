@@ -57,7 +57,7 @@ color_ramp = SubResource("Gradient_q48jt")
 color = Color(1.4648298, 0.88859105, 0, 1)
 energy = 0.0
 texture = SubResource("GradientTexture2D_l7wp4")
-texture_scale = 12.0
+texture_scale = 1.17
 height = 30.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
