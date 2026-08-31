@@ -27,7 +27,7 @@ func _ready() -> void:
 		planet = get_parent()
 		orbit_center = planet.position
 		orbit_distance = planet.size * orbit_offset
-		GameControllerAutoLoad.satellites.append(self)
+	GameControllerAutoLoad.satellites.append(self)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
