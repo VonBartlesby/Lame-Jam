@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://chglidnahts2v"]
+
+[ext_resource type="Script" uid="uid://6trbtb7ojwo1" path="res://Scripts/GravitationalMass.gd" id="1_mvx3u"]
+[ext_resource type="Shader" uid="uid://2276rvwm5yj2" path="res://materials/atmosphere.gdshader" id="2_bi35s"]
+[ext_resource type="Texture2D" uid="uid://by8ilky2vymwr" path="res://Textures/planet_3__.png" id="3_mvx3u"]
+[ext_resource type="Texture2D" uid="uid://dj8amda1h6558" path="res://Textures/planet_3__n.png" id="4_bi35s"]
+[ext_resource type="Texture2D" uid="uid://cdifnjl88awj3" path="res://Textures/planet_3__s.png" id="5_i2uah"]
+
+[sub_resource type="Curve" id="Curve_svads"]
+_data = [Vector2(0.45446268, 0), 0.0, 0.0, 0, 0, Vector2(0.6985428, 0.07205236), 0.6673521, 0.6673521, 0, 0, Vector2(0.8970856, 0.22925764), 0.91538537, 0.91538537, 0, 0, Vector2(1, 0.37772924), 3.1851933, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_a578t"]
+curve = SubResource("Curve_svads")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytj11"]
+shader = ExtResource("2_bi35s")
+shader_parameter/c = SubResource("CurveTexture_a578t")
+shader_parameter/a = Color(1.1535394, 1.5692154, 1.5345756, 1)
+shader_parameter/a_p = 0.745
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4xy80"]
+diffuse_texture = ExtResource("3_mvx3u")
+normal_texture = ExtResource("4_bi35s")
+specular_texture = ExtResource("5_i2uah")
+specular_shininess = 0.77
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
+radius = 43.55
+
+[node name="Planet" type="Area2D" unique_id=1221522964]
+collision_layer = 2
+script = ExtResource("1_mvx3u")
+
+[node name="Planet" type="Sprite2D" parent="." unique_id=723948335]
+material = SubResource("ShaderMaterial_ytj11")
+scale = Vector2(0.087, 0.087)
+texture = SubResource("CanvasTexture_4xy80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=582415943]
+visible = false
+shape = SubResource("CircleShape2D_57qmd")
