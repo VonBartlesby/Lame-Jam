@@ -15,7 +15,6 @@ extends Node
 
 
 var mouseDown : bool = false
-var mouseInitialPostision : Vector2
 var mouseCurrentPosition : Vector2
 var mouseToMoonDirection : Vector2
 var magnituge : float
@@ -39,25 +38,35 @@ func _process(_delta: float) -> void:
 	charge_noise.volume_linear = vol
 	pass
 
+func _physics_process(delta: float) -> void:
+	mouseCurrentPosition = camera.get_global_mouse_position()
+	charge.set_point_position(1,(mouseCurrentPosition - camera.offset).normalized() * magnituge)
+
+	if mouseDown:
+		#Input.warp_mouse(-mouseCurrentPosition.normalized() * magnituge)
+		line_2d.clear_points()
+		charge.visible = false
+		var points = path_finder.launch(moon_launch_velocity)
+		magnituge = minf(500, (camera.offset - mouseCurrentPosition).length()*2)
+		visual.wobble_strength = magnituge/WOBBLE_RATIO
+		charge.visible = true
+		for point in points:
+			line_2d.add_point(point)
+
 func _unhandled_input(event):
 	if not moon.shootable:
 		return
 	if event is InputEventMouse:
 		event.position = camera.get_global_mouse_position()
-		moon_launch_velocity = mouseCurrentPosition.normalized() * magnituge
-		
+		moon_launch_velocity = (camera.offset - mouseCurrentPosition).normalized() * magnituge	
 	if event is InputEventMouseButton:
-		
-		
 		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 			mouseDown = true
-			mouseInitialPostision = Vector2(0,0)
-			mouseCurrentPosition = mouseInitialPostision
+			mouseCurrentPosition = camera.offset
 			
 			
-		elif mouseDown && event.button_index == MOUSE_BUTTON_LEFT:
-			print("let go")
+		elif mouseDown && event.button_index == MOUSE_BUTTON_LEFT: 
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			moon.shootable = false
 			moon.started = true
@@ -70,22 +79,6 @@ func _unhandled_input(event):
 			visual.wobble_strength = 0
 			line_2d.clear_points()
 			charge.visible = false
-	elif event is InputEventMouseMotion:
-		mouseCurrentPosition -= (event.screen_relative * 0.8)
-		
-		charge.set_point_position(1,-mouseCurrentPosition.normalized() * magnituge)
-		
-		if mouseDown:
-			Input.warp_mouse(-mouseCurrentPosition.normalized() * magnituge)
-			line_2d.clear_points()
-			charge.visible = false
-			var points = path_finder.launch(moon_launch_velocity)
-			magnituge = minf(500, abs(mouseCurrentPosition).length())
-			visual.wobble_strength = magnituge/WOBBLE_RATIO
-			charge.visible = true
-			#line_2d.set_point_position(1,(moon.position-mouseCurrentPosition).normalized() * magnituge * LINE_LENGTH)
-			for point in points:
-				line_2d.add_point(point)
 	
 
 
