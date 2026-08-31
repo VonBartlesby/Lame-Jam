@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8368f23o6g07"]
 
-[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_efpaj"]
+[ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="1_efpaj"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_arbu7"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
@@ -28,11 +28,10 @@ The closer you are to a large mass the faster it will charge"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_efpaj")]
+[node name="Planet2" parent="." unique_id=1221522964 instance=ExtResource("1_efpaj")]
 position = Vector2(772, 340)
 scale = Vector2(6, 6)
 size = 6.0
-debug = true
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]
 position = Vector2(311, 201.00003)

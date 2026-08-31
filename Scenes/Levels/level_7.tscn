@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_vb8ac"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_10co4"]
+[ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="3_dbpl7"]
+[ext_resource type="PackedScene" uid="uid://3rav677e0c0d" path="res://Scenes/planet_2.tscn" id="4_hubum"]
+[ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="5_qhxxe"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
@@ -39,11 +42,10 @@ rotation = 3.3033123
 orbit_offset = 85
 debug = true
 
-[node name="Planet2" parent="." unique_id=1823928759 instance=ExtResource("1_vb8ac")]
+[node name="Planet5" parent="." unique_id=512973544 instance=ExtResource("3_dbpl7")]
 position = Vector2(935.99994, 703.0001)
 scale = Vector2(4, 4)
 size = 4.0
-debug = true
 
 [node name="Satellite" parent="Planet2" unique_id=529104024 instance=ExtResource("2_10co4")]
 position = Vector2(56.34285, -56.793335)
@@ -52,11 +54,10 @@ orbit_offset = 80
 start_rotation = 125.506
 debug = true
 
-[node name="Planet3" parent="." unique_id=713229174 instance=ExtResource("1_vb8ac")]
+[node name="Planet2" parent="." unique_id=1364356701 instance=ExtResource("4_hubum")]
 position = Vector2(277.00003, 1203)
 scale = Vector2(4, 4)
 size = 4.0
-debug = true
 
 [node name="Satellite" parent="Planet3" unique_id=1451027612 instance=ExtResource("2_10co4")]
 position = Vector2(-94.747375, -15.457489)
@@ -68,7 +69,6 @@ debug = true
 position = Vector2(836, 1632)
 scale = Vector2(4, 4)
 size = 4.0
-debug = true
 
 [node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_10co4")]
 position = Vector2(81.77966, 57.55072)

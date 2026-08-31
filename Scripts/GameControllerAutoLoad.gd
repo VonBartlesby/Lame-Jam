@@ -3,6 +3,7 @@ extends Node
 var satellites : Array[Satellite]
 #starts at -1 as the start of the game will increment it
 var level_index : int = -1
+var death_counter : int = 0
 var levels : Array[String] = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",
@@ -36,10 +37,11 @@ func check_win() -> void:
 	for satellite in satellites:
 		if not satellite.dead:
 			return
-	SignalHandler.win.emit()
+	SignalHandler.win.emit(death_counter)
 
 func load_level() -> void:
 	satellites = []
+	death_counter = 0
 	print("loading level ",level_index," into scene")
 	if current_level != null:
 		current_level.queue_free()

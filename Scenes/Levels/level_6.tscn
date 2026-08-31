@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://djv6hs0njgtmm"]
 
-[ext_resource type="PackedScene" uid="uid://0poyklthpt7g" path="res://Scenes/planet.tscn" id="1_hggss"]
+[ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="1_ik81l"]
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_rt0ev"]
 [ext_resource type="PackedScene" uid="uid://c1468rtc3d1yl" path="res://Scenes/evil_moon.tscn" id="3_rt0ev"]
+[ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="4_h7uay"]
 [ext_resource type="PackedScene" uid="uid://dwbyudug10ffc" path="res://Scenes/Black Hole.tscn" id="4_vrotf"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
@@ -26,29 +27,28 @@ text = "Black holes have a stronger pull, but you need to be pulled right into t
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Planet3" parent="." unique_id=338070861 instance=ExtResource("1_hggss")]
+[node name="Planet4" parent="." unique_id=1221522964 instance=ExtResource("1_ik81l")]
 position = Vector2(778, 619)
 
-[node name="Satellite" parent="Planet3" unique_id=1404198482 instance=ExtResource("2_rt0ev")]
+[node name="Satellite" parent="Planet4" unique_id=1404198482 instance=ExtResource("2_rt0ev")]
 orbit_offset = 154
 orbit_speed = 0.258
 
-[node name="Evil Moon" parent="Planet3" unique_id=1807886266 instance=ExtResource("3_rt0ev")]
+[node name="Evil Moon" parent="Planet4" unique_id=1807886266 instance=ExtResource("3_rt0ev")]
 position = Vector2(-94, 55)
 orbit_offset = 257
 
-[node name="Evil Moon2" parent="Planet3" unique_id=327953062 instance=ExtResource("3_rt0ev")]
+[node name="Evil Moon2" parent="Planet4" unique_id=327953062 instance=ExtResource("3_rt0ev")]
 position = Vector2(15, -146)
 orbit_offset = 257
 start_rotation = 128.769
 
-[node name="Planet2" parent="." unique_id=806294977 instance=ExtResource("1_hggss")]
+[node name="Planet3" parent="." unique_id=2017067130 instance=ExtResource("4_h7uay")]
 position = Vector2(337, 353)
 scale = Vector2(4, 4)
 size = 4.0
-debug = true
 
-[node name="Black Hole" parent="." unique_id=1221522964 instance=ExtResource("4_vrotf")]
+[node name="Black Hole" parent="." unique_id=2143775007 instance=ExtResource("4_vrotf")]
 position = Vector2(852, 247)
 
 [node name="Start Point" type="Marker2D" parent="." unique_id=662663214]

@@ -9,7 +9,7 @@ float fresnel(float amount, vec3 normal)
 void light() {
 	float cNdotL = max(0.0, dot(NORMAL, LIGHT_DIRECTION));
 	cNdotL=1.+(cNdotL-1.)*(1.+float(LIGHT_IS_DIRECTIONAL));
-	LIGHT = vec4(LIGHT_COLOR.rgb * COLOR.rgb * LIGHT_ENERGY * cNdotL , LIGHT_COLOR.a);
+	LIGHT = vec4(LIGHT_COLOR.rgb * COLOR.rgb * LIGHT_ENERGY * cNdotL * (1.+(0.75*float(LIGHT_IS_DIRECTIONAL))) , LIGHT_COLOR.a);
 	float _cNdotL=texture(c,vec2(cNdotL)).r * float(!LIGHT_IS_DIRECTIONAL);
 	LIGHT+=SPECULAR_SHININESS*_cNdotL*LIGHT_ENERGY;
 	LIGHT+=vec4(a*fresnel(a_p,NORMAL),0.) * float(LIGHT_IS_DIRECTIONAL);
