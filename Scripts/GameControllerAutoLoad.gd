@@ -9,6 +9,7 @@ var levels : Array[String] = [
 	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_4.tscn",
 	"res://Scenes/Levels/level_5.tscn",
+	"res://Scenes/Levels/level_77.tscn",
 	"res://Scenes/Levels/level_6.tscn",
 	"res://Scenes/Levels/level_7.tscn",
 	"res://Scenes/Levels/level_8.tscn",

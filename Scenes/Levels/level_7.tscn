@@ -18,6 +18,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="." unique_id=1913309939]
+visible = false
 offset_left = 57.0
 offset_top = 301.0
 offset_right = 231.0
@@ -28,29 +29,33 @@ autowrap_mode = 2
 
 [node name="Planet" parent="." unique_id=1221522964 instance=ExtResource("1_vb8ac")]
 position = Vector2(216, 391.0001)
-scale = Vector2(5, 5)
-size = 5.0
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("2_10co4")]
 
 [node name="Planet2" parent="." unique_id=1823928759 instance=ExtResource("1_vb8ac")]
 position = Vector2(935.99994, 703.0001)
-scale = Vector2(5, 5)
-size = 5.0
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
 
 [node name="Satellite" parent="Planet2" unique_id=529104024 instance=ExtResource("2_10co4")]
 
 [node name="Planet3" parent="." unique_id=713229174 instance=ExtResource("1_vb8ac")]
 position = Vector2(277.00003, 1203)
-scale = Vector2(5, 5)
-size = 5.0
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
 
 [node name="Satellite" parent="Planet3" unique_id=1451027612 instance=ExtResource("2_10co4")]
 
 [node name="Planet4" parent="." unique_id=335385685 instance=ExtResource("1_vb8ac")]
 position = Vector2(1165.0001, 1635)
-scale = Vector2(9, 9)
-size = 9.0
+scale = Vector2(4, 4)
+size = 4.0
+debug = true
 
 [node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_10co4")]
 
