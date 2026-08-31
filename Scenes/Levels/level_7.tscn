@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_10co4"]
 [ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="3_dbpl7"]
 [ext_resource type="PackedScene" uid="uid://3rav677e0c0d" path="res://Scenes/planet_2.tscn" id="4_hubum"]
-[ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="5_qhxxe"]
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
@@ -37,8 +36,8 @@ size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("2_10co4")]
-position = Vector2(-83.89091, -13.686333)
-rotation = 3.3033123
+position = Vector2(-77.51807, -34.870453)
+rotation = 3.5643106
 orbit_offset = 85
 debug = true
 
@@ -47,9 +46,9 @@ position = Vector2(935.99994, 703.0001)
 scale = Vector2(4, 4)
 size = 4.0
 
-[node name="Satellite" parent="Planet2" unique_id=529104024 instance=ExtResource("2_10co4")]
-position = Vector2(56.34285, -56.793335)
-rotation = 3.3033123
+[node name="Planet2#Satellite" parent="Planet5" unique_id=529104024 instance=ExtResource("2_10co4")]
+position = Vector2(-219.91428, -189.94836)
+rotation = -2.979873
 orbit_offset = 80
 start_rotation = 125.506
 debug = true
@@ -59,9 +58,9 @@ position = Vector2(277.00003, 1203)
 scale = Vector2(4, 4)
 size = 4.0
 
-[node name="Satellite" parent="Planet3" unique_id=1451027612 instance=ExtResource("2_10co4")]
-position = Vector2(-94.747375, -15.457489)
-rotation = 3.3033123
+[node name="Planet3#Satellite" parent="Planet2" unique_id=1451027612 instance=ExtResource("2_10co4")]
+position = Vector2(-92.93685, -304.61438)
+rotation = -2.979873
 orbit_offset = 96
 debug = true
 
@@ -71,8 +70,8 @@ scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_10co4")]
-position = Vector2(81.77966, 57.55072)
-rotation = 3.1115756
+position = Vector2(48.366486, 87.52533)
+rotation = 3.5643106
 orbit_offset = 100
 start_rotation = 216.855
 debug = true

@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" format=3 uid="uid://b3lry43rl3ysx"]
 
-[ext_resource type="Texture2D" uid="uid://wyavytl3qtp5" path="res://Textures/evil_moon.png" id="1_wqqod"]
-[ext_resource type="Texture2D" uid="uid://bf3y0dnn7hbxd" path="res://Textures/evil_moon_n.png" id="2_3gp5g"]
+[ext_resource type="Texture2D" uid="uid://lhxmubfpuwu6" path="res://Textures/moon.png" id="1_wqqod"]
+[ext_resource type="Texture2D" uid="uid://cpiv115d2lwwm" path="res://Textures/moon_n.png" id="2_3gp5g"]
 
 [resource]
 diffuse_texture = ExtResource("1_wqqod")
