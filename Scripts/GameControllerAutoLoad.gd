@@ -14,8 +14,6 @@ var levels : Array[String] = [
 	"res://Scenes/Levels/level_6.tscn",
 	"res://Scenes/Levels/level_7.tscn",
 	"res://Scenes/Levels/level_8.tscn",
-	"res://Scenes/Levels/level_10.tscn",
-	"res://Scenes/Levels/level_11.tscn",
 	
 	"res://Scenes/level_test.tscn",]
 var current_level : Node2D = null

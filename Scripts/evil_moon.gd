@@ -14,7 +14,7 @@ var time : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if get_parent() is GravitationalMass:
+	if not stationary:
 		planet = get_parent()
 		orbit_center = planet.position
 		orbit_distance = planet.size * orbit_offset
@@ -22,7 +22,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if planet is GravitationalMass:
+	if not stationary:
 		time += delta * orbit_speed
 		if abs(time) > 2:
 			time = 0
