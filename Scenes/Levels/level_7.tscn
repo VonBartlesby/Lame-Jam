@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dsfd3lhbp44nj" path="res://Scenes/satellite.tscn" id="2_10co4"]
 [ext_resource type="PackedScene" uid="uid://b54pdyrjt4vhn" path="res://Scenes/planet_1.tscn" id="3_dbpl7"]
 [ext_resource type="PackedScene" uid="uid://3rav677e0c0d" path="res://Scenes/planet_2.tscn" id="4_hubum"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://chglidnahts2v" path="res://Scenes/planet_3.tscn" id="5_qhxxe"]
+=======
+>>>>>>> parent of 5cbed96 (More levels)
 
 [node name="Level" type="Node2D" unique_id=1877995342]
 
@@ -37,8 +40,13 @@ size = 4.0
 debug = true
 
 [node name="Satellite" parent="Planet" unique_id=1404198482 instance=ExtResource("2_10co4")]
+<<<<<<< HEAD
 position = Vector2(-35.1571, -77.38849)
 rotation = -5.138808
+=======
+position = Vector2(-77.51807, -34.870453)
+rotation = 3.5643106
+>>>>>>> parent of 5cbed96 (More levels)
 orbit_offset = 85
 orbit_speed = -0.14400000000000002
 start_rotation = 180.0
@@ -50,8 +58,13 @@ scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Planet2#Satellite" parent="Planet5" unique_id=529104024 instance=ExtResource("2_10co4")]
+<<<<<<< HEAD
 position = Vector2(33.08905, 72.83624)
 rotation = -5.138808
+=======
+position = Vector2(-219.91428, -189.94836)
+rotation = -2.979873
+>>>>>>> parent of 5cbed96 (More levels)
 orbit_offset = 80
 orbit_speed = -0.14400000000000002
 debug = true
@@ -62,8 +75,13 @@ scale = Vector2(4, 4)
 size = 4.0
 
 [node name="Planet3#Satellite" parent="Planet2" unique_id=1451027612 instance=ExtResource("2_10co4")]
+<<<<<<< HEAD
 position = Vector2(-39.706844, -87.40347)
 rotation = -5.138808
+=======
+position = Vector2(-92.93685, -304.61438)
+rotation = -2.979873
+>>>>>>> parent of 5cbed96 (More levels)
 orbit_offset = 96
 orbit_speed = -0.14400000000000002
 start_rotation = 180.0
@@ -73,9 +91,15 @@ position = Vector2(1057, 1567)
 scale = Vector2(4, 4)
 size = 4.0
 
+<<<<<<< HEAD
 [node name="Satellite" parent="Planet3" unique_id=323994378 instance=ExtResource("2_10co4")]
 position = Vector2(46.361298, 75.29529)
 rotation = -5.138808
+=======
+[node name="Satellite" parent="Planet4" unique_id=323994378 instance=ExtResource("2_10co4")]
+position = Vector2(48.366486, 87.52533)
+rotation = 3.5643106
+>>>>>>> parent of 5cbed96 (More levels)
 orbit_offset = 100
 orbit_speed = -0.14400000000000002
 debug = true
@@ -84,6 +108,3 @@ debug = true
 position = Vector2(594, 141)
 scale = Vector2(0.99999994, 0.99999994)
 gizmo_extents = 50.0
-
-[node name="Black Hole" parent="." unique_id=551237592 instance=ExtResource("5_dbpl7")]
-position = Vector2(572, 927)
